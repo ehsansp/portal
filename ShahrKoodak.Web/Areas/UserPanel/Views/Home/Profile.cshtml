@@ -1,0 +1,71 @@
+﻿
+@model ShahrKoodak.Core.DTOs.User.InformationUserViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-action="Profile">
+    <div class="col-md-9">
+        <div class="dashboard-title fl-wrap">
+            <h3>پروفایل شما</h3>
+        </div>
+        <!-- profile-edit-container-->
+        <div class="profile-edit-container fl-wrap block_box">
+            <div class="custom-form">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>نام <i class="fal fa-user"></i></label>
+                        <input type="text" placeholder="نام" asp-for="Name" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label>نام خانوادگی <i class="fal fa-user"></i></label>
+                        <input type="text" placeholder="نام خانوادگی" asp-for="Family" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label>آدرس ایمیل<i class="far fa-envelope"></i>  </label>
+                        <input type="text" placeholder="آدرس ایمیل" asp-for="Email" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label>تلفن<i class="far fa-phone"></i>  </label>
+                        <input type="text" placeholder="شماره تماس" asp-for="Tel" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label> آدرس <i class="fas fa-map-marker"></i>  </label>
+                        <input type="text" placeholder="آدرس" asp-for="Address" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label> سایت <i class="far fa-globe"></i>  </label>
+                        <input type="text" placeholder="آدرس وب سایت" asp-for="WebSite" />
+                    </div>
+                </div>
+                @*<label> یادداشت</label>
+                    <textarea cols="40" rows="3" placeholder="در مورد من" style="margin-bottom:20px;"></textarea>
+                    <label>تغییر آواتار</label>
+                    <div class="photoUpload">
+                        <span><i class="fal fa-image"></i> <strong>اضافه کردن عکس</strong></span>
+                        <input type="file" class="upload">
+                    </div>*@
+            </div>
+        </div>
+        <!-- profile-edit-container end-->
+        @*<div class="dashboard-title dt-inbox fl-wrap">
+                <h3>شبکه اجتماعی شما</h3>
+            </div>*@
+        <!-- profile-edit-container-->
+        <div class="profile-edit-container fl-wrap block_box">
+            <div class="custom-form">
+                @*<label>فیس بوک <i class="fab fa-facebook"></i></label>
+                    <input type="text" placeholder="https://www.facebook.com/" asp-for="" />
+                    <label>توییتر<i class="fab fa-twitter"></i>  </label>
+                    <input type="text" placeholder="https://twitter.com/" value="" />
+                    <label>Vkontakte<i class="fab fa-vk"></i>  </label>
+                    <input type="text" placeholder="https://vk.com" value="" />
+                    <label> اینستاگرام <i class="fab fa-instagram"></i>  </label>
+                    <input type="text" placeholder="https://www.instagram.com/" value="" />*@
+                <button class="btn    color2-bg  float-btn">ذخیره تغییرات<i class="fal fa-save"></i></button>
+            </div>
+        </div>
+        <!-- profile-edit-container end-->
+    </div>
+</form>

@@ -1,0 +1,134 @@
+﻿@model ShahrKoodak.Core.DTOs.User.InformationAdViewModel
+@{
+    ViewData["dash"] = "افزودن تبلیغ";
+    ViewData["Title"] = "افزودن تبلیغ";
+}
+<form asp-action="Add" enctype="multipart/form-data">
+    <div class="col-md-9">
+        <div class="dashboard-title   fl-wrap">
+            <h3>افزودن تبلیغ</h3>
+        </div>
+        <!-- profile-edit-container-->
+        <div class="profile-edit-container fl-wrap block_box">
+            <div class="custom-form">
+                <label>عنوان تبلیغ <i class="fal fa-briefcase"></i></label>
+                <input asp-for="ProductName" type="text" placeholder="عنوان آگهی" />
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>دسته بندی اصلی</label>
+                        <div class="listsearch-input-item">
+                            <select class="chosen-select" asp-for="GroupId" asp-items="@(ViewData["group"] as SelectList)"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>دسته بندی فرعی</label>
+                        <div id="dd">
+                            <div id="tt" class="listsearch-input-item">
+                                <select class="chosen-select" asp-for="SubGroup" asp-items="@(ViewData["sub"] as SelectList)"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label> قیمت </label>
+                <input asp-for="Price" type="text" placeholder="قیمت را به تومان وارد کنید..." />
+                <label> شماره تماس </label>
+                <input asp-for="Price" type="text" placeholder="شماره تماس را وارد فرمایید..." />
+                <label id="input"></label>
+                <div class="add-list-media-header" style="margin-bottom:20px">
+                    <label class="radio inline">
+                        <input type="radio"  name="gender" checked>
+                        <span>تصویر اصلی</span>
+                    </label>
+                </div>
+                <div class="custom-form">
+                    <label>متن</label>
+                    <textarea cols="40" rows="3" placeholder="جزئیات"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- profile-edit-container end-->
+        <!-- profile-edit-container end-->
+        <div class="dashboard-title  dt-inbox fl-wrap">
+            <h3>تصاویر</h3>
+        </div>
+        <!-- profile-edit-container-->
+        <div class="profile-edit-container fl-wrap block_box">
+            <div class="custom-form">
+                <div class="row">
+                    <!--col -->
+                    <div class="col-md-4">
+                        <div class="add-list-media-header" style="margin-bottom:20px">
+                            <label class="radio inline">
+                                <input type="radio" name="gender" checked>
+                                <span>تصویر اصلی</span>
+                            </label>
+                        </div>
+                        <div class="add-list-media-wrap">
+                            <div class="add-list-media-wrap">
+                               
+                                    <div class="fu-text">
+                                        <span><i class="fal fa-image"></i> اینجا را کلیک کنید یا پرونده ها را بارگذاری کنید</span>
+                                    </div>
+                                    <input type="file" asp-for="ProductImage" class="upload">
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <!--col end-->
+
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-title  dt-inbox fl-wrap">
+            <h3>شبکه های اجتماعی</h3>
+        </div>
+        <!-- profile-edit-container-->
+        <button class="btn    color2-bg  float-btn">ثبت آگهی<i class="fal fa-paper-plane"></i></button>
+        <!-- profile-edit-container end-->
+    </div>
+</form>
+@section Scripts
+{
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&libraries=places&callback=initAutocomplete"></script>
+    <script src="/js/map-add.js"></script>
+    <script src="/js/map-listing.js"></script>
+
+    <script>
+        $("#GroupId").change(function () {
+
+            $("#tt").remove();
+            var div = document.createElement("div");
+            div.className = "listsearch-input-item";
+            div.id = "tt";
+            $("#dd").append(div);
+            var s = document.createElement("select");
+            s.id = "SubGroup";
+            s.name = "SubGroup";
+            $("#tt").append(s);
+
+
+            $.getJSON("/home/GetSubGroups/" + $("#GroupId :selected").val(),
+                function (data) {
+
+                    $.each(data,
+                        function () {
+                            $("#SubGroup").append('<option value=' + this.value + '>' + this.text + '</option>');
+                        });
+                    $("#SubGroup").niceSelect();
+                });
+            //$(document).ready(function() {
+            //    $('select').niceSelect();
+            //});
+
+        });
+
+    </script>
+    <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $('#Price').keyup(function (event) {
+            $(this).val(function (index, value) {
+                return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            });
+        });
+    </script>
+}

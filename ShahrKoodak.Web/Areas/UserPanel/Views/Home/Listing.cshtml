@@ -1,0 +1,31 @@
+﻿@model List<ShahrKoodak.DataLayer.Entities.Product.product>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="col-md-9">
+    <div class="dashboard-title   fl-wrap">
+        <h3>آگهی های من</h3>
+    </div>
+    <!-- dashboard-list-box-->
+    <div class="dashboard-list-box  fl-wrap">
+        <!-- dashboard-list -->
+        @foreach (var item in Model)
+        {
+            <partial name="_BoxProduct4" model="@item" />
+        }
+        <!-- dashboard-list end-->
+
+    </div>
+    <!-- dashboard-list-box end-->
+    <div class="pagination">
+        <a href="#" class="prevposts-link"><i class="fas fa-caret-right"></i><span>قبلی</span></a>
+        <a href="#">1</a>
+        <a href="#" class="current-page">2</a>
+        <a href="#">3</a>
+        <a href="#">...</a>
+        <a href="#">7</a>
+        <a href="#" class="nextposts-link"><span>بعدی</span><i class="fas fa-caret-left"></i></a>
+    </div>
+</div>

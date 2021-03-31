@@ -1,0 +1,34 @@
+﻿@using ShahrKoodak.Core.Convertors
+@model ShahrKoodak.Core.DTOs.Product.ShowProductListItemViewModel
+@{
+    string s = FriendlyUrlHelper.GetFriendlyTitle(Model.Title);
+}
+
+
+<div class="col-xl-4 col-md-6">
+    <div class="product-box-layout1">
+        <div class="item-img">
+            <a href="/ShowProduct/@Model.ProductId/@s" class="item-trending"><img src="/product/image/@Model.ImageName" alt="@Model.Title"></a>
+        </div>
+        <div class="item-content">
+            <div class="item-tag"><a href="/product?SelectedGroups=@Model.CG">@Model.GroupTitle</a></div>
+            <h3 class="item-title"><a href="/ShowProduct/@Model.ProductId/@s">@Model.Title</a></h3>
+            <ul class="entry-meta">
+                <li><i class="far fa-clock"></i>@Model.CreateDate.ToShamsi()</li>
+                <li><i class="far fa-eye"></i>@Model.Counter بازدید</li>
+            </ul>
+            <div class="item-price">
+                @{
+                    if (Model.PriceType)
+                    {
+                        <span class="currency-symbol">توافقی</span>
+                    }
+                    else
+                    {
+                        <span class="currency-symbol">@Model.Price.ToString("#,0") تومان</span>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

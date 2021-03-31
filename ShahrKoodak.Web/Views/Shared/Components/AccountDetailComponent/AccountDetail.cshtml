@@ -1,0 +1,155 @@
+﻿@model ShahrKoodak.Core.DTOs.User.InformationUserViewModel
+    <div class="tab-pane fade" id="accout-detail" role="tabpanel">
+        <div class="light-shadow-bg post-ad-box-layout1 myaccount-store-settings myaccount-detail">
+            <div class="light-box-content">
+                <form asp-action="AccountDetail">
+                    <div class="post-section basic-information">
+                        <div class="post-ad-title">
+                            <i class="fas fa-user"></i>
+                            <h3 class="item-title">اطلاعات اصلی</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    شماره همراه
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <div class="text-value">@Model.Email</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    نام
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="text" asp-for="Name" class="form-control" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    نام خانوادگی
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="text" asp-for="Family" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    ایمیل
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="email" asp-for="Mail" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    تلفن
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="text" asp-for="Tel" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    تلفن واتس آپ
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="text" asp-for="WhatsApp" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    وب سایت
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="text" asp-for="WebSite" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-section location-detail">
+                        <div class="post-ad-title">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3 class="item-title">موقعیت</h3>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    شهر
+                                    <span>*</span>
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <select class="form-control" asp-for="CityId" asp-items="@(ViewData["City"] as SelectList)"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    کد پستی
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="text" asp-for="PostCode" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="control-label">
+                                    آدرس
+                                </label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <textarea class="form-control textarea" cols="30" rows="2" asp-for="Address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <input type="submit" class="submit-btn" value="ویرایش حساب کاربری">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

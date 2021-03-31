@@ -1,0 +1,253 @@
+﻿
+@{
+    ViewData["Title"] = "حساب کاربری بابیت";
+}
+
+<div class="col-md-9">
+    <div class="dashboard-title fl-wrap">
+        <h3>آمار شما</h3>
+    </div>
+    <!-- list-single-facts -->
+    <div class="list-single-facts fl-wrap">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- inline-facts -->
+                <div class="inline-facts-wrap gradient-bg ">
+                    <div class="">
+                        <i class="fa fa-dollar-sign"></i>
+                        <div class="">
+                            <div class="">
+                                <p class="num" data-num="@ViewBag.ee">@ViewBag.ee</p>
+                            </div>
+                        </div>
+                        <h6>نرخ لحظه ای بیت کوین</h6>
+                    </div>
+                    <div class="stat-wave">
+                        <svg viewbox="0 0 100 25">
+                            <path fill="#fff" d="M0 30 V12 Q30 17 55 2 T100 11 V30z" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- inline-facts end -->
+            </div>
+            <div class="col-md-4">
+                <!-- inline-facts  -->
+                <div class="inline-facts-wrap gradient-bg ">
+                    <div class="inline-facts">
+                        <i class="fa fa-dollar-sign"></i>
+                        <div class="milestone-counter">
+                            <div class="">
+                                <p class="num" data-num="@ViewBag.ss">@ViewBag.ss</p>
+                            </div>
+                        </div>
+                        <h6>نرخ لحظه ای اتریوم</h6>
+                    </div>
+                    <div class="stat-wave">
+                        <svg viewbox="0 0 100 25">
+                            <path fill="#fff" d="M0 30 V12 Q30 6 55 12 T100 11 V30z" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- inline-facts end -->
+            </div>
+            <div class="col-md-4">
+                <!-- inline-facts  -->
+                <div class="inline-facts-wrap gradient-bg ">
+                    <div class="inline-facts">
+                        <i class="fal fa-envelope-open-dollar"></i>
+                        <div class="milestone-counter">
+                            <div class="">
+                                <p class="num" data-num="@ViewBag.doge">@ViewBag.doge</p>
+                            </div>
+                        </div>
+                        <h6>نرخ لحظه ای دوج </h6>
+                    </div>
+                    <div class="stat-wave">
+                        <svg viewbox="0 0 100 25">
+                            <path fill="#fff" d="M0 30 V12 Q30 12 55 5 T100 11 V30z" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- inline-facts end -->
+            </div>
+        </div>
+    </div>
+    <!-- list-single-facts end -->
+    <div class="list-single-main-item fl-wrap block_box">
+        <!-- chart-wra-->
+        <div class="chart-wrap   fl-wrap">
+            <div class="chart-header fl-wrap">
+                <div class="listsearch-input-item">
+                    <select data-placeholder="هفته" class="chosen-select no-search-select">
+                        <option>هفته</option>
+                        <option>ماه</option>
+                        <option>سال</option>
+                    </select>
+                </div>
+                <div id="myChartLegend"></div>
+            </div>
+            <canvas id="canvas-chart"></canvas>
+        </div>
+        <!--chart-wrap end-->
+    </div>
+    @*<div class="dashboard-title dt-inbox fl-wrap">
+        <h3>فعالیت های اخیر</h3>
+    </div>*@
+    <!-- dashboard-list-box-->
+    <!--<div class="dashboard-list-box  fl-wrap">-->
+        <!-- dashboard-list end-->
+        <!--<div class="dashboard-list fl-wrap">
+            <div class="dashboard-message">
+                <span class="new-dashboard-item"><i class="fal fa-times"></i></span>
+                <div class="dashboard-message-text">
+                    <i class="far fa-check green-bg"></i>
+                    <p>تبلیغ شما <a href="#">فروشگاه زنجیره ای</a> تأیید شده است! </p>
+                </div>
+                <div class="dashboard-message-time"><i class="fal fa-calendar-week"></i> 28 اسفند 1399</div>
+            </div>
+        </div>-->
+        <!-- dashboard-list end-->
+        <!-- dashboard-list end-->
+        <!--<div class="dashboard-list fl-wrap">
+            <div class="dashboard-message">
+                <span class="new-dashboard-item"><i class="fal fa-times"></i></span>
+                <div class="dashboard-message-text">
+                    <i class="far fa-heart purp-bg"></i>
+                    <p>محمد فهرست <a href="#">خانه ویلای</a> شما را علامت گذاری کرد!</p>
+                </div>
+                <div class="dashboard-message-time"><i class="fal fa-calendar-week"></i> 28 اسفند 1399</div>
+            </div>
+        </div>-->
+        <!-- dashboard-list end-->
+        <!-- dashboard-list end-->
+        <!--<div class="dashboard-list fl-wrap">
+            <div class="dashboard-message">
+                <span class="new-dashboard-item"><i class="fal fa-times"></i></span>
+                <div class="dashboard-message-text">
+                    <i class="fal fa-comments-alt red-bg"></i>
+                    <p> محمودی نظری را در تبلیغ <a href="#">فروشگاه زنجیره ای</a> گذاشت!</p>
+                </div>
+                <div class="dashboard-message-time"><i class="fal fa-calendar-week"></i> 28 اسفند 1399</div>
+            </div>
+        </div>-->
+        <!-- dashboard-list end-->
+        <!-- dashboard-list end-->
+        <!--<div class="dashboard-list fl-wrap">
+            <div class="dashboard-message">
+                <span class="new-dashboard-item"><i class="fal fa-times"></i></span>
+                <div class="dashboard-message-text">
+                    <i class="far fa-check green-bg"></i>
+                    <p> تبلیغ <a href="#">گردشگری</a> شما تأیید شده است! </p>
+                </div>
+                <div class="dashboard-message-time"><i class="fal fa-calendar-week"></i> 28 اسفند 1399</div>
+            </div>
+        </div>-->
+        <!-- dashboard-list end-->
+        <!-- dashboard-list end-->
+        <!--<div class="dashboard-list fl-wrap">
+            <div class="dashboard-message">
+                <span class="new-dashboard-item"><i class="fal fa-times"></i></span>
+                <div class="dashboard-message-text">
+                    <i class="far fa-heart purp-bg"></i>
+                    <p>شخصی تبلیغ <a href="#">هتل مازندران</a> شما را علامت گذاری کرد!</p>
+                </div>
+                <div class="dashboard-message-time"><i class="fal fa-calendar-week"></i> 28 اسفند 1399</div>
+            </div>
+        </div>-->
+        <!-- dashboard-list end-->
+    <!--</div>-->
+    <!-- dashboard-list-box end-->
+</div>
+@section Scripts
+{
+
+
+    <script>
+        var config = {
+            type: 'line',
+            data: {
+                labels: ['شنبه', 'یک‌شنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنج‌شنبه', '  جمعه'],
+                datasets: [
+                    {
+                        label: 'بازدیدهای تبلیغ',
+                        fill: true,
+                        animation: false,
+                        backgroundColor: "rgba(94, 207, 177, 0.2)",
+                        borderColor: "#5ECFB1",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointBorderColor: "#5ECFB1",
+                        pointHoverBorderWidth: 1,
+                        data: [16, 12, 37, 33, 44, 98, 20]
+                    },
+                    {
+                        label: 'رزرو',
+                        fill: true,
+                        animation: false,
+                        backgroundColor: "rgba(77, 183, 254, 0.2)",
+                        borderColor: "#f1a628",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointBorderColor: "#f1a628",
+                        pointBorderWidth: 1,
+                        pointHoverBorderWidth: 1,
+
+                        data: [12, 32, 62, 12, 49, 12, 92]
+                    },
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                hover: {
+                    onHover: function(e) {
+                        var point = this.getElementAtEvent(e);
+                        if (point.length) e.target.style.cursor = 'pointer';
+                        else e.target.style.cursor = 'default';
+                    }
+                },
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                fontColor: "rgba(0,0,0,0.2)",
+                                fontStyle: "bold",
+                                beginAtZero: true,
+
+                                padding: 20
+                            },
+                            gridLines: {
+                                display: true,
+                                zeroLineColor: "transparent"
+                            }
+
+                        }
+                    ],
+                    xAxes: [
+                        {
+                            gridLines: {
+                                zeroLineColor: "transparent"
+                            },
+                            ticks: {
+                                padding: 20,
+                                fontColor: "rgba(0,0,0,0.5)",
+                                fontStyle: "bold"
+                            }
+                        }
+                    ],
+
+                },
+                tooltips: {
+                    backgroundColor: "rgba(0,0,0,0.6)",
+                    titleMarginBottom: 10,
+                    footerMarginTop: 6,
+                    xPadding: 22,
+                    yPadding: 12
+                }
+            }
+        };
+
+    </script>
+
+}

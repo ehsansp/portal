@@ -1,0 +1,14 @@
+﻿@using Microsoft.CodeAnalysis.CSharp
+@using Microsoft.EntityFrameworkCore.Scaffolding.Internal
+@model IEnumerable<ShahrKoodak.DataLayer.Entities.Product.ProductGroup>
+
+
+
+
+
+@foreach (var group in Model.Where(g => g.ParentId == null))
+{
+    <li>
+        <a href="#"><span class="item-icon"><img src="/product/image/@group.ImageName" alt=""></span>@group.GroupTitle</a>
+    </li>
+}

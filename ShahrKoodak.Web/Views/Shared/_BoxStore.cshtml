@@ -1,0 +1,15 @@
+﻿@using ShahrKoodak.Core.Convertors
+@using ShahrKoodak.Core.Services.Interfaces
+@model ShahrKoodak.Core.DTOs.Store.ShowStoreListItemViewModel
+
+
+
+
+<div class="store-list">
+    <div class="store-logo">
+        <a href="/ShowStore/@Model.StoreId"><img src="/Store/Logo/@Model.ImageName" alt="@Model.StoreName"></a>
+    </div>
+    <div class="store-content">
+        <h3 class="item-title"><a href="/ShowStore/@Model.StoreId">@Model.StoreName</a></h3>
+    </div>
+</div>

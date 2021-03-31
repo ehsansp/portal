@@ -1,0 +1,25 @@
+﻿
+@using ShahrKoodak.DataLayer.Entities.Product
+@model List<product>
+
+<div class="tab-pane fade" id="my-listing" role="tabpanel">
+    <div class="myaccount-listing">
+        
+        @foreach (var item in Model)
+        {
+            <partial name="_BoxProduct" model="@item" />
+        }
+    </div>
+    @*<div class="pagination-layout1">
+        <div class="btn-prev disabled">
+            <a href="#"><i class="fas fa-angle-double-left"></i>قبلی</a>
+        </div>
+        <div class="page-number">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+        </div>
+        <div class="btn-next">
+            <a href="#">بعدی<i class="fas fa-angle-double-right"></i></a>
+        </div>
+    </div>*@
+</div>

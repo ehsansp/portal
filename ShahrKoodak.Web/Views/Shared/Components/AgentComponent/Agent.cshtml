@@ -1,0 +1,15 @@
+﻿@using Microsoft.CodeAnalysis.CSharp
+@using Microsoft.EntityFrameworkCore.Scaffolding.Internal
+@model IEnumerable<ShahrKoodak.DataLayer.Entities.Agent.Agent>
+
+
+@foreach (var group in Model)
+{
+
+    <div class="terms-content sidbar-style">
+        <div class="single-term mb-20">
+            <h3 class="term-mini-title">@group.AgentLocation</h3>
+            <p>@group.AgentName</p>
+        </div>
+    </div>
+}

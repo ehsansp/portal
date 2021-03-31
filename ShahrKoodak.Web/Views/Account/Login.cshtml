@@ -1,0 +1,81 @@
+﻿@model ShahrKoodak.Core.DTOs.LoginViewModel
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+@{
+    ViewData["Title"] = "ورود به بابیت";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<!--tabs -->
+<div class="container">
+    <div class="tab">
+        <!--tab -->
+        <div id="tab-1" class="tab-content first-tab">
+            <div class="custom-form">
+                @if (@ViewBag.IsSuccess != null)
+                {
+                    <div dir="rtl" class="alert alert-success">
+                        <p class="help-block">ورود با موفقیت انجام شد.</p>
+                    </div>
+                    <script>
+                        var delay = 1;
+                        setTimeout(function () { window.location = "/UserPanel"; }, delay);
+                    </script>
+                }
+                @if (ViewBag.EditProfile == true)
+                {
+                    <div dir="rtl" class="alert alert-warning">
+                        بدلیل ویرایش پروفایل و بارگزاری مجدد اطلاعات لطفاً مجدد وارد شوید.
+                    </div>
+                }
+            <form method="post" asp-action="Login" name="registerform">
+                <label style="color: aliceblue">شماره همراه <span>*</span> </label>
+                <input asp-for="Email" type="text" onClick="this.select()">
+                <label style="color: aliceblue">کلمه عبور <span>*</span> </label>
+                <input asp-for="Password" type="password" onClick="this.select()" value="">
+                <button type="submit" class="btn float-btn color2-bg"> ورود <i class="fas fa-caret-left"></i></button>
+                <div class="clearfix"></div>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <a class="btn btn-google-plus" href="/Register">عضویت در بابیت</a>
+
+                <div class="filter-tags">
+                    <input id="check-a3" asp-for="RememberMe" type="checkbox">
+                    <label style="color: aliceblue" for="check-a3">مرا به خاطر بسپار</label>
+
+                </div>
+            </form>
+
+                <div class="lost_password">
+                    <a href="/ForgotPassword">رمزعبور خود را گم کردید؟</a>
+                </div>
+            </div>
+        </div>
+        <!--tab end -->
+        <!--tab -->
+        
+        <!--tab end -->
+    </div>
+    <!--tabs end -->
+    <div class="log-separator fl-wrap"><span>یا</span></div>
+    <div class="soc-log fl-wrap">
+        <p style="color: aliceblue">برای ورود سریع یا ثبت نام از حساب اجتماعی خود استفاده کنید.</p>
+        <a href="/provider/Google" class="facebook-log"> گوگل</a>
+    </div>
+    <div class="wave-bg">
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+    </div>
+</div>

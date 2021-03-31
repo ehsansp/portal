@@ -1,0 +1,35 @@
+﻿@using ShahrKoodak.Core.Convertors
+@model ShahrKoodak.Core.DTOs.User.InformationUserViewModel
+
+<div class="tab-pane fade show active" id="dashboard" role="tabpanel">
+    <div class="myaccount-dashboard light-shadow-bg">
+        <div class="light-box-content">
+            <div class="media-box">
+                <div class="item-img">
+                    <img src="media/figure/avatar.jpg" alt="avatar">
+                </div>
+                <div class="item-content">
+                    <h3 class="item-title">@Model.Name @Model.Family</h3>
+                    <div class="item-email"><span>شماره تماس: </span>@Model.Email</div>
+                    <div class="item-email"><span>ایمیل: </span>@Model.Mail</div>
+                </div>
+            </div>
+            <div class="static-report">
+                <h3 class="report-title">گزارش عضویت</h3>
+                <div class="report-list">
+                    <div class="report-item">
+                        <label>وضعیت</label>
+                        <div class="item-value">فعال</div>
+                    </div>
+                </div>
+                <div class="report-list">
+                    <div class="report-item">
+                        <label>تاریخ عضویت</label>
+                        <div class="item-value">@Model.RegisterDate.ToShamsi()</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

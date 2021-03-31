@@ -1,0 +1,16 @@
+﻿@page "{id}"
+@model ShahrKoodak.Web.Pages.Admin.ProductGroups.DeleteModel
+@{
+}
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="ProductFeature.GroupId" />
+        آیا از حذف صنف @Model.ProductFeature.GroupTitle مطمئن هستید؟
+        <form method="post" enctype="multipart/form-data">
+            <input type="submit" value="بله" class="btn btn-success" />
+        </form>
+        <a href="/Admin/Products/" class="btn btn-danger btn-sm">
+            خیر
+        </a>
+    </form>
+</div>

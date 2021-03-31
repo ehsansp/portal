@@ -1,0 +1,12 @@
+﻿
+@using Microsoft.CodeAnalysis.CSharp
+@using Microsoft.EntityFrameworkCore.Scaffolding.Internal
+@model IEnumerable<ShahrKoodak.DataLayer.Entities.Product.ProductGroup>
+@{ int i = 2; }
+@foreach (var group in Model.Where(g => g.ParentId == null))
+{
+
+    <option value="i">@group.GroupTitle</option>
+    i++;
+}
+

@@ -1,0 +1,337 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <!--=============== basic  ===============-->
+    <meta charset="UTF-8">
+    <title> پنل کاربری</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--=============== css  ===============-->
+    <link type="text/css" rel="stylesheet" href="/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="/css/plugins.css">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/css/dashboard-style.css">
+    <link type="text/css" rel="stylesheet" href="/css/color.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <!--=============== favicons ===============-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+    <!--loader-->
+    <div class="loader-wrap">
+        <div class="loader-inner">
+            <div class="loader-inner-cirle"></div>
+        </div>
+    </div>
+    <!--loader end-->
+    <!-- main start  -->
+    <div id="main">
+        <!-- header -->
+    <partial name="_MainMenu" />
+        <!-- header end-->
+        <!-- wrapper-->
+    <div id="wrapper">
+        <!-- content-->
+        <div class="content">
+            <!--  section  -->
+            <section class="parallax-section dashboard-header-sec gradient-bg" data-scrollax-parent="true">
+                <div class="container">
+                    <div class="dashboard-breadcrumbs breadcrumbs"><a href="/">خانه</a><a href="/UserPanel">داشبورد</a><span>صفحه اصلی</span></div>
+                    <!--Tariff Plan menu-->
+                    <div class="tfp-btn"><span>کیف پول من : </span> <strong>نمایش جزئیات</strong></div>
+                    <div class="tfp-det">
+                        <p><strong> @ViewData["Wallet"] usdt</strong> </p>
+                        <p><strong> @ViewData["eth"] eth </strong></p>
+                        <p><strong> @ViewData["btc"] btc </strong></p>
+                        <p><strong> @ViewData["doge"] doge </strong></p>
+                        <a href="/UserPanel/Money" class="tfp-det-btn color2-bg">افزایش</a>
+                    </div>
+                    <!--Tariff Plan menu end-->
+                    <div class="dashboard-header_conatiner fl-wrap dashboard-header_title">
+                        <h1>خوش آمدید  : <span>@ViewData["Name"]</span></h1>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="dashboard-header fl-wrap">
+                    <div class="container">
+                        <div class="dashboard-header_conatiner fl-wrap">
+                            <div class="dashboard-header-avatar">
+                                <img src="/UserAvatar/@ViewData["UserAvatar"]" alt="User Avatar">
+                                <a href="/UserPanel/Profile" class="color-bg edit-prof_btn"><i class="fal fa-edit"></i></a>
+                            </div>
+                            <div class="dashboard-header-stats-wrap">
+                                <div class="dashboard-header-stats">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <!--  dashboard-header-stats-item -->
+                                            <div class="swiper-slide">
+                                                <div class="dashboard-header-stats-item">
+                                                    <i class="fal fa-map-marked"></i>
+                                                    آگهی های فعال
+                                                    <span>0</span>
+                                                </div>
+                                            </div>
+                                            <!--  dashboard-header-stats-item end -->
+                                            <!--  dashboard-header-stats-item -->
+                                            <div class="swiper-slide">
+                                                <div class="dashboard-header-stats-item">
+                                                    <i class="fal fa-chart-bar"></i>
+                                                    بازدید تبلیغ
+                                                    <span>0</span>
+                                                </div>
+                                            </div>
+                                            <!--  dashboard-header-stats-item end -->
+                                            <!--  dashboard-header-stats-item -->
+                                            <div class="swiper-slide">
+                                                <div class="dashboard-header-stats-item">
+                                                    <i class="fal fa-comments-alt"></i>
+                                                    کل نظرات
+                                                    <span>0</span>
+                                                </div>
+                                            </div>
+                                            <!--  dashboard-header-stats-item end -->
+                                            <!--  dashboard-header-stats-item -->
+                                            <div class="swiper-slide">
+                                                <div class="dashboard-header-stats-item">
+                                                    <i class="fal fa-heart"></i>
+                                                    ذخیره شده
+                                                    <span>0</span>
+                                                </div>
+                                            </div>
+                                            <!--  dashboard-header-stats-item end -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  dashboard-header-stats  end -->
+                                <div class="dhs-controls">
+                                    <div class="dhs dhs-prev"><i class="fal fa-angle-left"></i></div>
+                                    <div class="dhs dhs-next"><i class="fal fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                            <!--  dashboard-header-stats-wrap end -->
+                            <a href="/UserPanel/Money" class="add_new-dashboard">شرکت در بازی <i class="fal fa-layer-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-bg-figure" style="right:-30px;top:10px;"></div>
+                <div class="gradient-bg-figure" style="left:-20px;bottom:30px;"></div>
+                <div class="circle-wrap" style="left:120px;bottom:120px;" data-scrollax="properties: { translateY: '-200px' }">
+                    <div class="circle_bg-bal circle_bg-bal_small"></div>
+                </div>
+                <div class="circle-wrap" style="right:420px;bottom:-70px;" data-scrollax="properties: { translateY: '150px' }">
+                    <div class="circle_bg-bal circle_bg-bal_big"></div>
+                </div>
+                <div class="circle-wrap" style="left:420px;top:-70px;" data-scrollax="properties: { translateY: '100px' }">
+                    <div class="circle_bg-bal circle_bg-bal_big"></div>
+                </div>
+                <div class="circle-wrap" style="left:40%;bottom:-70px;">
+                    <div class="circle_bg-bal circle_bg-bal_middle"></div>
+                </div>
+                <div class="circle-wrap" style="right:40%;top:-10px;">
+                    <div class="circle_bg-bal circle_bg-bal_versmall" data-scrollax="properties: { translateY: '-350px' }"></div>
+                </div>
+                <div class="circle-wrap" style="right:55%;top:90px;">
+                    <div class="circle_bg-bal circle_bg-bal_versmall" data-scrollax="properties: { translateY: '-350px' }"></div>
+                </div>
+            </section>
+            <!--  section  end-->
+            <!--  section  -->
+            <section class="gray-bg main-dashboard-sec" id="sec1">
+                <div class="container">
+                    <!--  dashboard-menu-->
+                    <div class="col-md-3">
+                        <div class="mob-nav-content-btn color2-bg init-dsmen fl-wrap"><i class="fal fa-bars"></i> منوی داشبورد</div>
+                        <div class="clearfix"></div>
+                        <div class="fixed-bar fl-wrap" id="dash_menu">
+                            <div class="user-profile-menu-wrap fl-wrap block_box">
+                                <!-- user-profile-menu-->
+                                <div class="user-profile-menu">
+                                    <h3>اصلی</h3>
+                                    <ul class="no-list-style">
+                                        <li><a href="/UserPanel" class="user-profile"><i class="fal fa-chart-line"></i>داشبورد</a></li>
+                                        @*<li><a href="/UserPanel/Feed"><i class="fal fa-rss"></i>اطلاعیه </a></li>*@
+                                        <li><a href="/UserPanel/Profile"><i class="fal fa-user-edit"></i> ویرایش پروفایل</a></li>
+                                        @*<li><a href="/UserPanel/Message"><i class="fal fa-envelope"></i> پیام ها <span>3</span></a></li>*@
+                                        <li><a href="/UserPanel/Password"><i class="fal fa-key"></i>تغییر رمز عبور</a></li>
+                                    </ul>
+                                </div>
+                                <!-- user-profile-menu end-->
+                                <div class="user-profile-menu">
+                                    <h3>کیف پول</h3>
+                                    <ul class="no-list-style">
+                                        <li><a href="/UserPanel/Deposit"><i class="fal fa-plus"></i> واریز  </a></li>
+                                        <li><a href="/UserPanel/Withdrawal"><i class="fal fa-minus"></i> برداشت</a></li>
+                                        <li><a href="/UserPanel/Exchange"><i class="fal fa-wallet"></i> تبدیل</a></li>
+                                    </ul>
+                                </div>
+                                <!-- user-profile-menu-->
+                                <div class="user-profile-menu">
+                                    <h3>تبلیغ ها</h3>
+                                    <ul class="no-list-style">
+                                        <li><a href="/UserPanel/Listing"><i class="fal fa-th-list"></i> آگهی های من  </a></li>
+                                        @*<li><a href="/UserPanel/Booking"> <i class="fal fa-calendar-check"></i> رزرو <span>2</span></a></li>*@
+                                        @*<li><a href="/UserPanel/Reviewing"><i class="fal fa-comments-alt"></i> نظرات </a></li>*@
+                                        <li><a href="/UserPanel/Add"><i class="fal fa-file-plus"></i> آگهی جدید</a></li>
+                                    </ul>
+                                </div>
+                                <!-- user-profile-menu end-->
+                                <a href="/Logout" class="logout_btn color2-bg">خروج <i class="fas fa-sign-out"></i></a>
+                            </div>
+                        </div>
+                        <a class="back-tofilters color2-bg custom-scroll-link fl-wrap" href="/">بازگشت<i class="fas fa-caret-up"></i></a>
+                    </div>
+                    <!-- dashboard-menu  end-->
+                    <!-- dashboard content-->
+                    @RenderBody()
+                    <!-- dashboard content end-->
+                </div>
+            </section>
+            <!--  section  end-->
+            <div class="limit-box fl-wrap"></div>
+        </div>
+        <!--content end-->
+    </div>
+
+        <!-- wrapper end-->
+        <!--footer -->
+    <partial name="_Footer" />
+    <div style="position: relative !important; z-index: 1000 !important"> 
+  
+        <div id="chat-circle" class="btn btn-raised">
+            <div id="chat-overlay"></div>
+            <i class="material-icons">speaker_phone</i>
+        </div>
+  
+        <div class="chat-box">
+            <div class="chat-box-header">
+                پشتیبانی بابیت
+                <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+            </div>
+            <div class="chat-box-body">
+                <div class="chat-box-overlay">   
+                </div>
+                <div class="chat-logs">
+       
+                </div><!--chat-log -->
+            </div>
+            <div class="chat-input">      
+                <form>
+                    <input type="text" id="chat-input" placeholder="پیام خود را تایپ کنید..."/>
+                    <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+                </form>      
+            </div>
+        </div>
+  
+  
+  
+  
+    </div>
+        <!--footer end -->
+        <!--map-modal -->
+        <div class="map-modal-wrap">
+            <div class="map-modal-wrap-overlay"></div>
+            <div class="map-modal-item">
+                <div class="map-modal-container fl-wrap">
+                    <div class="map-modal fl-wrap">
+                        <div id="singleMap" data-latitude="40.7" data-longitude="-73.1"></div>
+                    </div>
+                    <h3><span>مکان برای : </span><a href="#">عنوان لیست</a></h3>
+                    <div class="map-modal-close"><i class="fal fa-times"></i></div>
+                </div>
+            </div>
+        </div>
+        <!--map-modal end -->
+        <!--register form -->
+        <div class="main-register-wrap modal">
+            <div class="reg-overlay"></div>
+            <div class="main-register-holder tabs-act">
+                <div class="main-register fl-wrap  modal_main">
+                    <div class="main-register_title">به شهر <span><strong>تبلیغ </strong>خوش آمدید<strong>.</strong></span></div>
+                    <div class="close-reg"><i class="fal fa-times"></i></div>
+                    <ul class="tabs-menu fl-wrap no-list-style">
+                        <li class="current"><a href="#tab-1"><i class="fal fa-sign-in-alt"></i> وارد شدن</a></li>
+                        <li><a href="#tab-2"><i class="fal fa-user-plus"></i> ثبت نام</a></li>
+                    </ul>
+                    <!--tabs -->
+                    <div class="tabs-container">
+                        <div class="tab">
+                            <!--tab -->
+                            <div id="tab-1" class="tab-content first-tab">
+                                <div class="custom-form">
+                                    <form method="post" name="registerform">
+                                        <label>نام کاربری یا آدرس ایمیل <span>*</span> </label>
+                                        <input name="email" type="text" onClick="this.select()" value="">
+                                        <label>کلمه عبور <span>*</span> </label>
+                                        <input name="password" type="password" onClick="this.select()" value="">
+                                        <button type="submit" class="btn float-btn color2-bg"> وارد <i class="fas fa-caret-left"></i></button>
+                                        <div class="clearfix"></div>
+                                        <div class="filter-tags">
+                                            <input id="check-a3" type="checkbox" name="check">
+                                            <label for="check-a3">مرا به خاطر بسپار</label>
+                                        </div>
+                                    </form>
+                                    <div class="lost_password">
+                                        <a href="#">رمزعبور خود را گم کردید؟</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--tab end -->
+                            <!--tab -->
+                            <div class="tab">
+                                <div id="tab-2" class="tab-content">
+                                    <div class="custom-form">
+                                        <form method="post" name="registerform" class="main-register-form" id="main-register-form2">
+                                            <label>نام و نام خانوادگی <span>*</span> </label>
+                                            <input name="name" type="text" onClick="this.select()" value="">
+                                            <label>آدرس ایمیل <span>*</span></label>
+                                            <input name="email" type="text" onClick="this.select()" value="">
+                                            <label>کلمه عبور <span>*</span></label>
+                                            <input name="password" type="password" onClick="this.select()" value="">
+                                            <div class="filter-tags ft-list">
+                                                <input id="check-a2" type="checkbox" name="check">
+                                                <label for="check-a2">من با سیاست حفظ حریم خصوصی <a href="#">موافقم</a></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="filter-tags ft-list">
+                                                <input id="check-a" type="checkbox" name="check">
+                                                <label for="check-a">شرایط را <a href="#">قبول دارم</a></label>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <button type="submit" class="btn float-btn color2-bg"> ثبت نام  <i class="fas fa-caret-left"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--tab end -->
+                        </div>
+                        <!--tabs end -->
+                        <div class="log-separator fl-wrap"><span>یا</span></div>
+                        <div class="soc-log fl-wrap">
+                            <p>برای ورود سریع یا ثبت نام از حساب اجتماعی خود استفاده کنید.</p>
+                            <a href="#" class="facebook-log"> فیسبوک</a>
+                        </div>
+                        <div class="wave-bg">
+                            <div class='wave -one'></div>
+                            <div class='wave -two'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--register form end -->
+        <a class="to-top"><i class="fas fa-caret-up"></i></a>
+    </div>
+    <!-- Main end -->
+    <!--=============== scripts  ===============-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/charts.js"></script>
+<script src="/js/dashboard.js"></script>
+@RenderSection("Scripts", false)
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<header class="main-header">
+
+    <!-- logo-->
+    <a href="/" class="logo-holder hidden-xs"><img src="/images/logo.png" alt=""></a>
+    <!-- logo end-->
+    <!-- header-search_btn-->
+    <div class="header-search_btn show-search-button"><i class="fal fa-search"></i><span>جستجو</span></div>
+    <!-- header-search_btn end-->
+    <!-- header opt -->
+    <a href="/UserPanel/Add" class="add-list color-bg">ثبت آگهی <span><i class="fal fa-layer-plus"></i></span></a>
+    <div class="cart-btn  hidden-xs show-header-modal" data-microtip-position="bottom" role="tooltip" aria-label="Your Wishlist"><i class="fal fa-heart"></i><span class="cart-counter green-bg"></span> </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="show-reg-form avatar-img" data-srcav="/images/avatar/3.jpg"><a class="btn btn-google-plus" href="/UserPanel"><i class="fal fa-user"></i>پنل کاربری</a></div>
+    }
+    else
+    {
+        <div class="show-reg-form avatar-img" data-srcav="/images/avatar/3.jpg"><a class="btn btn-google-plus" href="/Login"><i class="fal fa-user"></i>ورود</a></div>
+    }
+
+    <!-- header opt end-->
+    <!-- lang-wrap-->
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class="show-reg-form avatar-img hidden-xs" data-srcav="/images/avatar/3.jpg"><a class="btn btn-google-plus" href="/Register"><i class="fal fa-user"></i>عضویت</a></div>
+    }
+    <!-- lang-wrap end-->
+    <!-- nav-button-wrap-->
+    <div class="nav-button-wrap color-bg">
+        <div class="nav-button">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+    <!-- nav-button-wrap end-->
+    <!--  navigation -->
+    <div class="nav-holder main-menu">
+        <nav>
+            <ul class="no-list-style">
+                <li>
+                    <a href="/">خانه</a>
+                </li>
+                <li>
+                    <a href="/About">درباره ما</a>
+                </li>
+                <li>
+                    <a href="/Contact">تماس با ما</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    <!-- navigation  end -->
+    <!-- header-search_container -->
+    <div class="header-search_container header-search vis-search">
+        <div class="container small-container">
+
+
+
+
+
+
+            @await Component.InvokeAsync("SearchComponent")
+            <div class="header-search_close color-bg"><i class="fal fa-long-arrow-up"></i></div>
+        </div>
+    </div>
+    <!-- header-search_container  end -->
+    <!-- wishlist-wrap-->
+    <!--wishlist-wrap end -->
+</header>
+

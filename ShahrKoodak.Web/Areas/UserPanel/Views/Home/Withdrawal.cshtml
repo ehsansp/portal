@@ -1,0 +1,42 @@
+﻿@model ShahrKoodak.DataLayer.Entities.User.Withdrawal
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@if (@ViewBag.flag != null)
+{
+    <div dir="rtl" class="alert alert-success">
+        <p class="help-block">درخواست شما با موفقیت ثبت شد.</p>
+    </div>
+   
+}
+<form asp-action="Withdrawal">
+    <div class="col-md-9">
+        <div class="dashboard-title   fl-wrap">
+            <h3>درخواست برداشت</h3>
+        </div>
+        <!-- profile-edit-container-->
+        <div class="profile-edit-container fl-wrap block_box">
+            <div class="custom-form">
+                @*<div class="pass-input-wrap fl-wrap">
+                        <label>رمز عبور فعلی</label>
+                        <input type="password" class="pass-input" placeholder="" value="" />
+                        <span class="eye"><i class="far fa-eye" aria-hidden="true"></i> </span>
+                    </div>*@
+                <div class="pass-input-wrap fl-wrap">
+                    <label>مبلغ</label>
+                    <input type="text" class="pass-input" placeholder="" asp-for="Amount"  />
+                    <span class="eye"><i class="far fa-eye" aria-hidden="true"></i> </span>
+                </div>
+                <div class="form-group">
+                    <label>نوع درخواست</label>
+                    <select class="nice-select" asp-for="WithdrawalTypeId" asp-items="@(ViewData["Levels"] as SelectList)"></select>
+                    <span asp-validation-for="WithdrawalTypeId"></span>
+                </div>
+                <button class="btn    color2-bg  float-btn">ذخیره تغییرات<i class="fal fa-save"></i></button>
+            </div>
+        </div>
+        <!-- profile-edit-container end-->
+    </div>
+</form>

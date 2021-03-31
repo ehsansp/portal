@@ -1,0 +1,264 @@
+﻿@model ShahrKoodak.Core.DTOs.User.InformationStoreViewModel
+
+<div class="tab-pane fade" id="store" role="tabpanel">
+
+<div id="dashhh" class="light-shadow-bg post-ad-box-layout1 myaccount-store-settings">
+<div class="light-box-content">
+<form asp-action="Store" enctype="multipart/form-data">
+<input type="hidden" asp-for="@Model.Banner"/>
+<input type="hidden" asp-for="@Model.Logo"/>
+<div class="post-section store-banner">
+    <div class="post-ad-title">
+        <i class="far fa-image"></i>
+        <h3 class="item-title">تصاویر فروشگاه</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                بنر فروشگاه
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <div class="store-banner-wrapper">
+                    <div class="banenr-img">
+                        <img src="/Store/Banner/@Model.Banner" id="imgBanner" alt="بنر فروشگاه">
+                        <div class="media-action">
+
+                        </div>
+                        <label>انتخاب بنر</label>
+                        <input type="file" asp-for="BannerFile" id="imgBannerUp">
+                    </div>
+                    <div class="alert alert-danger">
+                        اندازه تصویر توصیه شده به (1180x300) px ، حداکثر اندازه پرونده 3 مگابایت ، نوع مجاز تصویر (png ، jpg ، jpeg)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                لوگوی فروشگاه
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <div class="store-banner-wrapper">
+                    <div class="banenr-img">
+                        <img src="/Store/Logo/@Model.Logo" id="imgLogo" alt="Store Banner">
+                        <label>انتخاب لوگو</label>
+                        <input type="file" asp-for="LogoFile" id="imgLogoUp">
+                    </div>
+                    <div class="alert alert-danger">
+                        اندازه تصویر توصیه شده به (180x140) px ، حداکثر اندازه پرونده 3 MB ، نوع مجاز تصویر (png ، jpg ، jpeg)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="post-section post-category">
+    <div class="post-ad-title">
+        <i class="fas fa-tags"></i>
+        <h3 class="item-title">انتخاب دسته بندی</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                دسته
+                <span>*</span>
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+
+                <select class="form-control" asp-for="GroupId" asp-items="@(ViewData["groups"] as SelectList)"></select>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                زیر مجموعه
+                <span>*</span>
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <select class="form-control" asp-for="SubGroup" asp-items="@(ViewData["subGroups"] as SelectList)"></select>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="post-section store-schedule">
+            <div class="post-ad-title">
+                <i class="far fa-calendar"></i>
+                <h3 class="item-title">برنامه فروشگاه</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label class="control-label">
+                        ساعات کار
+                    </label>
+                </div>
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <div class="form-check form-radio-btn">
+                            <input class="form-check-input" type="radio" id="exampleRadios1" name="exampleRadios1" value="جدید">
+                            <label class="form-check-label" for="exampleRadios1">
+                                همیشه باز
+                            </label>
+                        </div>
+                        <div class="form-check form-radio-btn">
+                            <input class="form-check-input" type="radio" id="exampleRadios2" name="exampleRadios1" value="استفاده شده">
+                            <label class="form-check-label" for="exampleRadios2">
+                                ساعات کار را انتخاب کنید
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+<div class="post-section store-information">
+    <div class="post-ad-title">
+        <i class="fas fa-folder-open"></i>
+        <h3 class="item-title">اطلاعات فروشگاه</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                نام فروشگاه
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="text" asp-for="Name" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                شعار
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="text" asp-for="Shoar" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                ایمیل
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="email" asp-for="Email" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                شماره تلفن
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="text" asp-for="Tel" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                وب سایت
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="text" asp-for="WebSite" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                آدرس
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <textarea class="form-control textarea" cols="30" rows="2">@Model.Address</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                توضیحات
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <textarea class="form-control textarea" cols="30" rows="6">@Model.Description</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                اینستاگرام
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="text" asp-for="Instagram" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                تلگرام
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="text" asp-for="Telegram" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label class="control-label">
+                واتس اپ
+            </label>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="text" asp-for="WhatsApp" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-9">
+            <div class="form-group">
+                <input type="submit" class="submit-btn" value="بروز رسانی فروشگاه">
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+</div>
+</div>
+</div>

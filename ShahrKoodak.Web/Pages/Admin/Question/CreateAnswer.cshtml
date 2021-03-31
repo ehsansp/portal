@@ -1,0 +1,28 @@
+﻿@page "{id}"
+@model ShahrKoodak.Web.Pages.Admin.Question.CreateAnswerModel
+@{
+}
+<div class="row">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Answer.QuestionId"/>
+        <div class="col-md-8">
+            <h2>اطلاعات پاسخ</h2>
+            <hr/>
+            <div class="form-group">
+                <label>پاسخ</label>
+                <input type="text" asp-for="Answer.Title" class="form-control">
+                <span asp-validation-for="Answer.Title"></span>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" asp-for="Answer.IsTrue"/>
+                    پاسخ صحیح
+                </label>
+            </div>
+            <input type="submit" value="ذخیره اطلاعات" class="btn btn-success"/>
+
+        </div>
+
+    </form>
+</div>
+

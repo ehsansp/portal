@@ -1,0 +1,39 @@
+﻿@using Microsoft.CodeAnalysis.CSharp
+@using Microsoft.EntityFrameworkCore.Scaffolding.Internal
+@model IEnumerable<ShahrKoodak.DataLayer.Entities.Product.ProductGroup>
+
+
+
+
+
+    <div class="accordion-box">
+        @{
+            int i = 1;
+        }
+        @foreach (var group in Model.Where(g => g.ParentId == null))
+        {
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="parent-list collapsed" role="button" data-toggle="collapse" href="#collapse-@i" aria-expanded="true">
+                        <img src="/product/image/@group.ImageName" alt="category">
+                        @group.GroupTitle
+                    </a>
+                </div>
+                <div id="collapse-@i" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        @if (Model.Any(g => g.ParentId == group.GroupId))
+                        {
+                            <ul class="sub-list">
+                                @foreach (var sub in Model.Where(g => g.ParentId == group.GroupId))
+                                {
+                                    <li><a href="/product?SelectedGroups=@sub.GroupId">@sub.GroupTitle</a></li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+            i++;
+        }
+    </div>
