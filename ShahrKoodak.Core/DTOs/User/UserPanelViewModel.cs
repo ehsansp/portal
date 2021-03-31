@@ -46,6 +46,7 @@ namespace ShahrKoodak.Core.DTOs.User
         public string Tel { get; set; }
         public string WhatsApp { get; set; }
         public string Email { get; set; }
+        public bool IsShowMobile { get; set; }
     }
 
     public class InformationStoreViewModel

@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Jeeb.Client.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ShahrKoodak.Core.common;
@@ -11,17 +11,17 @@ using ShahrKoodak.Core.Services.Interfaces;
 using ShahrKoodak.Web.Settings;
 using ShahrKoodak.Web.Utils;
 
-namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
+namespace ShahrKoodak.Web.Controllers
 {
     public class CallbackController : Controller
     {
         private readonly IJeebPaymentClient _paymentClient;
         private readonly JeebSetting _jeebSetting;
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<Areas.UserPanel.Controllers.HomeController> _logger;
 
         public CallbackController(IJeebPaymentClient paymentClient,
             IOptions<JeebSetting> jeebOptions,
-            ILogger<HomeController> logger)
+            ILogger<Areas.UserPanel.Controllers.HomeController> logger)
         {
             _paymentClient = paymentClient;
             _jeebSetting = jeebOptions.Value;

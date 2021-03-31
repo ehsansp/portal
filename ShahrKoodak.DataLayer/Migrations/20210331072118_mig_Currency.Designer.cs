@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShahrKoodak.DataLayer.Context;
 
 namespace ShahrKoodak.DataLayer.Migrations
 {
     [DbContext(typeof(ShahrContext))]
-    partial class ShahrContextModelSnapshot : ModelSnapshot
+    [Migration("20210331072118_mig_Currency")]
+    partial class mig_Currency
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -652,13 +654,13 @@ namespace ShahrKoodak.DataLayer.Migrations
 
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.Currency", b =>
                 {
-                    b.Property<int>("CurrencyId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("CurrencyId");
+                    b.HasKey("Id");
 
                     b.ToTable("Currencies");
                 });
@@ -839,19 +841,13 @@ namespace ShahrKoodak.DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address");
-
                     b.Property<string>("Amount");
-
-                    b.Property<int>("CurrencyId");
 
                     b.Property<int>("UserId");
 
                     b.Property<int>("WithdrawalTypeId");
 
                     b.HasKey("WithdrawalId");
-
-                    b.HasIndex("CurrencyId");
 
                     b.HasIndex("WithdrawalTypeId");
 
@@ -881,17 +877,32 @@ namespace ShahrKoodak.DataLayer.Migrations
 
                     b.Property<string>("Amount");
 
+                    b.Property<int>("FromCurrencyId");
+
                     b.Property<int>("ToCurrencyId");
 
                     b.Property<int>("UserId");
 
-                    b.Property<bool>("tousdt");
-
                     b.HasKey("ExchangeId");
+
+                    b.HasIndex("FromCurrencyId");
 
                     b.HasIndex("ToCurrencyId");
 
                     b.ToTable("Exchanges");
+                });
+
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Wallet.FromCurrency", b =>
+                {
+                    b.Property<int>("FromCurrencyId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("FromCurrencyId");
+
+                    b.ToTable("FromCurrencies");
                 });
 
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Wallet.ToCurrency", b =>
@@ -1184,11 +1195,6 @@ namespace ShahrKoodak.DataLayer.Migrations
 
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.Withdrawal", b =>
                 {
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.User.Currency", "Currency")
-                        .WithMany("Withdrawals")
-                        .HasForeignKey("CurrencyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("ShahrKoodak.DataLayer.Entities.User.WithdrawalType", "WithdrawalType")
                         .WithMany("Withdrawals")
                         .HasForeignKey("WithdrawalTypeId")
@@ -1197,6 +1203,11 @@ namespace ShahrKoodak.DataLayer.Migrations
 
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Wallet.Exchange", b =>
                 {
+                    b.HasOne("ShahrKoodak.DataLayer.Entities.Wallet.FromCurrency", "FromCurrency")
+                        .WithMany("Exchanges")
+                        .HasForeignKey("FromCurrencyId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("ShahrKoodak.DataLayer.Entities.Wallet.ToCurrency", "ToCurrency")
                         .WithMany("Exchanges")
                         .HasForeignKey("ToCurrencyId")

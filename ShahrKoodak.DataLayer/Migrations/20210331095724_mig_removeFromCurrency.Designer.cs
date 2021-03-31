@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShahrKoodak.DataLayer.Context;
 
 namespace ShahrKoodak.DataLayer.Migrations
 {
     [DbContext(typeof(ShahrContext))]
-    partial class ShahrContextModelSnapshot : ModelSnapshot
+    [Migration("20210331095724_mig_removeFromCurrency")]
+    partial class mig_removeFromCurrency
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -838,8 +840,6 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.Property<int>("WithdrawalId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address");
 
                     b.Property<string>("Amount");
 

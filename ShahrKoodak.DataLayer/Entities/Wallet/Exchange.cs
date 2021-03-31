@@ -11,10 +11,9 @@ namespace ShahrKoodak.DataLayer.Entities.Wallet
         public int ExchangeId { get; set; }
         public string Amount { get; set; }
         public int ToCurrencyId { get; set; }
-        public int FromCurrencyId { get; set; }
         public int UserId { get; set; }
+        public bool tousdt { get; set; }
 
-        public FromCurrency FromCurrency { get; set; }
         public ToCurrency ToCurrency { get; set; }
     }
 }

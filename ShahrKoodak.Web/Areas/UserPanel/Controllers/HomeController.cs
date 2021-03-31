@@ -96,6 +96,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
             ViewData["btc"] = _userService.GetUserInformation(User.Identity.Name).btc;
             ViewData["eth"] = _userService.GetUserInformation(User.Identity.Name).eth;
             ViewData["doge"] = _userService.GetUserInformation(User.Identity.Name).doge;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
 
             return View();
         }
@@ -322,6 +323,9 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
             var levels = _userService.getWithdrawalTypes();
             ViewData["Levels"] = new SelectList(levels, "Value", "Text");
 
+            var currency = _userService.getCurrency();
+            ViewData["currency"] = new SelectList(currency, "Value", "Text");
+
             return View();
         }
 
@@ -333,6 +337,8 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
             ViewData["Levels"] = new SelectList(levels, "Value", "Text");
 
             withdrawal.UserId = _userService.GetUserIdByUserName(User.Identity.Name);
+
+            
 
             _userService.AddWithdrawal(withdrawal);
             ViewBag.flag = true;
@@ -352,8 +358,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
             ViewData["eth"] = _userService.GetUserInformation(User.Identity.Name).eth;
             ViewData["doge"] = _userService.GetUserInformation(User.Identity.Name).doge;
 
-            var from = _userService.getFromCurrency();
-            ViewData["From"] = new SelectList(from, "Value", "Text");
+           
 
             var levels = _userService.getToCurrency();
             ViewData["To"] = new SelectList(levels, "Value", "Text");
@@ -365,13 +370,18 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         [HttpPost]
         public IActionResult Exchange(Exchange exchange)
         {
-            var from = _userService.getFromCurrency();
-            ViewData["From"] = new SelectList(from, "Value", "Text");
+            
 
             var levels = _userService.getToCurrency();
             ViewData["To"] = new SelectList(levels, "Value", "Text");
 
             exchange.UserId = _userService.GetUserIdByUserName(User.Identity.Name);
+
+            string s = HttpContext.Request.Form["arz"];
+            if (s == "two")
+            {
+                exchange.tousdt = true;
+            }
 
             _userService.AddExchange(exchange);
             ViewBag.flag = true;

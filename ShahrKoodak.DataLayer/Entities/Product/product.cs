@@ -87,6 +87,8 @@ namespace ShahrKoodak.DataLayer.Entities.Product
         [Display(Name = "وضعیت")]
         public bool IsActive { get; set; }
 
+        public bool IsShowTel { get; set; }
+
         #region Relations
         [ForeignKey("OtherCourse")]
         public int? OtherProduct { get; set; }

@@ -22,7 +22,7 @@ namespace ShahrKoodak.Core.Services.Interfaces
         int AddStore(Store store);
         InformationUserViewModel GetUserInformation(string username);
         List<SelectListItem> getWithdrawalTypes();
-        List<SelectListItem> getFromCurrency();
+        List<SelectListItem> getCurrency();
         List<SelectListItem> getToCurrency();
         void AddWithdrawal(Withdrawal withdrawal);
         void AddExchange(Exchange exchange);

@@ -12,7 +12,10 @@ namespace ShahrKoodak.DataLayer.Entities.User
 
         public int UserId { get; set; }
         public int WithdrawalTypeId { get; set; }
+        public int CurrencyId  { get; set; }
         public string Amount { get; set; }
+        public string Address { get; set; }
         public WithdrawalType WithdrawalType { get; set; }
+        public Currency Currency { get; set; }
     }
 }

@@ -32,6 +32,7 @@ namespace ShahrKoodak.DataLayer.Context
         public DbSet<TypeAd> TypeAds { get; set; }
         public DbSet<Withdrawal> Withdrawals { get; set; }
         public DbSet<WithdrawalType> WithdrawalTypes { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
 
         #endregion
 
@@ -80,7 +81,6 @@ namespace ShahrKoodak.DataLayer.Context
         public DbSet<WalletType> WalletTypes { get; set; }
         public DbSet<Exchange> Exchanges { get; set; }
         public DbSet<ToCurrency> ToCurrencies { get; set; }
-        public DbSet<FromCurrency> FromCurrencies { get; set; }
 
         #endregion
 

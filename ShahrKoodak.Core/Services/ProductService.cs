@@ -118,6 +118,7 @@ namespace ShahrKoodak.Core.Services
             product.UserId = user.UserId;
             product.Price = profile.Price;
             product.ProductDescription = profile.Description;
+            product.IsShowTel = profile.IsShowMobile;
 
             _context.Add(product);
             _context.SaveChanges();

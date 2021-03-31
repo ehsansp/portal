@@ -1,12 +1,12 @@
 ﻿@model ShahrKoodak.Core.DTOs.User.InformationAdViewModel
 @{
-    ViewData["dash"] = "افزودن تبلیغ";
-    ViewData["Title"] = "افزودن تبلیغ";
+    ViewData["dash"] = "ثبت آگهی";
+    ViewData["Title"] = "ثبت آگهی";
 }
 <form asp-action="Add" enctype="multipart/form-data">
     <div class="col-md-9">
         <div class="dashboard-title   fl-wrap">
-            <h3>افزودن تبلیغ</h3>
+            <h3>ثبت آگهی</h3>
         </div>
         <!-- profile-edit-container-->
         <div class="profile-edit-container fl-wrap block_box">
@@ -31,13 +31,12 @@
                 </div>
                 <label> قیمت </label>
                 <input asp-for="Price" type="text" placeholder="قیمت را به تومان وارد کنید..." />
-                <label> شماره تماس </label>
-                <input asp-for="Price" type="text" placeholder="شماره تماس را وارد فرمایید..." />
+                
                 <label id="input"></label>
                 <div class="add-list-media-header" style="margin-bottom:20px">
-                    <label class="radio inline">
-                        <input type="radio"  name="gender" checked>
-                        <span>تصویر اصلی</span>
+                    <label class="checkbox inline">
+                        <input type="checkbox" asp-for="IsShowMobile"   />
+                        <span>نمایش شماره تماس در آگهی</span>
                     </label>
                 </div>
                 <div class="custom-form">

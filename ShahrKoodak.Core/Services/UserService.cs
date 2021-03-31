@@ -354,14 +354,15 @@ namespace ShahrKoodak.Core.Services
             }).ToList();
         }
 
-        public List<SelectListItem> getFromCurrency()
+        public List<SelectListItem> getCurrency()
         {
-            return _context.FromCurrencies.Select(l => new SelectListItem()
+            return _context.Currencies.Select(l => new SelectListItem()
             {
-                Value = l.FromCurrencyId.ToString(),
-                Text = l.Title
+                Value = l.CurrencyId.ToString(),
+                Text = l.Name
             }).ToList();
         }
+
 
         public List<SelectListItem> getToCurrency()
         {
@@ -379,6 +380,7 @@ namespace ShahrKoodak.Core.Services
             w.WithdrawalTypeId = withdrawal.WithdrawalTypeId;
             w.Amount = withdrawal.Amount;
             w.UserId = withdrawal.UserId;
+            w.Address = withdrawal.Address;
 
             _context.Add(withdrawal);
             _context.SaveChanges();
@@ -388,7 +390,6 @@ namespace ShahrKoodak.Core.Services
         {
             Exchange w = new Exchange();
 
-            w.FromCurrencyId = exchange.FromCurrencyId;
             w.ToCurrencyId = exchange.ToCurrencyId;
             w.Amount = exchange.Amount;
             w.UserId = exchange.UserId;
