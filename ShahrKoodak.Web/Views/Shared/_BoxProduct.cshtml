@@ -16,21 +16,17 @@
 <div class="listing-item has_one_column hidden-lg hidden-md hidden-sm">
     <article class="geodir-category-listing fl-wrap">
         <div class="geodir-category-img">
-            <div class="geodir-js-favorite_btn"><i class="fal fa-heart"></i><span>ذخیره</span></div>
-            <a href="listing-single.html" class="geodir-category-img-wrap fl-wrap">
+            <a onclick="AddToList(@Model.ProductId)"> <div class="geodir-js-favorite_btn"><i class="fal fa-heart"></i><span>ذخیره</span></div></a>
+            <a href="/ShowProduct/@Model.ProductId" class="geodir-category-img-wrap fl-wrap">
                 <img src="@imageName" alt="">
             </a>
             <div class="listing-avatar">
                 @*<a href="author-single.html"><img src="images/avatar/1.jpg" alt=""></a>*@
-                <span class="avatar-tooltip">اضافه شده توسط  <strong></strong></span>
             </div>
-            <div class="geodir_status_date gsd_open"><i class="fal fa-lock-open"></i>تایید نشده</div>
             <div class="geodir-category-opt">
                 <div class="listing-rating-count-wrap">
-                    <div class="review-score">4.8</div>
-                    <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
-                    <br>
-                    <div class="reviews-count">12 بازدید</div>
+                    
+                    <div class="reviews-count">@Model.Counter بازدید</div>
                 </div>
             </div>
         </div>
@@ -38,7 +34,7 @@
             <div class="geodir-category-content-title fl-wrap">
                 <div class="geodir-category-content-title-item">
                     <h3 class="title-sin_map"><a href="/ShowProduct/@Model.ProductId">@Model.Title</a><span class="verified-badge"><i class="fal fa-check"></i></span></h3>
-                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i>  </a></div>
+                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i> @Model.Region </a></div>
                 </div>
             </div>
            
@@ -50,27 +46,27 @@
 <div class="listing-item hidden-xs">
     <article class="geodir-category-listing fl-wrap">
         <div class="geodir-category-img">
+            <a onclick="AddToList(@Model.ProductId)">
             <div class="geodir-js-favorite_btn"><i class="fal fa-heart"></i><span>ذخیره</span></div>
-            <a href="/ShowProduct/@Model.ProductId" class="geodir-category-img-wrap fl-wrap">
-                <img src="@imageName" alt="">
             </a>
-            <div class="listing-avatar">
-                @*<a href="author-single.html"><img src="images/avatar/1.jpg" alt=""></a>*@
-                <span class="avatar-tooltip">اضافه شده توسط  <strong></strong></span>
-            </div>
-            <div class="geodir-category-opt">
-                <div class="listing-rating-count-wrap">
-                    <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
-                    <br>
-                    <div class="reviews-count">@Model.Counter بازدید</div>
+                <a href="/ShowProduct/@Model.ProductId" class="geodir-category-img-wrap fl-wrap">
+                    <img src="@imageName" alt="">
+                </a>
+                <div class="listing-avatar">
+                    @*<a href="author-single.html"><img src="images/avatar/1.jpg" alt=""></a>*@
                 </div>
-            </div>
+                <div class="geodir-category-opt">
+                    <div class="listing-rating-count-wrap">
+
+                        <div class="reviews-count">@Model.Counter بازدید</div>
+                    </div>
+                </div>
         </div>
         <div class="geodir-category-content fl-wrap title-sin_item">
             <div class="geodir-category-content-title fl-wrap">
                 <div class="geodir-category-content-title-item">
                     <h3 class="title-sin_map"><a href="/ShowProduct/@Model.ProductId">@Model.Title</a><span class="verified-badge"><i class="fal fa-check"></i></span></h3>
-                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i>  </a></div>
+                    <div class="geodir-category-location fl-wrap"><a href="#"><i class="fas fa-map-marker-alt"></i>@Model.Region  </a></div>
                 </div>
             </div>
 

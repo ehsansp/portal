@@ -88,8 +88,16 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
 
             int index3 = result3.IndexOf("USD");
             index3 = index3 + 5;
-            string doge = result3.Substring(index3, 7);
-            ViewBag.doge = doge;
+            int count = 0;
+            bool f = false;
+            while (f==false)
+            {
+                count++;
+                if (result3[count + index3] == ',')
+                    f = true;
+            }
+            string doge = result3.Substring(index3, count);
+            ViewBag.doge2 = doge;
 
 
             ViewData["Wallet"] = _userService.GetUserInformation(User.Identity.Name).Wallet;
@@ -105,6 +113,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Feed()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
 
@@ -115,6 +124,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Profile()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
 
@@ -131,6 +141,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Profile(InformationUserViewModel user)
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
 
@@ -146,6 +157,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Message()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
             ViewData["Wallet"] = _userService.GetUserInformation(User.Identity.Name).Wallet;
@@ -159,6 +171,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Password()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
             ViewData["Wallet"] = _userService.GetUserInformation(User.Identity.Name).Wallet;
@@ -191,6 +204,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Listing()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
             ViewData["Wallet"] = _userService.GetUserInformation(User.Identity.Name).Wallet;
@@ -204,6 +218,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Booking()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
             ViewData["Wallet"] = _userService.GetUserInformation(User.Identity.Name).Wallet;
@@ -217,6 +232,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Reviewing()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
             ViewData["Wallet"] = _userService.GetUserInformation(User.Identity.Name).Wallet;
@@ -227,17 +243,100 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         }
 
         [Route("UserPanel/Add")]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
+
+            string url4 = "https://www.tgju.org/?act=sanarateservice&client=tgju&noview&type=json";
+
+            var client = new HttpClient();
+
+            var uri = new Uri(url4);
+            var result4 = await client.GetStringAsync(uri);
+
+
+            int index4 = result4.IndexOf("sana_sell_usd");
+            index4 = index4 + 46;
+            string s4 = result4.Substring(index4, 7);
+            index4 = s4.IndexOf(',');
+            s4 = s4.Remove(index4,1);
+            int g = int.Parse(s4) / 10;
+            s4 = g.ToString();
+            ViewBag.doalr = s4;
+
+
+
+
+            string url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
+            var client5 = new HttpClient();
+
+            var uri5 = new Uri(url);
+            var result = await client5.GetStringAsync(uri5);
+
+
+            int index = result.IndexOf("&#36;");
+            index = index + 15;
+            string s = result.Substring(index, 11);
+            s = s.Remove(2, 1);
+            ViewBag.ee = s;
+
+
+
+
+            string url2 = "https://min-api.cryptocompare.com/data/price?fsym=eth&tsyms=USD,JPY,EUR";
+            var client2 = new HttpClient();
+
+            var uri2 = new Uri(url2);
+            var result2 = await client.GetStringAsync(uri2);
+
+            int index2 = result2.IndexOf("USD");
+            index2 = index2 + 5;
+            string ss = result2.Substring(index2, 7);
+            ViewBag.ss = ss;
+
+
+            string url3 = "https://min-api.cryptocompare.com/data/price?fsym=doge&tsyms=USD,JPY,EUR";
+            var client3 = new HttpClient();
+
+            var uri3 = new Uri(url3);
+            var result3 = await client.GetStringAsync(uri3);
+
+            int index3 = result3.IndexOf("USD");
+            index3 = index3 + 5;
+            int count = 0;
+            bool f = false;
+            while (f == false)
+            {
+                count++;
+                if (result3[count + index3] == ',')
+                    f = true;
+            }
+            string doge = result3.Substring(index3, count);
+            ViewBag.doge2 = doge;
+
+
+
 
             var group = _productService.GetGroupForManageProduct();
             ViewData["group"] = new SelectList(group, "Value", "Text");
 
             var sub = _productService.GetSubGroupForManageCourse(int.Parse(group.First().Value));
             ViewData["sub"] = new SelectList(sub, "Value", "Text");
+
+            var shahr = _productService.GetShahrManageProduct();
+            ViewData["sh"] = new SelectList(shahr, "Value", "Text");
+
+            var ostan = _productService.GetOstanForManageCourse(int.Parse(shahr.First().Value));
+            ViewData["ostan"] = new SelectList(ostan, "Value", "Text");
+
+            var region = _productService.getRegionItems();
+            ViewData["region"] = new SelectList(region, "Value", "Text");
+
+
             ViewData["Wallet"] = _userService.GetUserInformation(User.Identity.Name).Wallet;
             ViewData["btc"] = _userService.GetUserInformation(User.Identity.Name).btc;
             ViewData["eth"] = _userService.GetUserInformation(User.Identity.Name).eth;
@@ -253,14 +352,153 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
             ViewData["btc"] = _userService.GetUserInformation(User.Identity.Name).btc;
             ViewData["eth"] = _userService.GetUserInformation(User.Identity.Name).eth;
             ViewData["doge"] = _userService.GetUserInformation(User.Identity.Name).doge;
+            string p = "";
+            string pp = profile.Price.ToString();
+
+            for (int i = 0; i < pp.Length; i++)
+            {
+                if (pp[i] != ',')
+                    p = p + pp[i];
+            }
+
+            profile.Price = p;
             _productService.AddAd(User.Identity.Name,profile);
             return Redirect("/UserPanel");
+        }
+
+        [Route("UserPanel/EditAdd/{id}")]
+        public async Task<IActionResult> EditAdd(int id, InformationAdViewModel profile)
+        {
+            ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
+            ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
+                               _userService.GetUserByUserName(User.Identity.Name).Family;
+            string url4 = "https://www.tgju.org/?act=sanarateservice&client=tgju&noview&type=json";
+
+            var client = new HttpClient();
+
+            var uri = new Uri(url4);
+            var result4 = await client.GetStringAsync(uri);
+
+
+            int index4 = result4.IndexOf("sana_sell_usd");
+            index4 = index4 + 46;
+            string s4 = result4.Substring(index4, 7);
+            index4 = s4.IndexOf(',');
+            s4 = s4.Remove(index4, 1);
+            int g = int.Parse(s4) / 10;
+            s4 = g.ToString();
+            ViewBag.doalr = s4;
+
+
+
+
+            string url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
+            var client5 = new HttpClient();
+
+            var uri5 = new Uri(url);
+            var result = await client5.GetStringAsync(uri5);
+
+
+            int index = result.IndexOf("&#36;");
+            index = index + 15;
+            string s = result.Substring(index, 11);
+            s = s.Remove(2, 1);
+            ViewBag.ee = s;
+
+
+
+
+            string url2 = "https://min-api.cryptocompare.com/data/price?fsym=eth&tsyms=USD,JPY,EUR";
+            var client2 = new HttpClient();
+
+            var uri2 = new Uri(url2);
+            var result2 = await client.GetStringAsync(uri2);
+
+            int index2 = result2.IndexOf("USD");
+            index2 = index2 + 5;
+            string ss = result2.Substring(index2, 7);
+            ViewBag.ss = ss;
+
+
+            string url3 = "https://min-api.cryptocompare.com/data/price?fsym=doge&tsyms=USD,JPY,EUR";
+            var client3 = new HttpClient();
+
+            var uri3 = new Uri(url3);
+            var result3 = await client.GetStringAsync(uri3);
+
+            int index3 = result3.IndexOf("USD");
+            index3 = index3 + 5;
+            int count = 0;
+            bool f = false;
+            while (f == false)
+            {
+                count++;
+                if (result3[count + index3] == ',')
+                    f = true;
+            }
+            string doge = result3.Substring(index3, count);
+            ViewBag.doge2 = doge;
+
+            var Ad = _productService.GetProductById2(id, profile);
+
+            var group = _productService.GetGroupForManageProduct();
+            ViewData["group"] = new SelectList(group, "Value", "Text");
+
+
+
+            var subGroups = _productService.GetSubGroupForManageCourse(Ad.GroupId);
+            ViewData["sub"] = new SelectList(subGroups, "Value", "Text", Ad.SubGroup);
+
+            var shahr = _productService.GetShahrManageProduct();
+            ViewData["sh"] = new SelectList(shahr, "Value", "Text");
+
+           
+
+            var ostan = _productService.GetOstanForManageCourse(Ad.ShahrId);
+            ViewData["ostan"] = new SelectList(ostan, "Value", "Text",Ad.Ostan);
+
+            var region = _productService.getRegionItems();
+            ViewData["region"] = new SelectList(region, "Value", "Text");
+
+            return View(Ad);
+        }
+
+        [Route("UserPanel/DeleteAdd/{id}")]
+        public IActionResult DeleteAdd(int id)
+        {
+           _productService.DeleteProduct(id);
+
+            return Redirect("/UserPanel/Listing");
+        }
+
+        [Route("UserPanel/EditAdd/{id}")]
+        [HttpPost]
+        public IActionResult EditAdd(InformationAdViewModel profile)
+        {
+            string p="";
+            string pp = profile.Price.ToString();
+
+            for(int i=0;i<pp.Length;i++)
+            {
+                if (pp[i] != ',')
+                    p = p + pp[i];
+            }
+
+            profile.Price = p;
+            _productService.EditAd(profile);
+
+
+
+            return Redirect("/userpanel");
         }
 
         [Route("UserPanel/Money")]
         public IActionResult Money()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
 
@@ -276,6 +514,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Deposit()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
 
@@ -312,6 +551,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Withdrawal()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
 
@@ -350,6 +590,7 @@ namespace ShahrKoodak.Web.Areas.UserPanel.Controllers
         public IActionResult Exchange()
         {
             ViewData["UserAvatar"] = _userService.GetUserByUserName(User.Identity.Name).UserAvatar;
+            ViewData["number"] = _userService.GetUserIdByUserName(User.Identity.Name);
             ViewData["Name"] = _userService.GetUserByUserName(User.Identity.Name).Name + ' ' +
                                _userService.GetUserByUserName(User.Identity.Name).Family;
 

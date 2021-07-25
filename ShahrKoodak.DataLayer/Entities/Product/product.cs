@@ -15,11 +15,17 @@ namespace ShahrKoodak.DataLayer.Entities.Product
 
         [Required(ErrorMessage = "لطفاً {0} را وارد کنید.")]
         public int GroupId { get; set; }
+        [Required(ErrorMessage = "لطفاً {0} را وارد کنید.")]
+        public int ShahrId { get; set; }
         [Required]
         public int UserId { get; set; }
 
+        public int ProductStatusId { get; set; }
+
         public int Counter { get; set; }
+        public int RegionId { get; set; }
         public int? SubGroup { get; set; }
+        public int? Ostan { get; set; }
         [Required(ErrorMessage = "لطفاً {0} را وارد کنید.")]
         public int TypeAdId { get; set; }
 
@@ -75,6 +81,18 @@ namespace ShahrKoodak.DataLayer.Entities.Product
 
         [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
         public string ProductImageName { get; set; }
+        [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
+        public string ProductImageName1 { get; set; }
+        [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
+        public string ProductImageName2 { get; set; }
+        [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
+        public string ProductImageName3 { get; set; }
+        [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
+        public string ProductImageName4 { get; set; }
+        [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
+        public string ProductImageName5 { get; set; }
+        [MaxLength(50, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
+        public string ProductImageName6 { get; set; }
 
         [MaxLength(100, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]
         public string DemoFileName { get; set; }
@@ -104,15 +122,21 @@ namespace ShahrKoodak.DataLayer.Entities.Product
 
         [ForeignKey("GroupId")]
         public ProductGroup ProductGroup { get; set; }
+        [ForeignKey("ShahrId")]
+        public Shahr Shahr { get; set; }
 
         [ForeignKey("SubGroup")]
         public ProductGroup Group { get; set; }
+
+        [ForeignKey("Ostan")]
+        public Shahr Sh { get; set; }
 
         public List<ProductEpisode> ProductEpisodes { get; set; }
         public List<ProductSharayet> ProductSharayets { get; set; }
         public List<ProductVizhegi> ProductVizhegis { get; set; }
         public List<Package> Packages { get; set; }
         public TypeAd TypeAd { get; set; }
+        public Region Region { get; set; }
 
         public List<OrderDetail> OrderDetails { get; set; }
 
@@ -121,6 +145,7 @@ namespace ShahrKoodak.DataLayer.Entities.Product
         public List<ProductComment> ProductComments { get; set; }
 
         public List<ProductFeature> ProductFeatures { get; set; }
+        public ProductStatus ProductStatus { get; set; }
         
 
         #endregion

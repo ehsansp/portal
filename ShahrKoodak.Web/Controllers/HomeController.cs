@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ShahrKoodak.Core.Services.Interfaces;
+using ShahrKoodak.DataLayer.Context;
+using ShahrKoodak.DataLayer.Entities.Slider;
 
 namespace ShahrKoodak.Web.Controllers
 {
@@ -14,12 +16,14 @@ namespace ShahrKoodak.Web.Controllers
         private IProductService _productService;
         private ISliderService _sliderService;
         private IUserService _userService;
+        private ShahrContext _context;
 
-        public HomeController(IProductService productService, ISliderService sliderService, IUserService userService)
+        public HomeController(IProductService productService, ISliderService sliderService, IUserService userService, ShahrContext context)
         {
             _productService = productService;
             _sliderService = sliderService;
             _userService = userService;
+            _context = context;
         }
         public IActionResult Index()
         {
@@ -67,6 +71,26 @@ namespace ShahrKoodak.Web.Controllers
             list.AddRange(_productService.GetSubGroupForManageCourse(id));
             return Json(new SelectList(list, "Value", "Text"));
         }
+
+        public IActionResult GetSubGroups2(int id)
+        {
+            List<SelectListItem> list = new List<SelectListItem>()
+            {
+                new SelectListItem() {Text = "لطفا نام محله را انتخاب کنید", Value = "0"}
+            };
+            list.AddRange(_productService.GetOstanForManageCourse(id));
+            if (list.Count == 1)
+            {
+                List<SelectListItem> list2 = new List<SelectListItem>()
+                {
+                    new SelectListItem() {Text = "بدون محله", Value = "0"}
+
+                };
+                return Json(new SelectList(list2, "Value", "Text"));
+            }
+            return Json(new SelectList(list, "Value", "Text"));
+        }
+
         [Route("About")]
         public IActionResult About()
         {
@@ -76,6 +100,16 @@ namespace ShahrKoodak.Web.Controllers
         [Route("Contact")]
         public IActionResult Contact()
         {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Contact")]
+        public IActionResult Contact(Contact contact)
+        {
+            _context.Add(contact);
+            _context.SaveChanges();
+            ViewBag.IsSuccess = true;
             return View();
         }
 

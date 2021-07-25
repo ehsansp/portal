@@ -25,6 +25,12 @@
     <Compile Remove="Migrations\20200409113810_mig_UpdateUserProduct.Designer.cs" />
     <Compile Remove="Migrations\20210314063742_mig_Exchange.cs" />
     <Compile Remove="Migrations\20210314063742_mig_Exchange.Designer.cs" />
+    <Compile Remove="Migrations\20210603105600_mig_slugCity.cs" />
+    <Compile Remove="Migrations\20210603105600_mig_slugCity.Designer.cs" />
+    <Compile Remove="Migrations\20210703135005_mig_ProductStatusEdit.cs" />
+    <Compile Remove="Migrations\20210703135005_mig_ProductStatusEdit.Designer.cs" />
+    <Compile Remove="Migrations\20210703135218_mig_ProductStatusEdit.cs" />
+    <Compile Remove="Migrations\20210703135218_mig_ProductStatusEdit.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

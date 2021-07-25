@@ -10,7 +10,7 @@ namespace ShahrKoodak.Core.DTOs
     {
 
     }
-    public class RegisterViewModel: GoogleReCaptchaModelBase
+    public class RegisterViewModel
     {
         [Display(Name = "نام کاربری")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد.")]

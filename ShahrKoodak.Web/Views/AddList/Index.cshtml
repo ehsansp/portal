@@ -1,0 +1,126 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@section Styles
+{
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/plugins.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/color.css">
+    <link type="text/css" rel="stylesheet" href="css/shop.css">
+}
+<div id="wrapper">
+    <!-- content-->
+    <div class="content">
+        <!--  section  -->
+        <section class="gray-bg small-padding no-top-padding-sec" id="sec1">
+            <div class="container">
+                <div class="breadcrumbs inline-breadcrumbs fl-wrap block-breadcrumbs">
+                    <a href="/">خانه</a><span>لیست علاقه مندی ها</span>
+                </div>
+                <div class="clearfix"></div>
+                <!-- CHECKOUT TABLE -->
+                <div class=" fl-wrap">
+                    <h4 class="cart-ttitle ">لیست علاقه مندی های شما</h4>
+                    <table class="table table-border checkout-table">
+                        <tbody>
+                            <tr>
+                                <th>عنوان آگهی</th>
+                                <th class="hidden-xs">قیمت</th>
+                                <th></th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                   
+                                    <td>
+                                        <h5 class="product-name">@item.Title</h5>
+                                    </td>
+                                    <td class="hidden-xs">
+                                        <h5 class="order-money">@item.Price.ToString("#,0")</h5>
+                                    </td>
+
+                                    <td class="pr-remove">
+                                        <a onclick="RemoveCart(@item.ProductId)" title="حذف"><i class="fal fa-times"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /CHECKOUT TABLE -->
+                <!-- COUPON -->
+                <!-- /COUPON -->
+                <!-- CART TOTALS  -->
+                <!-- /CART TOTALS  -->
+            </div>
+        </section>
+        <div class="limit-box fl-wrap"></div>
+    </div>
+    <!--content end-->
+    <!--cart  -->
+    <div class="cart-overlay"></div>
+    <div class="cart-modal">
+        <div class="cart-modal-wrap fl-wrap">
+            <span class="close-cart color2-bg">بستن <i class="fal fa-times"></i> </span>
+            <h3>سبد خرید شما</h3>
+            <div class="clear-cart"> <span class="tolt" data-microtip-position="left" data-tooltip="Remove All"><i class="fal fa-trash-alt"></i></span></div>
+            <ul class="cart-modal-list no-list-style fl-wrap">
+                <li>
+                    <a class="cart-modal-image" href="product-single.html">
+                        <img src="images/shop/4.jpg" alt="">
+                    </a>
+                    <div class="cart-modal-det">
+                        <a href="product-single.html">فیله کباب شده</a>
+                        <div class="quantity"><span>1</span> x <span class="woocommerce-Price-amount">56.000 تومان</span></div>
+                    </div>
+                    <a href="#" class="remove"><i class="fal fa-times-circle"></i></a>
+                </li>
+                <li>
+                    <a class="cart-modal-image" href="product-single.html">
+                        <img src="images/shop/2.jpg" alt="">
+                    </a>
+                    <div class="cart-modal-det">
+                        <a href="product-single.html">بزهای سفید و ترد</a>
+                        <div class="quantity"><span>1</span> x <span class="woocommerce-Price-amount">17.000 تومان</span></div>
+                    </div>
+                    <a href="#" class="remove"><i class="fal fa-times-circle"></i></a>
+                </li>
+                <li>
+                    <a class="cart-modal-image" href="product-single.html">
+                        <img src="images/shop/3.jpg" alt="">
+                    </a>
+                    <div class="cart-modal-det">
+                        <a href="product-single.html">پودینگ شکلات گرم</a>
+                        <div class="quantity"><span>2</span> x <span class="woocommerce-Price-amount">90.000 تومان</span></div>
+                    </div>
+                    <a href="#" class="remove"><i class="fal fa-times-circle"></i></a>
+                </li>
+            </ul>
+            <div class="cart-modal-total fl-wrap">
+                <span class="cart-modal-total-title">جمع</span> <span class="woocommerce-Price-amount">253.000 تومان</span>
+            </div>
+            <div class="cart-sb_footer fl-wrap">
+                <a href="cart.html" class="cart_btn  color2-bg">سبد خرید</a>
+                <a href="#" class="cart_btn  color-bg">بررسی</a>
+            </div>
+        </div>
+    </div>
+    <!--cart end-->
+</div>
+@section Scripts{
+    <script>
+        function RemoveCart(id) {
+            $.ajax({
+                url: "/AddList/RemoveList/" + id,
+                type: "Post"
+
+            }).done(function (result) {
+
+                location.reload();
+
+            });
+        }
+    </script>
+}

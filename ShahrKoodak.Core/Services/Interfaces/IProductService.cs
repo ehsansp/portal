@@ -24,7 +24,11 @@ namespace ShahrKoodak.Core.Services.Interfaces
             string filterProductGroup = "");
         
         List<SelectListItem> GetGroupForManageProduct();
+        List<SelectListItem> GetShahrManageProduct();
+        List<SelectListItem> getRegionItems();
+        List<SelectListItem> getRegionItems(int id);
         List<SelectListItem> GetSubGroupForManageCourse(int groupId);
+        List<SelectListItem> GetOstanForManageCourse(int shahrId);
         List<SelectListItem> GetRelationCourse1();
         int AddProduct(product product, IFormFile imgCourse, IFormFile courseDemo);
         void AddAd(string username, InformationAdViewModel profile);

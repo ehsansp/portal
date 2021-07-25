@@ -34,12 +34,25 @@ namespace ShahrKoodak.Core.DTOs.User
         public DateTime RegisterDate { get; set; }
         public int GroupId { get; set; }
         public int? SubGroup { get; set; }
+        public int RegionId { get; set; }
         public string ProductName { get; set; }
         public bool PriceType { get; set; }
-        public int Price { get; set; }
+        public string Price { get; set; }
         public string Description { get; set; }
         public string ImageName { get; set; }
         public IFormFile ProductImage { get; set; }
+        public string ImageName1 { get; set; }
+        public IFormFile ProductImage1 { get; set; }
+        public string ImageName2 { get; set; }
+        public IFormFile ProductImage2 { get; set; }
+        public string ImageName3 { get; set; }
+        public IFormFile ProductImage3 { get; set; }
+        public string ImageName4 { get; set; }
+        public IFormFile ProductImage4 { get; set; }
+        public string ImageName5 { get; set; }
+        public IFormFile ProductImage5 { get; set; }
+        public string ImageName6 { get; set; }
+        public IFormFile ProductImage6 { get; set; }
         public int CityId  { get; set; }
         public string PostCode { get; set; }
         public string Address { get; set; }
@@ -47,6 +60,8 @@ namespace ShahrKoodak.Core.DTOs.User
         public string WhatsApp { get; set; }
         public string Email { get; set; }
         public bool IsShowMobile { get; set; }
+        public int ShahrId { get; set; }
+        public int? Ostan { get; set; }
     }
 
     public class InformationStoreViewModel

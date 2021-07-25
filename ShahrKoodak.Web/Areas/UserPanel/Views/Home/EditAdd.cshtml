@@ -1,0 +1,493 @@
+﻿@model ShahrKoodak.Core.DTOs.User.InformationAdViewModel
+@{
+    ViewData["dash"] = "ویرایش آگهی";
+    ViewData["Title"] = "ویرایش آگهی";
+}
+@section Style
+{
+
+    <link href="~/css/nice-select.css" rel="stylesheet" />
+}
+<form asp-action="EditAdd" enctype="multipart/form-data">
+    <input type="hidden" asp-for="ProductId" />
+    <div class="col-md-9">
+        <div class="dashboard-title   fl-wrap">
+            <h3>ویرایش آگهی</h3>
+        </div>
+        <!-- profile-edit-container-->
+        <div class="profile-edit-container fl-wrap block_box">
+            <div class="custom-form">
+                <label>عنوان آگهی <i class="fal fa-briefcase"></i></label>
+                <input asp-for="ProductName" type="text" placeholder="عنوان آگهی" />
+                <input type="hidden" id="dolar" value="@ViewBag.doalr" />
+                <input type="hidden" id="bit" value="@ViewBag.ee" />
+                <input type="hidden" id="etheriom" value="@ViewBag.ss" />
+                <input type="hidden" id="doge" value="@ViewBag.doge2" />
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>دسته بندی اصلی</label>
+                        <div class="listsearch-input-item">
+                            <select class="nice-select col-12" style="width: 100% !important" asp-for="GroupId" asp-items="@(ViewData["group"] as SelectList)"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>دسته بندی فرعی</label>
+                        <div id="dd">
+                            <div id="tt" class="listsearch-input-item">
+                                <select class="nice-select" asp-for="SubGroup" style="width: 100% !important" asp-items="@(ViewData["sub"] as SelectList)"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <label>شهر</label>
+                        <div class="listsearch-input-item">
+                            <select class="nice-select" style="width: 100% !important" asp-for="ShahrId" asp-items="@(ViewData["sh"] as SelectList)"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>محله</label>
+                        <div id="gg">
+                            <div id="yy" class="listsearch-input-item">
+                                <select class="nice-select" style="width: 100% !important" asp-for="Ostan" asp-items="@(ViewData["ostan"] as SelectList)"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <label> قیمت </label>
+                <input id="rial" asp-for="Price" onkeyup="javascript: this.value = separate(this.value);" type="text" placeholder="قیمت را به تومان وارد کنید..." />
+                <input type="button" class="btn btn-primary" id="bt" value="محاسبه ارزهای دیگر" onclick="changeLabel()" />
+                <div class="custom-form">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label>دلار <i class="fal fa-wallet"></i></label>
+                            <input type="text" id="dolar2" placeholder="دلار" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label>بیت کوبن <i class="fal fa-wallet"></i></label>
+                            <input type="text" id="bit2" placeholder="بیت کوبن" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label>اتریوم <i class="fal fa-wallet"></i></label>
+                            <input type="text" id="eth2" placeholder="اتریوم" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label>دوج <i class="fal fa-wallet"></i></label>
+                            <input id="doge2" type="text" placeholder="دوج" />
+                        </div>
+                    </div>
+                </div>
+                <label id="input"></label>
+                <div class="add-list-media-header" style="margin-bottom: 20px">
+                    <label class="checkbox inline">
+                        <input type="checkbox" asp-for="IsShowMobile" />
+                        <span>نمایش شماره تماس در آگهی</span>
+                    </label>
+                </div>
+                <div class="custom-form">
+                    <label>متن</label>
+                    <textarea cols="40" rows="3" asp-for="Description" placeholder="جزئیات"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- profile-edit-container end-->
+        <!-- profile-edit-container end-->
+        <div class="dashboard-title  dt-inbox fl-wrap">
+            <h3>تصاویر</h3>
+        </div>
+        <!-- profile-edit-container-->
+        <div class="profile-edit-container fl-wrap block_box">
+            <div class="custom-form">
+                <div class="row">
+                    <!--col -->
+                    <div class="col-md-12">
+                        <div class="add-list-media-header" style="margin-bottom:20px">
+                            <label>
+
+                                <span>تصویر اصلی</span>
+                            </label>
+                        </div>
+                        <div class="add-list-media-wrap">
+                            <div class="add-list-media-wrap">
+
+                                <div class="fu-text">
+                                    <span><i class="fal fa-image"></i> این عکس در صفحه اصلی نمایش داده می شود</span>
+                                </div>
+
+                                <div class="file-upload">
+                                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">افزودن تصویر</button>
+
+                                    <div class="image-upload-wrap">
+                                        <input class="file-upload-input" type='file' asp-for="ProductImage" onchange="readURL(this);" accept="image/*" />
+                                        <div class="drag-text">
+                                            <h3>تصویر اصلی</h3>
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content">
+                                        @if (Model.ImageName != null)
+                                        {
+                                            <img class="file-upload-image" src="/product/image/@Model.ImageName" alt="your image" />
+                                        }
+                                        else
+                                        {
+                                            <img class="file-upload-image" src="/product/image/@Model.ImageName" alt="your image" />
+                                        }
+
+                                        <div class="image-title-wrap">
+                                            <button type="button" onclick="removeUpload()" class="remove-image">حذف تصویر <span class="image-title"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--col end-->
+                    <div class="col-md-12">
+                        <div class="custom-form">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="add-list-media-header" style="margin-bottom:20px">
+                                        <label>
+
+                                            <span>تصویر اضافه</span>
+                                        </label>
+                                    </div>
+                                    <div class="file-upload1">
+                                        <button class="file-upload-btn1" type="button" onclick="$('.file-upload-input1').trigger( 'click' )">افزودن تصویر</button>
+
+                                        <div class="image-upload-wrap1">
+                                            <input class="file-upload-input1" type='file' asp-for="ProductImage1" onchange="readURL1(this);" accept="image/*" />
+                                            <div class="drag-text1">
+                                                <h3>تصویر 1</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content1">
+                                            <img class="file-upload-image1" src="/product/image/@Model.ImageName1" alt="your image" />
+                                            <div class="image-title-wrap1">
+                                                <button type="button" onclick="removeUpload1()" class="remove-image1">حذف تصویر <span class="image-title1"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="add-list-media-header" style="margin-bottom:20px">
+                                        <label>
+
+                                            <span>تصویر 2</span>
+                                        </label>
+                                    </div>
+                                    <div class="file-upload2">
+                                        <button class="file-upload-btn2" type="button" onclick="$('.file-upload-input2').trigger( 'click' )">افزودن تصویر</button>
+
+                                        <div class="image-upload-wrap2">
+                                            <input class="file-upload-input2" type='file' asp-for="ProductImage2" onchange="readURL2(this);" accept="image/*" />
+                                            <div class="drag-text2">
+                                                <h3>تصویر 2</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content2">
+                                            <img class="file-upload-image2" src="/product/image/@Model.ImageName2" alt="your image" />
+                                            <div class="image-title-wrap2">
+                                                <button type="button" onclick="removeUpload2()" class="remove-image2">حذف تصویر <span class="image-title2"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="add-list-media-header" style="margin-bottom:20px">
+                                        <label>
+
+                                            <span>تصویر اضافه</span>
+                                        </label>
+                                    </div>
+                                    <div class="file-upload3">
+                                        <button class="file-upload-btn3" type="button" onclick="$('.file-upload-input3').trigger( 'click' )">افزودن تصویر</button>
+
+                                        <div class="image-upload-wrap3">
+                                            <input class="file-upload-input3" type='file' asp-for="ProductImage3" onchange="readURL3(this);" accept="image/*" />
+                                            <div class="drag-text3">
+                                                <h3>تصویر 3</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content3">
+                                            <img class="file-upload-image3" src="/product/image/@Model.ImageName3" alt="your image" />
+                                            <div class="image-title-wrap3">
+                                                <button type="button" onclick="removeUpload3()" class="remove-image3">حذف تصویر <span class="image-title3">Uploaded Image</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="add-list-media-header" style="margin-bottom:20px">
+                                        <label>
+
+                                            <span>تصویر اضافه</span>
+                                        </label>
+                                    </div>
+                                    <div class="file-upload4">
+                                        <button class="file-upload-btn4" type="button" onclick="$('.file-upload-input4').trigger( 'click' )">افزودن تصویر</button>
+
+                                        <div class="image-upload-wrap4">
+                                            <input class="file-upload-input4" type='file' asp-for="ProductImage4" onchange="readURL4(this);" accept="image/*" />
+                                            <div class="drag-text4">
+                                                <h3>تصویر 4</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content4">
+                                            <img class="file-upload-image4" src="/product/image/@Model.ImageName4" alt="your image" />
+                                            <div class="image-title-wrap4">
+                                                <button type="button" onclick="removeUpload4()" class="remove-image4">حذف تصویر <span class="image-title4">Uploaded Image</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="add-list-media-header" style="margin-bottom:20px">
+                                        <label>
+
+                                            <span>تصویر اضافه</span>
+                                        </label>
+                                    </div>
+                                    <div class="file-upload5">
+                                        <button class="file-upload-btn5" type="button" onclick="$('.file-upload-input5').trigger( 'click' )">افزودن تصویر</button>
+
+                                        <div class="image-upload-wrap5">
+                                            <input class="file-upload-input5" type='file' asp-for="ProductImage5" onchange="readURL5(this);" accept="image/*" />
+                                            <div class="drag-text5">
+                                                <h3>تصویر 5</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content5">
+                                            <img class="file-upload-image5" src="/product/image/@Model.ImageName5" alt="your image" />
+                                            <div class="image-title-wrap5">
+                                                <button type="button" onclick="removeUpload5()" class="remove-image5">حذف تصویر <span class="image-title5">Uploaded Image</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="add-list-media-header" style="margin-bottom:20px">
+                                        <label>
+
+                                            <span>تصویر اضافه</span>
+                                        </label>
+                                    </div>
+                                    <div class="file-upload6">
+                                        <button class="file-upload-btn6" type="button" onclick="$('.file-upload-input6').trigger( 'click' )">افزودن تصویر</button>
+
+                                        <div class="image-upload-wrap6">
+                                            <input class="file-upload-input6" type='file' asp-for="ProductImage6" onchange="readURL6(this);" accept="image/*" />
+                                            <div class="drag-text6">
+                                                <h3>تصویر 6</h3>
+                                            </div>
+                                        </div>
+                                        <div class="file-upload-content6">
+                                            <img class="file-upload-image6" src="/product/image/@Model.ImageName6" alt="your image" />
+                                            <div class="image-title-wrap6">
+                                                <button type="button" onclick="removeUpload6()" class="remove-image6">حذف تصویر <span class="image-title6">Uploaded Image</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- profile-edit-container-->
+        <button class="btn    color2-bg  float-btn">تایید آگهی<i class="fal fa-paper-plane"></i></button>
+        <!-- profile-edit-container end-->
+    </div>
+</form>
+@section Scripts
+{
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&libraries=places&callback=initAutocomplete"></script>
+    <script src="/js/map-add.js"></script>
+    <script src="/js/map-listing.js"></script>
+
+    <script>
+        $("#GroupId").change(function () {
+
+            $("#tt").remove();
+            var div = document.createElement("div");
+            div.className = "listsearch-input-item";
+            div.id = "tt";
+            $("#dd").append(div);
+            var s = document.createElement("select");
+            s.id = "SubGroup";
+            s.name = "SubGroup";
+            $("#tt").append(s);
+
+
+            $.getJSON("/home/GetSubGroups/" + $("#GroupId :selected").val(),
+                function (data) {
+
+                    $.each(data,
+                        function () {
+                            $("#SubGroup").append('<option value=' + this.value + '>' + this.text + '</option>');
+                        });
+                    $("#SubGroup");
+                    $("#SubGroup").addClass('nice-select');
+                    $("#SubGroup").addClass('ehsen');
+
+                });
+
+
+        });
+
+    </script>
+
+    <script>
+        $("#ShahrId").change(function () {
+
+            $("#yy").remove();
+            var div = document.createElement("div");
+            div.className = "listsearch-input-item";
+            div.id = "yy";
+            $("#gg").append(div);
+            var s = document.createElement("select");
+            s.id = "Ostan";
+            s.name = "Ostan";
+            $("#yy").append(s);
+            var count = 0;
+
+            $.getJSON("/home/GetSubGroups2/" + $("#ShahrId :selected").val(),
+                function (data) {
+
+                    $.each(data,
+                        function () {
+                            count++;
+                            $("#Ostan").append('<option value=' + this.value + '>' + this.text + '</option>');
+                        });
+                    $("#Ostan");
+                    $("#Ostan").addClass('nice-select');
+                    $("#Ostan").addClass('ehsen');
+                });
+            //$(document).ready(function() {
+            //    $('select').niceSelect();
+            //});
+
+        });
+
+    </script>
+    
+
+    <script data-require="jquery@2.1.4" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $('#Price').keyup(function (event) {
+            $(this).val(function (index, value) {
+                return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            });
+        });
+    </script>
+
+    <script>
+        function changeLabel() {
+            var dolar = parseFloat(document.getElementById("dolar").value);
+            var bit = parseFloat(document.getElementById("bit").value);
+            var eth = parseFloat(document.getElementById("etheriom").value);
+            var doge = parseFloat(document.getElementById("doge").value);
+            var riall = document.getElementById("rial").value;
+
+            var rial3 = riall.replace(/,/g, "");
+            var rial = parseFloat(rial3);
+
+            var dolar2 = rial / dolar;
+            var bit2 = dolar2 / bit;
+            var eth2 = dolar2 / eth;
+            var doge2 = dolar2 / doge;
+
+
+            document.getElementById("dolar2").value = dolar2.toFixed(2);
+            document.getElementById("bit2").value = bit2;
+            document.getElementById("eth2").value = eth2;
+            document.getElementById("doge2").value = doge2;
+        };
+    </script>
+    <script>
+        function separate(Number) {
+            Number += '';
+            Number = Number.replace(',', ''); Number = Number.replace(',', ''); Number = Number.replace(',', '');
+            Number = Number.replace(',', ''); Number = Number.replace(',', ''); Number = Number.replace(',', '');
+            x = Number.split('.');
+            y = x[0];
+            z = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(y))
+                y = y.replace(rgx, '$1' + ',' + '$2');
+            return y + z;
+        }
+    </script>
+    @if (Model.ImageName != null)
+    {
+        <script>
+            $('.image-upload-wrap').hide();
+            $('.file-upload-content').show();
+        </script>
+    }
+
+    @if (Model.ImageName1 != null)
+    {
+        <script>
+            $('.image-upload-wrap1').hide();
+            $('.file-upload-content1').show();
+        </script>
+    }
+
+    @if (Model.ImageName2 != null)
+    {
+        <script>
+            $('.image-upload-wrap2').hide();
+            $('.file-upload-content2').show();
+        </script>
+    }
+
+    @if (Model.ImageName3 != null)
+    {
+        <script>
+            $('.image-upload-wrap3').hide();
+            $('.file-upload-content3').show();
+        </script>
+    }
+
+    @if (Model.ImageName4 != null)
+    {
+        <script>
+            $('.image-upload-wrap4').hide();
+            $('.file-upload-content4').show();
+        </script>
+    }
+
+    @if (Model.ImageName5 != null)
+    {
+        <script>
+            $('.image-upload-wrap5').hide();
+            $('.file-upload-content5').show();
+        </script>
+    }
+
+    @if (Model.ImageName6 != null)
+    {
+        <script>
+            $('.image-upload-wrap6').hide();
+            $('.file-upload-content6').show();
+        </script>
+    }
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="~/js/prism.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+
+}

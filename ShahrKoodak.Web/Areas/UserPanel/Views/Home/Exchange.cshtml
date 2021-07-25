@@ -20,11 +20,7 @@
             <input type="password" class="pass-input" placeholder="" value="" />
             <span class="eye"><i class="far fa-eye" aria-hidden="true"></i> </span>
         </div>*@
-                <div class="pass-input-wrap fl-wrap">
-                    <label>مبلغ</label>
-                    <input type="text" class="pass-input" placeholder="" asp-for="Amount" />
-                    <span class="eye"><i class="far fa-eye" aria-hidden="true"></i> </span>
-                </div>
+               
                 <div class="add-list-media-header" style="margin-bottom:20px">
                     <label class="checkbox inline">
                         <input type="radio" name="arz" id="one" value="one" onclick="if(this.checked){myFunction()}" />
@@ -54,6 +50,11 @@
                 <div id="totext" class="form-group">
                     <label>به</label>
                     <input type="text" value="usdt" class="pass-input" disabled placeholder="" />
+                </div>
+                <div class="pass-input-wrap fl-wrap">
+                    <label>مبلغ</label>
+                    <input type="text" class="pass-input" placeholder="" asp-for="Amount" />
+                    <span class="eye"><i class="far fa-eye" aria-hidden="true"></i> </span>
                 </div>
                 <button class="btn    color2-bg  float-btn">ثبت دستور<i class="fal fa-save"></i></button>
             </div>

@@ -21,5 +21,6 @@ namespace ShahrKoodak.Core.DTOs.Product
         public bool PriceType { get; set; }
         public DateTime CreateDate { get; set; }
         public int Counter { get; set; }
+        public string Region { get; set; }
     }
 }

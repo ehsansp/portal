@@ -7,8 +7,8 @@
     <div class="header-search_btn show-search-button"><i class="fal fa-search"></i><span>جستجو</span></div>
     <!-- header-search_btn end-->
     <!-- header opt -->
-    <a href="/UserPanel/Add" class="add-list color-bg">ثبت آگهی <span><i class="fal fa-layer-plus"></i></span></a>
-    <div class="cart-btn  hidden-xs show-header-modal" data-microtip-position="bottom" role="tooltip" aria-label="Your Wishlist"><i class="fal fa-heart"></i><span class="cart-counter green-bg"></span> </div>
+    <a href="/UserPanel/Add" class="add-list color-bg"><b>ثبت آگهی</b> <span><i class="fal fa-layer-plus"></i></span></a>
+    <div class="cart-btn  hidden-xs show-header-modal"  data-microtip-position="bottom" role="tooltip" aria-label="Your Wishlist"><a href="/AddList"><i class="fal fa-heart"></i><span id="AddList" class="cart-counter green-bg"></span> </a></div>
     @if (User.Identity.IsAuthenticated)
     {
         <div class="show-reg-form avatar-img" data-srcav="/images/avatar/3.jpg"><a class="btn btn-google-plus" href="/UserPanel"><i class="fal fa-user"></i>پنل کاربری</a></div>
@@ -38,6 +38,9 @@
             <ul class="no-list-style">
                 <li>
                     <a href="/">خانه</a>
+                </li>
+                <li>
+                    <a href="/AddList">لیست علاقه مندی ها</a>
                 </li>
                 <li>
                     <a href="/About">درباره ما</a>

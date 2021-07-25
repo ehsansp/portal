@@ -155,7 +155,24 @@
     <script src="/js/plugins.js"></script>
     <script src="/js/scripts.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&libraries=places&callback=initAutocomplete"></script>
-    <script src="/js/map-single.js"></script>
+<script src="/js/map-single.js"></script>
+<script>
+    function AddToList(id) {
+        $.ajax({
+            url: "/AddList/AddToList/" + id,
+            type: "Post"
+        }).done(function (result) {
+            $("#AddList").html(result);
+           
+        });
+    }
+
+    $(function () {
+        $("#AddList").load("/AddList/ListCount");
+    });
+  
+</script>
+
     @RenderSection("Scripts", false)
 </body>
 </html>

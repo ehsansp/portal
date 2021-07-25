@@ -17,12 +17,12 @@
 <div class="dashboard-list fl-wrap">
     <div class="dashboard-message">
         <div class="booking-list-contr">
-            <a href="#" class="color-bg tolt" data-microtip-position="left" data-tooltip="ویرایش"><i class="fal fa-edit"></i></a>
-            <a href="#" class="red-bg tolt" data-microtip-position="left" data-tooltip="حذف"><i class="fal fa-trash"></i></a>
+            <a href="/UserPanel/EditAdd/@Model.ProductId" class="color-bg tolt" data-microtip-position="left" data-tooltip="ویرایش"><i class="fal fa-edit"></i></a>
+            <a href="/UserPanel/DeleteAdd/@Model.ProductId" class="red-bg tolt" data-microtip-position="left" data-tooltip="حذف"><i class="fal fa-trash"></i></a>
         </div>
         <div class="dashboard-message-text">
             <img src="@imageName" alt="">
-            <h4><a href="listing-single.html">@Model.ProductTitle</a></h4>
+            <h4><a href="/UserPanel/EditAdd/@Model.ProductId">@Model.ProductTitle</a></h4>
             <div class="geodir-category-location clearfix"><a href="#"> </a></div>
         </div>
     </div>

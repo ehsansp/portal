@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ShahrKoodak.DataLayer.Entities.Slider.Contact
+@{
     ViewData["Title"] = "تماس با بابیت";
 }
 
@@ -68,20 +69,32 @@
                         </div>
                         <div class="col-md-8">
                             <div class="ab_text">
-                                <div class="ab_text-title fl-wrap">
-                                    <h3>یک پیام برای ما ارسال کنید</h3>
-                                    <span class="section-separator fl-sec-sep"></span>
-                                </div>
+                                @if (@ViewBag.IsSuccess != null)
+                                {
+                                    <div class="ab_text-title fl-wrap">
+                                        <h3>پیام شما با موفقیت ثبت شد</h3>
+                                        <span class="section-separator fl-sec-sep"></span>
+                                    </div>
+                                   
+                                }
+                                else
+                                {
+                                    <div class="ab_text-title fl-wrap">
+                                        <h3>یک پیام برای ما ارسال کنید</h3>
+                                        <span class="section-separator fl-sec-sep"></span>
+                                    </div>
+                                }
+                                
                                 <div id="contact-form">
                                     <div id="message"></div>
-                                    <form class="custom-form" action="php/contact.php" name="contactform" id="contactform">
+                                    <form class="custom-form" method="post" asp-action="Contact" >
                                         <fieldset>
                                             <label><i class="fal fa-user"></i></label>
-                                            <input type="text" name="name" id="name" placeholder="نام شما *" value="" />
+                                            <input type="text" name="name" id="name" placeholder="نام شما *" asp-for="Name"/>
                                             <div class="clearfix"></div>
-                                            <label><i class="fal fa-envelope"></i>  </label>
-                                            <input type="text" name="email" id="email" placeholder="آدرس ایمیل*" value="" />
-                                            <textarea name="comments" id="comments" cols="40" rows="3" placeholder="پیام شما:"></textarea>
+                                            <label><i class="fal fa-envelope"></i> </label>
+                                            <input type="text" name="email" id="email" placeholder="آدرس ایمیل*" asp-for="Email"/>
+                                            <textarea name="comments" id="comments" cols="40" asp-for="Description" rows="3" placeholder="پیام شما:"></textarea>
                                         </fieldset>
                                         <button class="btn float-btn color2-bg" id="submit">ارسال پیام<i class="fal fa-paper-plane"></i></button>
                                     </form>

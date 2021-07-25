@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -10,14 +11,17 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
+using Newtonsoft.Json;
 using ShahrKoodak.Core.Convertors;
 using ShahrKoodak.Core.DTOs;
+using ShahrKoodak.Core.DTOs.Product;
 using ShahrKoodak.Core.DTOs.User;
 using ShahrKoodak.Core.Generator;
 using ShahrKoodak.Core.Security;
 using ShahrKoodak.Core.Senders;
 using ShahrKoodak.Core.Services.Interfaces;
 using ShahrKoodak.DataLayer.Context;
+using ShahrKoodak.DataLayer.Entities.Product;
 using ShahrKoodak.DataLayer.Entities.User;
 using ShahrKoodak.DataLayer.Entities.Wallet;
 using ShahrKoodak.Web.Auth;
@@ -40,6 +44,78 @@ namespace ShahrKoodak.Web.Controllers
             _signInManager = signInManager;
         }
 
+        [Route("city")]
+        public async Task<IActionResult> city()
+        {
+            for (int j = 1; j < 9; j++)
+            {
+
+
+
+                string url = "https://api.divar.ir/v5/places/cities/"+j+"/districts";
+
+                var client = new HttpClient();
+
+                var uri = new Uri(url);
+                var result = await client.GetStringAsync(uri);
+                int index = result.IndexOf('[');
+                int indexof = result.IndexOf(']');
+                result = result.Replace("\"neighbors\":[],", "");
+                result = result.Replace(",\"tags\":[]", "");
+                bool flag = true;
+
+
+                while (flag)
+                {
+                    flag = result.Contains("centroid");
+                    if (flag)
+                    {
+                        int startWord = 0;
+                        int endWord = 0;
+                        bool g = false;
+                        int count = 0;
+                        startWord = result.IndexOf("centroid", 0);
+                        endWord = startWord;
+
+                        endWord = result.IndexOf('}', startWord);
+
+
+
+                        result = result.Remove(startWord - 2, (endWord - startWord) + 3);
+                    }
+
+                }
+
+                result = result.Replace("new", "news");
+                string s = "";
+                for (int i = index; i <= result.Length - 2; i++)
+                {
+                    s = s + result[i];
+                }
+
+                //int y = s.IndexOf("top_cities", 0);
+                //s = s.Remove(y - 2, (s.Length - y)+2);
+                s = s.Replace(",\"tags\":[]", "");
+
+                var newresult = JsonConvert.DeserializeObject<List<CityVM>>(s);
+
+                foreach (var item in newresult)
+                {
+                    Shahr c = new Shahr();
+                    c.ShahrId = item.id;
+                    c.GroupTitle = item.name;
+                    c.IsDelete = false;
+                    c.ParentId = j;
+                    c.slug = item.slug;
+
+                    _context.Add(c);
+                    _context.SaveChanges();
+                }
+            }
+
+            return View();
+        }
+
 
         #region Login
 
@@ -56,6 +132,7 @@ namespace ShahrKoodak.Web.Controllers
         {
             login.Email = ConvertNumber.PersianToEnglish(login.Email);
             var user = _userService.LoginUser(login);
+            var user2 = _userService.GetUserByUserName(login.Email);
             if (user != null)
             {
                 if (user.IsActive)
@@ -83,7 +160,16 @@ namespace ShahrKoodak.Web.Controllers
                     ModelState.AddModelError("Email", "حساب کاربری شما فعال نمی باشد.");
                 }
             }
-            ModelState.AddModelError("Email", "کاربری با مشخصات وارد شده یافت نشد.");
+
+            if (user2 == null)
+            {
+                ModelState.AddModelError("Email", "کاربری با مشخصات وارد شده یافت نشد.");
+            }
+            else
+            {
+                ModelState.AddModelError("Email", "رمز عبور شما اشتباه است.");
+            }
+
             return View(login);
         }
 
@@ -108,13 +194,13 @@ namespace ShahrKoodak.Web.Controllers
                 return View(register);
             }
 
-            register.UserName = ConvertNumber.PersianToEnglish(register.UserName);
+            register.UserName = ConvertNumber.PersianToEnglish(register.Email);
 
             Random rnd = new Random();
             string r = "";
             string rr = "";
 
-            if (_userService.IsExistUserName(register.UserName))
+            if (_userService.IsExistUserName(register.Email))
             {
 
                 // r = rnd.Next(1000, 9999).ToString();
@@ -289,7 +375,7 @@ namespace ShahrKoodak.Web.Controllers
                 _context.Add(wallet);
                 _context.SaveChanges();
 
-                User user = _context.Users.FirstOrDefault(c => c.UserName ==User.Identity.Name);
+                User user = _context.Users.FirstOrDefault(c => c.UserName == User.Identity.Name);
                 user.Referal = true;
                 _context.Update(user);
                 _context.SaveChanges();
@@ -321,6 +407,8 @@ namespace ShahrKoodak.Web.Controllers
 
             User user = new User();
             req.Email = ConvertNumber.PersianToEnglish(req.Email);
+
+            user = _userService.GetUserByUserName(req.Email);
 
             if (user == null)
             {

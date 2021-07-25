@@ -4,9 +4,7 @@
 }
 
 <div class="col-md-9">
-    <div class="dashboard-title fl-wrap">
-        <h3>آمار شما</h3>
-    </div>
+   
     <!-- list-single-facts -->
     <div class="list-single-facts fl-wrap">
         <div class="row">
@@ -54,10 +52,10 @@
                 <!-- inline-facts  -->
                 <div class="inline-facts-wrap gradient-bg ">
                     <div class="inline-facts">
-                        <i class="fal fa-envelope-open-dollar"></i>
+                        <i class="fa fa-dollar-sign"></i>
                         <div class="milestone-counter">
                             <div class="">
-                                <p class="num" data-num="@ViewBag.doge">@ViewBag.doge</p>
+                                <p class="num" data-num="@ViewBag.doge2">@ViewBag.doge2</p>
                             </div>
                         </div>
                         <h6>نرخ لحظه ای دوج </h6>
@@ -73,23 +71,7 @@
         </div>
     </div>
     <!-- list-single-facts end -->
-    <div class="list-single-main-item fl-wrap block_box">
-        <!-- chart-wra-->
-        <div class="chart-wrap   fl-wrap">
-            <div class="chart-header fl-wrap">
-                <div class="listsearch-input-item">
-                    <select data-placeholder="هفته" class="chosen-select no-search-select">
-                        <option>هفته</option>
-                        <option>ماه</option>
-                        <option>سال</option>
-                    </select>
-                </div>
-                <div id="myChartLegend"></div>
-            </div>
-            <canvas id="canvas-chart"></canvas>
-        </div>
-        <!--chart-wrap end-->
-    </div>
+    
     @*<div class="dashboard-title dt-inbox fl-wrap">
         <h3>فعالیت های اخیر</h3>
     </div>*@

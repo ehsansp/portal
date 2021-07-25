@@ -143,6 +143,27 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("RolePermissions");
                 });
 
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.City2", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("level");
+
+                    b.Property<string>("name");
+
+                    b.Property<int>("parent");
+
+                    b.Property<int>("radius");
+
+                    b.Property<string>("slug");
+
+                    b.HasKey("id");
+
+                    b.ToTable("City2s");
+                });
+
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.Feature", b =>
                 {
                     b.Property<int>("FeatureId")
@@ -232,6 +253,8 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.Property<string>("Mobile")
                         .HasMaxLength(450);
 
+                    b.Property<int?>("Ostan");
+
                     b.Property<int?>("OtherProduct");
 
                     b.Property<int?>("OtherProduct2");
@@ -249,6 +272,24 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.Property<string>("ProductImageName")
                         .HasMaxLength(50);
 
+                    b.Property<string>("ProductImageName1")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ProductImageName2")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ProductImageName3")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ProductImageName4")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ProductImageName5")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ProductImageName6")
+                        .HasMaxLength(50);
+
                     b.Property<string>("ProductTitle")
                         .IsRequired()
                         .HasMaxLength(450);
@@ -258,6 +299,10 @@ namespace ShahrKoodak.DataLayer.Migrations
 
                     b.Property<string>("ProductTitle3")
                         .HasMaxLength(450);
+
+                    b.Property<int>("RegionId");
+
+                    b.Property<int>("ShahrId");
 
                     b.Property<string>("ShortDescription");
 
@@ -287,7 +332,13 @@ namespace ShahrKoodak.DataLayer.Migrations
 
                     b.HasIndex("GroupId");
 
+                    b.HasIndex("Ostan");
+
                     b.HasIndex("ProductId1");
+
+                    b.HasIndex("RegionId");
+
+                    b.HasIndex("ShahrId");
 
                     b.HasIndex("SubGroup");
 
@@ -421,6 +472,23 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("ProductSharayets");
                 });
 
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.ProductStatus", b =>
+                {
+                    b.Property<int>("ProductStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("ProductStatusId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductStatus");
+                });
+
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.ProductVizhegi", b =>
                 {
                     b.Property<int>("VizhegiId")
@@ -438,6 +506,42 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductVizhegis");
+                });
+
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.Region", b =>
+                {
+                    b.Property<int>("RegionId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("OstanId");
+
+                    b.HasKey("RegionId");
+
+                    b.ToTable("Regions");
+                });
+
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.Shahr", b =>
+                {
+                    b.Property<int>("ShahrId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("GroupTitle")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.Property<bool>("IsDelete");
+
+                    b.Property<int?>("ParentId");
+
+                    b.Property<string>("slug");
+
+                    b.HasKey("ShahrId");
+
+                    b.ToTable("Shahr");
                 });
 
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.TypeAd", b =>
@@ -525,6 +629,23 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("ButtomBanners");
                 });
 
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Slider.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Slider.LeftBanner", b =>
                 {
                     b.Property<int>("LeftBannerId")
@@ -608,6 +729,19 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.HasKey("RightBannerId");
 
                     b.ToTable("RightBanner2s");
+                });
+
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Slider.Rule", b =>
+                {
+                    b.Property<int>("RuleId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description");
+
+                    b.HasKey("RuleId");
+
+                    b.ToTable("Rules");
                 });
 
             modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Slider.Slider", b =>
@@ -1023,9 +1157,23 @@ namespace ShahrKoodak.DataLayer.Migrations
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade);
 
+                    b.HasOne("ShahrKoodak.DataLayer.Entities.Product.Shahr", "Sh")
+                        .WithMany("Sh")
+                        .HasForeignKey("Ostan");
+
                     b.HasOne("ShahrKoodak.DataLayer.Entities.Product.product")
                         .WithMany("Products")
                         .HasForeignKey("ProductId1");
+
+                    b.HasOne("ShahrKoodak.DataLayer.Entities.Product.Region", "Region")
+                        .WithMany("Products")
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ShahrKoodak.DataLayer.Entities.Product.Shahr", "Shahr")
+                        .WithMany("Products")
+                        .HasForeignKey("ShahrId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ShahrKoodak.DataLayer.Entities.Product.ProductGroup", "Group")
                         .WithMany("SubGroup")
@@ -1090,6 +1238,14 @@ namespace ShahrKoodak.DataLayer.Migrations
                 {
                     b.HasOne("ShahrKoodak.DataLayer.Entities.Product.product", "Product")
                         .WithMany("ProductSharayets")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Product.ProductStatus", b =>
+                {
+                    b.HasOne("ShahrKoodak.DataLayer.Entities.Product.product", "Product")
+                        .WithMany("ProductStatus")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

@@ -54,6 +54,7 @@ namespace ShahrKoodak.DataLayer.Context
 
         #region Product
 
+        public DbSet<City2> City2s { get; set; }
         public DbSet<product> Product { get; set; }
         public DbSet<ProductComment> ProductComment { get; set; }
         public DbSet<ProductGroup> ProductGroup { get; set; }
@@ -65,6 +66,9 @@ namespace ShahrKoodak.DataLayer.Context
         public DbSet<Package> Packages { get; set; }
         public DbSet<ProductSharayet> ProductSharayets { get; set; }
         public DbSet<ProductVizhegi> ProductVizhegis { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Shahr> Shahr { get; set; }
+        public DbSet<ProductStatus> ProductStatus { get; set; }
 
         #endregion
 
@@ -99,6 +103,8 @@ namespace ShahrKoodak.DataLayer.Context
         public DbSet<LeftBanner2> LeftBanner2s { get; set; }
         public DbSet<RightBanner2> RightBanner2s { get; set; }
         public DbSet<ButtomBanner> ButtomBanners { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Rule> Rules { get; set; }
 
         #endregion
 

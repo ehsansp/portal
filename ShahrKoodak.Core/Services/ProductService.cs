@@ -104,10 +104,97 @@ namespace ShahrKoodak.Core.Services
                     profile.ProductImage.CopyTo(stream);
                 }
             }
+
             else
             {
                 profile.ImageName = "nophoto.jpg";
             }
+
+            if (profile.ProductImage1 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName1 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage1.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName1);
+                product.ProductImageName1 = profile.ImageName1;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage1.CopyTo(stream);
+                }
+            }
+
+            if (profile.ProductImage2 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName2 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage2.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName2);
+                product.ProductImageName2 = profile.ImageName2;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage2.CopyTo(stream);
+                }
+            }
+
+            if (profile.ProductImage3 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName3 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage3.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName3);
+                product.ProductImageName3 = profile.ImageName3;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage3.CopyTo(stream);
+                }
+            }
+
+            if (profile.ProductImage4 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName4 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage4.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName);
+                product.ProductImageName4 = profile.ImageName4;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage4.CopyTo(stream);
+                }
+            }
+
+            if (profile.ProductImage5 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName5 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage5.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName5);
+                product.ProductImageName5 = profile.ImageName5;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage5.CopyTo(stream);
+                }
+            }
+
+            if (profile.ProductImage6 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName6 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage6.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName6);
+                product.ProductImageName6 = profile.ImageName6;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage6.CopyTo(stream);
+                }
+            }
+
+           
             product.CreateDate=DateTime.Now;
             product.Counter = 0;
             product.TypeAdId = 1;
@@ -116,9 +203,14 @@ namespace ShahrKoodak.Core.Services
             product.ProductTitle = profile.ProductName;
             product.PriceType = profile.PriceType;
             product.UserId = user.UserId;
-            product.Price = profile.Price;
+            product.Price = int.Parse(profile.Price);
             product.ProductDescription = profile.Description;
             product.IsShowTel = profile.IsShowMobile;
+            product.RegionId = 1;
+            product.ShahrId = profile.ShahrId;
+            if (profile.Ostan == null)
+                profile.Ostan = 0;
+            product.Ostan = profile.Ostan;
 
             _context.Add(product);
             _context.SaveChanges();
@@ -126,23 +218,16 @@ namespace ShahrKoodak.Core.Services
 
         public void EditAd(InformationAdViewModel profile)
         {
-            var store = GetProductById(profile.ProductId);
+            var product = _context.Product.Find(profile.ProductId);
 
             if (profile.ProductImage != null)
             {
                 string imagePath = "";
-                if (profile.ImageName != "store-banner.jpg")
-                {
-                    imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName);
-                    if (File.Exists(imagePath))
-                    {
-                        File.Delete(imagePath);
-                    }
-                }
+
 
                 profile.ImageName = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage.FileName);
                 imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName);
-                store.ProductImageName = profile.ImageName;
+                product.ProductImageName = profile.ImageName;
                 using (var stream = new FileStream(imagePath, FileMode.Create))
                 {
                     profile.ProductImage.CopyTo(stream);
@@ -150,18 +235,140 @@ namespace ShahrKoodak.Core.Services
             }
             else
             {
-                profile.ImageName = "nophoto.jpg";
+                product.ProductImageName = null;
             }
-           
 
-            store.ProductTitle = profile.ProductName;
-            store.SubGroup = profile.SubGroup;
-            store.GroupId = profile.GroupId;
-            store.TypeAdId = profile.TypeAdId;
-            store.PriceType = profile.PriceType;
-            store.Price = profile.Price;
-            store.ProductDescription = profile.Description;
-            _context.Update(store);
+            
+
+            if (profile.ProductImage1 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName1 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage1.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName1);
+                product.ProductImageName1 = profile.ImageName1;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage1.CopyTo(stream);
+                }
+            }
+
+            else
+            {
+                product.ProductImageName1 = null;
+            }
+
+            if (profile.ProductImage2 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName2 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage2.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName2);
+                product.ProductImageName2 = profile.ImageName2;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage2.CopyTo(stream);
+                }
+            }
+
+            else
+            {
+                product.ProductImageName2 = null;
+            }
+
+            if (profile.ProductImage3 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName3 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage3.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName3);
+                product.ProductImageName3 = profile.ImageName3;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage3.CopyTo(stream);
+                }
+            }
+
+            else
+            {
+                product.ProductImageName3 = null;
+            }
+
+            if (profile.ProductImage4 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName4 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage4.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName);
+                product.ProductImageName4 = profile.ImageName4;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage4.CopyTo(stream);
+                }
+            }
+
+            else
+            {
+                product.ProductImageName4 = null;
+            }
+
+            if (profile.ProductImage5 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName5 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage5.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName5);
+                product.ProductImageName5 = profile.ImageName5;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage5.CopyTo(stream);
+                }
+            }
+
+            else
+            {
+                product.ProductImageName5 = null;
+            }
+
+            if (profile.ProductImage6 != null)
+            {
+                string imagePath = "";
+
+
+                profile.ImageName6 = NameGenerator.GenerateUniqeCode() + Path.GetExtension(profile.ProductImage6.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/product/image", profile.ImageName6);
+                product.ProductImageName6 = profile.ImageName6;
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    profile.ProductImage6.CopyTo(stream);
+                }
+            }
+
+            else
+            {
+                product.ProductImageName6 = null;
+            }
+
+
+            product.GroupId = profile.GroupId;
+            product.SubGroup = profile.SubGroup;
+            product.ProductTitle = profile.ProductName;
+            product.PriceType = profile.PriceType;
+            product.Price = int.Parse(profile.Price);
+            product.ProductDescription = profile.Description;
+            product.IsShowTel = profile.IsShowMobile;
+            product.RegionId = 1;
+            if (profile.Ostan == null)
+                profile.Ostan = 0;
+            product.Ostan = profile.Ostan;
+            product.ShahrId = profile.ShahrId;
+
+            _context.Update(product);
             _context.SaveChanges();
         }
 
@@ -366,6 +573,16 @@ namespace ShahrKoodak.Core.Services
             return _context.ProductGroup.Find(productId);
         }
 
+        public List<SelectListItem> GetShahrManageProduct()
+        {
+            return _context.Shahr.Where(g => g.ParentId == null)
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.GroupTitle,
+                    Value = g.ShahrId.ToString()
+                }).ToList();
+        }
+
         public List<SelectListItem> GetGroupForManageProduct()
         {
             return _context.ProductGroup.Where(g => g.ParentId == null)
@@ -375,6 +592,18 @@ namespace ShahrKoodak.Core.Services
                     Value = g.GroupId.ToString()
                 }).ToList();
         }
+
+        public List<SelectListItem> getRegionItems()
+        {
+            return _context.Regions
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Name,
+                    Value = g.RegionId.ToString()
+                }).ToList();
+        }
+
+       
 
         public List<ProductEpisode> GetListEpisodeProduct(int courseId)
         {
@@ -489,7 +718,7 @@ namespace ShahrKoodak.Core.Services
 
             int skip = (pageId - 1) * take;
 
-            int pageCount = result.Include(c => c.ProductEpisodes).Where(c=>c.IsActive).Include(e=>e.ProductGroup).Select(c => new ShowProductListItemViewModel()
+            int pageCount = result.Include(c => c.ProductEpisodes).Where(c=>c.IsActive).Include(c=>c.Region).Include(e=>e.ProductGroup).Select(c => new ShowProductListItemViewModel()
             {
                 ProductId = c.ProductId,
                 GroupTitle = c.ProductGroup.GroupTitle,
@@ -505,10 +734,11 @@ namespace ShahrKoodak.Core.Services
                 PriceType = c.PriceType,
                 Price = c.Price,
                 CreateDate = c.CreateDate,
-                Counter = c.Counter
+                Counter = c.Counter,
+                Region = c.Region.Name
             }).Count() / take;
 
-            var query = result.Include(c => c.ProductEpisodes).Where(c=>c.IsActive).Select(c => new ShowProductListItemViewModel()
+            var query = result.Include(c => c.ProductEpisodes).Include(c=>c.Region).Where(c=>c.IsActive).Select(c => new ShowProductListItemViewModel()
             {
                 ProductId = c.ProductId,
                 GroupTitle = c.ProductGroup.GroupTitle,
@@ -524,7 +754,8 @@ namespace ShahrKoodak.Core.Services
                 PriceType = c.PriceType,
                 Price = c.Price,
                 CreateDate = c.CreateDate,
-                Counter = c.Counter
+                Counter = c.Counter,
+                Region = c.Region.Name
             }).Skip(skip).Take(take).ToList();
 
             return Tuple.Create(query, pageCount);
@@ -554,13 +785,22 @@ namespace ShahrKoodak.Core.Services
                 }
             }
             profile.ImageName = store.ProductImageName;
+            profile.ImageName1 = store.ProductImageName1;
+            profile.ImageName2 = store.ProductImageName2;
+            profile.ImageName3 = store.ProductImageName3;
+            profile.ImageName4 = store.ProductImageName4;
+            profile.ImageName5 = store.ProductImageName5;
+            profile.ImageName6 = store.ProductImageName6;
             profile.ProductId = store.ProductId;
             profile.GroupId = store.GroupId;
             profile.SubGroup = store.SubGroup;
             profile.ProductName = store.ProductTitle;
             profile.PriceType = store.PriceType;
-            profile.Price = store.Price;
-            profile.Description = product.ProductDescription;
+            profile.Price = store.Price.ToString("#,0");
+            profile.Description = store.ProductDescription;
+            profile.RegionId = store.RegionId;
+            profile.ShahrId = store.ShahrId;
+            profile.Ostan = store.Ostan;
 
             return profile;
         }
@@ -651,6 +891,26 @@ namespace ShahrKoodak.Core.Services
                 {
                     Text = g.GroupTitle,
                     Value = g.GroupId.ToString()
+                }).ToList();
+        }
+
+        public List<SelectListItem> GetOstanForManageCourse(int groupId)
+        {
+            return _context.Shahr.Where(g => g.ParentId == groupId)
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.GroupTitle,
+                    Value = g.ShahrId.ToString()
+                }).ToList();
+        }
+
+        public List<SelectListItem> getRegionItems(int groupId)
+        {
+            return _context.Regions.Where(g => g.OstanId == groupId)
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Name,
+                    Value = g.RegionId.ToString()
                 }).ToList();
         }
 
