@@ -16,8 +16,8 @@
       "*, ServiceReference1"
     ],
     "references": [
-      "C:\\Users\\Ehsan\\Desktop\\bingomarket\\ShahrKoodak.Web\\ShahrKoodak.Web\\bin\\Debug\\netcoreapp2.1\\ShahrKoodak.Core.dll",
-      "C:\\Users\\Ehsan\\Desktop\\bingomarket\\ShahrKoodak.Web\\ShahrKoodak.Web\\bin\\Debug\\netcoreapp2.1\\ShahrKoodak.DataLayer.dll",
+      "C:\\Users\\Ehsan\\Desktop\\bingomarket\\PortalBuilder.Web\\PortalBuilder.Web\\bin\\Debug\\netcoreapp2.1\\PortalBuilder.Core.dll",
+      "C:\\Users\\Ehsan\\Desktop\\bingomarket\\PortalBuilder.Web\\PortalBuilder.Web\\bin\\Debug\\netcoreapp2.1\\PortalBuilder.DataLayer.dll",
       "CoreCompat.System.Drawing, {CoreCompat.System.Drawing, 1.0.0-beta006}",
       "dotnet-aspnet-codegenerator-design, {Microsoft.VisualStudio.Web.CodeGeneration.Design, 2.1.10}",
       "Microsoft.AspNetCore, {Microsoft.AspNetCore, 2.1.1}",

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShahrKoodak.Core.Generator
+namespace PortalBuilder.Core.Generator
 {
     public class NameGenerator
     {

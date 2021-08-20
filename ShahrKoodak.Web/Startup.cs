@@ -14,15 +14,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
-using ShahrKoodak.Core.Convertors;
-using ShahrKoodak.Core.Services;
-using ShahrKoodak.Core.Services.Interfaces;
-using ShahrKoodak.DataLayer.Context;
-using ShahrKoodak.Web.Auth;
-using ShahrKoodak.Web.Settings;
+using PortalBuilder.DataLayer.Context;
+using PortalBuilder.Web.Auth;
 
 
-namespace ShahrKoodak.Web
+namespace PortalBuilder.Web
 {
     public class Startup
     {
@@ -94,25 +90,10 @@ namespace ShahrKoodak.Web
 
             #region IoC
 
-            services.AddTransient<IProductService, ProductService>();
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IViewRenderService, RenderViewToString>();
-            services.AddTransient<IPermissionService, PermissionService>();
-            services.AddTransient<IAgentService, AgentService>();
-            services.AddTransient<IFeatureService, FeatureService>();
-            services.AddTransient<ISliderService, SliderService>();
-            services.AddTransient<IJeebMarketClient, JeebMarketClient>();
-            services.AddTransient<IJeebPaymentClient, JeebPaymentClient>();
-            services.AddTransient<IQuestionService, QuestionService>();
-            services.AddSingleton(typeof(IJeebPaymentClient), provider => new JeebPaymentClient(Configuration["Jeeb:ApiKey"]));
 
 
             #endregion
 
-            services.Configure<AppSetting>(Configuration.GetSection("App"));
-            services.Configure<JeebSetting>(Configuration.GetSection("Jeeb"));
-            services.AddSingleton(typeof(IJeebMarketClient), typeof(JeebMarketClient));
-            services.AddSingleton(typeof(IJeebPaymentClient), provider => new JeebPaymentClient(Configuration["Jeeb:ApiKey"]));
 
         }
 

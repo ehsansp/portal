@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace ShahrKoodak.Core.Security
+namespace PortalBuilder.Core.Security
 {
     public static class SessionExtensions
     {

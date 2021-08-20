@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace ShahrKoodak.Web.Auth
+namespace PortalBuilder.Web.Auth
 {
     public class ApplicationUser: IdentityUser
     {

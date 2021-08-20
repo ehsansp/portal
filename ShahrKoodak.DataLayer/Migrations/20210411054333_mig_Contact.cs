@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ShahrKoodak.DataLayer.Migrations
+namespace PortalBuilder.DataLayer.Migrations
 {
     public partial class mig_Contact : Migration
     {

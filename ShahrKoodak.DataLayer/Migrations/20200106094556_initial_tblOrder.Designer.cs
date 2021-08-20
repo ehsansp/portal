@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShahrKoodak.DataLayer.Context;
+using PortalBuilder.DataLayer.Context;
 
-namespace ShahrKoodak.DataLayer.Migrations
+namespace PortalBuilder.DataLayer.Migrations
 {
     [DbContext(typeof(ShahrContext))]
     [Migration("20200106094556_initial_tblOrder")]
@@ -21,7 +21,7 @@ namespace ShahrKoodak.DataLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Order.Discount", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.Order.Discount", b =>
                 {
                     b.Property<int>("DiscountId")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("Discounts");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Permission.Permissoin", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.Permission.Permissoin", b =>
                 {
                     b.Property<int>("PermissionId")
                         .ValueGeneratedOnAdd()
@@ -63,7 +63,7 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("Permissoins");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Permission.RolePermission", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.Permission.RolePermission", b =>
                 {
                     b.Property<int>("RP_Id")
                         .ValueGeneratedOnAdd()
@@ -82,7 +82,7 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("RolePermissions");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.Role", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.User.Role", b =>
                 {
                     b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
@@ -99,7 +99,7 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.User", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.User.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -134,7 +134,7 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.UserDiscountCode", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.User.UserDiscountCode", b =>
                 {
                     b.Property<int>("UD_Id")
                         .ValueGeneratedOnAdd()
@@ -153,7 +153,7 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("UserDiscountCodes");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.UserRole", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.User.UserRole", b =>
                 {
                     b.Property<int>("UR_Id")
                         .ValueGeneratedOnAdd()
@@ -172,47 +172,47 @@ namespace ShahrKoodak.DataLayer.Migrations
                     b.ToTable("UserRoles");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Permission.Permissoin", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.Permission.Permissoin", b =>
                 {
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.Permission.Permissoin")
+                    b.HasOne("PortalBuilder.DataLayer.Entities.Permission.Permissoin")
                         .WithMany("Permissions")
                         .HasForeignKey("ParentID");
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.Permission.RolePermission", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.Permission.RolePermission", b =>
                 {
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.Permission.Permissoin", "Permission")
+                    b.HasOne("PortalBuilder.DataLayer.Entities.Permission.Permissoin", "Permission")
                         .WithMany("RolePermissions")
                         .HasForeignKey("PermissionId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.User.Role", "Role")
+                    b.HasOne("PortalBuilder.DataLayer.Entities.User.Role", "Role")
                         .WithMany("RolePermissions")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.UserDiscountCode", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.User.UserDiscountCode", b =>
                 {
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.Order.Discount", "Discount")
+                    b.HasOne("PortalBuilder.DataLayer.Entities.Order.Discount", "Discount")
                         .WithMany("UserDiscountCodes")
                         .HasForeignKey("DiscountId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.User.User", "User")
+                    b.HasOne("PortalBuilder.DataLayer.Entities.User.User", "User")
                         .WithMany("UserDiscountCodes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("ShahrKoodak.DataLayer.Entities.User.UserRole", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Entities.User.UserRole", b =>
                 {
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.User.Role", "Role")
+                    b.HasOne("PortalBuilder.DataLayer.Entities.User.Role", "Role")
                         .WithMany("UserRoles")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ShahrKoodak.DataLayer.Entities.User.User", "User")
+                    b.HasOne("PortalBuilder.DataLayer.Entities.User.User", "User")
                         .WithMany("UserRoles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

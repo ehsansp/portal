@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200119065459_mig_Brand2.cs" />
+    <Compile Remove="Migrations\20200119065459_mig_Brand2.Designer.cs" />
+    <Compile Remove="Migrations\20200217123627_mig_Products2.cs" />
+    <Compile Remove="Migrations\20200217123627_mig_Products2.Designer.cs" />
+    <Compile Remove="Migrations\20200217130255_mig_Products2.cs" />
+    <Compile Remove="Migrations\20200217130255_mig_Products2.Designer.cs" />
+    <Compile Remove="Migrations\20200406092107_mig_City.cs" />
+    <Compile Remove="Migrations\20200406092107_mig_City.Designer.cs" />
+    <Compile Remove="Migrations\20200406093404_mig_City.cs" />
+    <Compile Remove="Migrations\20200406093404_mig_City.Designer.cs" />
+    <Compile Remove="Migrations\20200406154902_mig_Store.cs" />
+    <Compile Remove="Migrations\20200406154902_mig_Store.Designer.cs" />
+    <Compile Remove="Migrations\20200409111352_updateUserProduct.cs" />
+    <Compile Remove="Migrations\20200409111352_updateUserProduct.Designer.cs" />
+    <Compile Remove="Migrations\20200409113555_mig_UpdateUserProduct.cs" />
+    <Compile Remove="Migrations\20200409113555_mig_UpdateUserProduct.Designer.cs" />
+    <Compile Remove="Migrations\20200409113810_mig_UpdateUserProduct.cs" />
+    <Compile Remove="Migrations\20200409113810_mig_UpdateUserProduct.Designer.cs" />
+    <Compile Remove="Migrations\20210314063742_mig_Exchange.cs" />
+    <Compile Remove="Migrations\20210314063742_mig_Exchange.Designer.cs" />
+    <Compile Remove="Migrations\20210603105600_mig_slugCity.cs" />
+    <Compile Remove="Migrations\20210603105600_mig_slugCity.Designer.cs" />
+    <Compile Remove="Migrations\20210703135005_mig_ProductStatusEdit.cs" />
+    <Compile Remove="Migrations\20210703135005_mig_ProductStatusEdit.Designer.cs" />
+    <Compile Remove="Migrations\20210703135218_mig_ProductStatusEdit.cs" />
+    <Compile Remove="Migrations\20210703135218_mig_ProductStatusEdit.Designer.cs" />
+    <Compile Remove="Migrations\20210727073713_mig_QuestionPackage.cs" />
+    <Compile Remove="Migrations\20210727073713_mig_QuestionPackage.Designer.cs" />
+    <Compile Remove="Migrations\20210727074226_mig_QuestionPackage.cs" />
+    <Compile Remove="Migrations\20210727074226_mig_QuestionPackage.Designer.cs" />
+    <Compile Remove="Migrations\20210727074502_mig_QuestionPackage.cs" />
+    <Compile Remove="Migrations\20210727074502_mig_QuestionPackage.Designer.cs" />
+    <Compile Remove="Migrations\20210727074542_mig_QuestionPackage.cs" />
+    <Compile Remove="Migrations\20210727074542_mig_QuestionPackage.Designer.cs" />
+    <Compile Remove="Migrations\20210727075411_mig_QuestionPackage.cs" />
+    <Compile Remove="Migrations\20210727075411_mig_QuestionPackage.Designer.cs" />
+    <Compile Remove="Migrations\20210727095615_mig_ProductStatus2.cs" />
+    <Compile Remove="Migrations\20210727095615_mig_ProductStatus2.Designer.cs" />
+    <Compile Remove="Migrations\20210727100327_mig_ProductStatus2.cs" />
+    <Compile Remove="Migrations\20210727100327_mig_ProductStatus2.Designer.cs" />
+    <Compile Remove="Migrations\20210727104045_mig_ProductStatus2.cs" />
+    <Compile Remove="Migrations\20210727104045_mig_ProductStatus2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.14" />
+  </ItemGroup>
+
+</Project>

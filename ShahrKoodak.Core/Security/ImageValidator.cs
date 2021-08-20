@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 
-namespace ShahrKoodak.Core.Security
+namespace PortalBuilder.Core.Security
 {
     public static class ImageValidator
     {

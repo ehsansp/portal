@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using ShahrKoodak.Core.Security;
+using PortalBuilder.Core.Security;
 
-namespace ShahrKoodak.Core.Security
+namespace PortalBuilder.Core.Security
 {
     public abstract class GoogleReCaptchaModelBase
     {

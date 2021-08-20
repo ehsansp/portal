@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Routing;
 
-namespace ShahrKoodak.Core.Convertors
+namespace PortalBuilder.Core.Convertors
 {
     public interface IViewRenderService
     {

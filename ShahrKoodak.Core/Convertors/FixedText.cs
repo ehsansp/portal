@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShahrKoodak.Core.Convertors
+namespace PortalBuilder.Core.Convertors
 {
     public class FixedText
     {

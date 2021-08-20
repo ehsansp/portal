@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShahrKoodak.Core.Convertors
+namespace PortalBuilder.Core.Convertors
 {
     /// <summary>
     /// Helps convert <see cref="string"/> title text to URL friendly <see cref="string"/>'s that can safely be

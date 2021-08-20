@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 
-namespace ShahrKoodak.Core.Security
+namespace PortalBuilder.Core.Security
 {
     public class GoogleReCaptchaValidationAttribute: ValidationAttribute
     {

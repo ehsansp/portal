@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace ShahrKoodak.Core.Convertors
+namespace PortalBuilder.Core.Convertors
 {
     public static class DateConvertor
     {

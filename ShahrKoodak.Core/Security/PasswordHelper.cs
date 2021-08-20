@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ShahrKoodak.Core.Security
+namespace PortalBuilder.Core.Security
 {
     public static class PasswordHelper
     {
