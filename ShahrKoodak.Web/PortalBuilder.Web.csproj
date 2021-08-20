@@ -17,27 +17,7 @@
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="ViewComponents\" />
     <Folder Include="Views\Shared\Components\" />
-    <Folder Include="wwwroot\AdminContent\css\plugins\dataTables\" />
-    <Folder Include="wwwroot\AdminContent\css\plugins\morris\" />
-    <Folder Include="wwwroot\AdminContent\css\plugins\social-buttons\" />
-    <Folder Include="wwwroot\AdminContent\css\plugins\timeline\" />
-    <Folder Include="wwwroot\AdminContent\font-awesome\css\" />
-    <Folder Include="wwwroot\AdminContent\font-awesome\fonts\" />
-    <Folder Include="wwwroot\AdminContent\font-awesome\less\" />
-    <Folder Include="wwwroot\AdminContent\font-awesome\scss\" />
-    <Folder Include="wwwroot\AdminContent\fonts\" />
-    <Folder Include="wwwroot\AdminContent\js\demo\" />
-    <Folder Include="wwwroot\AdminContent\js\plugins\dataTables\" />
-    <Folder Include="wwwroot\AdminContent\js\plugins\flot\" />
-    <Folder Include="wwwroot\AdminContent\js\plugins\metisMenu\" />
-    <Folder Include="wwwroot\AdminContent\js\plugins\morris\" />
-    <Folder Include="wwwroot\images\icons\" />
-    <Folder Include="wwwroot\product\image\" />
-    <Folder Include="wwwroot\product\ProductEpisode\" />
-    <Folder Include="wwwroot\product\ProductFiles\" />
-    <Folder Include="wwwroot\product\thumb\" />
-    <Folder Include="wwwroot\Store\Banner\" />
-    <Folder Include="wwwroot\Store\Logo\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
