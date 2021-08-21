@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace PortalBuilder.Models
 {
     public class Menu
     {
+        [Key]
         public int Id { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -16,7 +18,7 @@ namespace PortalBuilder.Models
         public string Link { get; set; }
         public bool IsActive { get; set; }
         public int SortIndex { get; set; }
-        public int ParentId { get; set; }
+        public int? ParentId { get; set; }
         public Menu Parent { get; set; }
         public bool DisplayInMainMenu { get; set; }
         public bool DisplayInFooterMenu { get; set; }

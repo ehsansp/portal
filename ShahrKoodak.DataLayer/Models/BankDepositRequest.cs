@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +9,7 @@ namespace PortalBuilder.Models
 {
     public class BankDepositRequest
     {
+        [Key]
         public int Id { get; set; }
         public int? CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -18,7 +21,6 @@ namespace PortalBuilder.Models
         public string Cellphone { get; set; }
         public int Amount { get; set; }
         public int BankId { get; set; }
-        public Bank Bank { get; set; }
         public string BranchTitle { get; set; }
         public string ReceiptCode { get; set; }
         public string Description { get; set; }
@@ -28,5 +30,6 @@ namespace PortalBuilder.Models
         public DateTime? ValidatedAt { get; set; }
         public string ValidationNote { get; set; }
 
+        public List<Bank> Banks { get; set; }
     }
 }

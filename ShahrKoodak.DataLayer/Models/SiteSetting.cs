@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace PortalBuilder.Models
 {
     public class SiteSetting
     {
+        [Key]
         public string BrandName { get; set; }
         public string BrandDescription { get; set; }
         public string LogoPhoto { get; set; }

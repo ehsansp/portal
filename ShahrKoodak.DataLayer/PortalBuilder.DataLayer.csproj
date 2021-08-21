@@ -47,6 +47,18 @@
     <Compile Remove="Migrations\20210727100327_mig_ProductStatus2.Designer.cs" />
     <Compile Remove="Migrations\20210727104045_mig_ProductStatus2.cs" />
     <Compile Remove="Migrations\20210727104045_mig_ProductStatus2.Designer.cs" />
+    <Compile Remove="Migrations\20210820164843_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210820164843_mig_Portal.Designer.cs" />
+    <Compile Remove="Migrations\20210820165009_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210820165009_mig_Portal.Designer.cs" />
+    <Compile Remove="Migrations\20210821050836_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210821050836_mig_Portal.Designer.cs" />
+    <Compile Remove="Migrations\20210821051121_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210821051121_mig_Portal.Designer.cs" />
+    <Compile Remove="Migrations\20210821051256_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210821051256_mig_Portal.Designer.cs" />
+    <Compile Remove="Migrations\20210821051358_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210821051358_mig_Portal.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
