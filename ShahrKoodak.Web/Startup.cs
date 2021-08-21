@@ -82,7 +82,7 @@ namespace PortalBuilder.Web
 
             services.AddDbContext<ShahrContext>(options =>
                 {
-                    options.UseSqlServer(Configuration.GetConnectionString("TopLearnConnection"));
+                    options.UseSqlServer(Configuration.GetConnectionString("ProjectConnection"));
                 }
             );
 
