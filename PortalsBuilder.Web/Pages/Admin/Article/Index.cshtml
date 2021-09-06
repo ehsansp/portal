@@ -38,6 +38,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach (var item in Model.ListArticle)
+                                {
                                     <tr>
                                         <td>1</td>
                                         <td>1399/08/03</td>
@@ -48,12 +50,14 @@
                                         <td>
                                             در حال نمایش
                                         </td>
+
                                         <td>
                                             <button class="btn btn-outline-primary">ویرایش</button>
                                             <button class="btn btn-outline-danger">حذف</button>
                                         </td>
-                                    </tr>
 
+                                    </tr>
+                                }
                                 </tbody>
                             </table>
                         </div>
