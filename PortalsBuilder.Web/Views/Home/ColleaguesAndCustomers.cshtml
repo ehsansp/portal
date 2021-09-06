@@ -1,0 +1,38 @@
+﻿@model List<PortalBuilder.Models.Customer>
+        <!-- Testimonial Page Section -->
+        <section class="testimonial-page-section">
+            <div class="auto-container">
+                <!-- Sec Title -->
+                <div class="sec-title centered">
+                    <div class="title">مشتریان</div>
+                    <h2>ما بررسی های زیادی از <br> مشتریان راضی  خود داریم.</h2>
+                </div>
+
+                <div class="row clearfix">
+
+
+                    @foreach (var item in Model)
+                    {
+                        <!-- Testimonial Block -->
+                        <div class="testimonial-block col-lg-6 col-md-12 col-sm-12">
+                            <div class="inner-box" style="background-image: url(images/background/pattern-4.png)">
+                                <div class="upper-box">
+                                    <div class="icon">
+                                        <img src="images/resource/testimonial-icon-1.png" alt="" />
+                                    </div>
+                                    <h4>@item.FirstName @item.LastName </h4>
+                                    <div class="designation">مشتری شرکت</div>
+                                    <div class="designation">@item.JobTitle</div>
+                                </div>
+                                <div class="text">@item.Description</div>
+                            </div>
+                        </div>
+                    }
+
+
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Pricing Section -->

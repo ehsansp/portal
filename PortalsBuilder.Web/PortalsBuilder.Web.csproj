@@ -4,4 +4,57 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="wwwroot\Admin\vendors\ckeditor\.npm\assets\ckeditor4.png" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog_ie.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog_ie7.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog_ie8.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog_iequirks.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog_opera.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\editor.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\editor_gecko.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\editor_ie.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\editor_ie7.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\editor_ie8.css" />
+    <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\editor_iequirks.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShahrKoodak.Core\PortalBuilder.Core.csproj" />
+    <ProjectReference Include="..\ShahrKoodak.DataLayer\PortalBuilder.DataLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Admin\vendors\ckeditor\.github\ISSUE_TEMPLATE" />
+    <None Include="wwwroot\Admin\vendors\ckeditor\.npm\README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\UserPanel\Controllers\" />
+    <Folder Include="Areas\UserPanel\Data\" />
+    <Folder Include="Areas\UserPanel\Models\" />
+    <Folder Include="Areas\UserPanel\Views\" />
+    <Folder Include="Pages\Admin\Education\" />
+    <Folder Include="Pages\Admin\Exam\" />
+    <Folder Include="Pages\Admin\FAQ\" />
+    <Folder Include="Pages\Admin\Job\" />
+    <Folder Include="wwwroot\Admin\Page\Article\" />
+    <Folder Include="wwwroot\Admin\Page\Bank\" />
+    <Folder Include="wwwroot\Admin\Page\Banner\" />
+    <Folder Include="wwwroot\Admin\Page\Branch\" />
+    <Folder Include="wwwroot\Admin\Page\Brand\" />
+    <Folder Include="wwwroot\Admin\Page\Certificate\" />
+    <Folder Include="wwwroot\Admin\Page\Contact\" />
+    <Folder Include="wwwroot\Admin\Page\Customer\" />
+    <Folder Include="wwwroot\Admin\Page\Education\" />
+    <Folder Include="wwwroot\Admin\Page\Exam\" />
+    <Folder Include="wwwroot\Admin\Page\FAQ\" />
+    <Folder Include="wwwroot\Admin\Page\Job\" />
+  </ItemGroup>
+
 </Project>

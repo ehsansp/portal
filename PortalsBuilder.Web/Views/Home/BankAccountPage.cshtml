@@ -1,0 +1,47 @@
+﻿@model List<PortalBuilder.Models.BankAccount>
+
+    <div class="page-wrapper">
+
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="auto-container">
+                <!-- Sec Title -->
+                <div class="sec-title centered">
+                    <div class="title">برنامه های قیمت گذاری ما</div>
+                    <h2>هزینه پروژه ماهانه <br> پلن قیمتها</h2>
+                </div>
+
+                <div class="row clearfix">
+
+                    @foreach (var item in Model)
+                    {
+                        <!-- Price Block -->
+                        <div class="price-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box">
+                                <h3>حرفه ای </h3>
+                                <div class="text">طراحی شده برای مشاغل با الزامات بهداشتی استاندارد</div>
+                                <div class="price">100000 تومان <span>/ هر ماه </span></div>
+                                <ul class="price-list">
+                                    <li>پشتیبانی 24/7</li>
+                                    <li>تنظیمات پیشرفته</li>
+                                    <li>16 گیگابایت فضا</li>
+                                    <li>پشتیبانی نامحدود</li>
+                                </ul>
+                                <div class="btn-box">
+                                    <a href="contact.html" class="theme-btn btn-style-one"><span class="txt">شروع کنید</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Pricing Section -->
+
+
+    </div>

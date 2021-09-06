@@ -1,0 +1,81 @@
+﻿@model List<PortalBuilder.Models.Branch>
+<div class="page-wrapper">
+
+    <!-- End Main Header -->
+    <!--Page Title-->
+    <section class="page-title">
+        <div class="pattern-layer-one" style="background-image: url(images/background/pattern-16.png)"></div>
+        <div class="auto-container">
+            <h2>تماس با ما</h2>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">صفحه اصلی </a></li>
+                <li>تماس با ما</li>
+            </ul>
+        </div>
+    </section>
+    <!--End Page Title-->
+    <!-- Contact Info Section -->
+
+    @foreach (var item in Model)
+    {
+        <section class="contact-info-section">
+            <div class="auto-container">
+                <!-- Sec Title -->
+                <div class="title-box">
+                    <div class="title">شعبه</div>
+                    <h2>@item.Title</h2>
+                    <div class="text">برای سوالات عمومی می توانید با تیم پشتیبانی میز جلو تماس بگیرید <br> با ایمیل <a href="@item.Email">@item.Email</a> در تماس باشید <a href="tel:@item.Phone">@item.Phone</a></div>
+                </div>
+
+                <div class="row clearfix">
+
+                    <!-- Info Column -->
+                    <div class="info-column col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="content">
+                                <div class="icon-box"><span class="flaticon-pin"></span></div>
+                                <ul>
+                                    <li><strong>آدرس </strong></li>
+                                    <li>@item.Address</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Column -->
+                    <div class="info-column col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="content">
+                                <div class="icon-box"><span class="flaticon-phone-call"></span></div>
+                                <ul>
+                                    <li><strong>تلفن </strong></li>
+                                    <li>@item.Phone</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Column -->
+                    <div class="info-column col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="content">
+                                <div class="icon-box"><span class="flaticon-email-1"></span></div>
+                                <ul>
+                                    <li><strong>مسئول شعبه </strong></li>
+                                    <li>@item.ManagerName</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lower-text"> <a>ساعت کاری:</a>@item.WorkTimes</div>
+                <div class="lower-text"><a>کد پستی :</a>@item.PostalCode </div>
+            </div>
+        </section>
+    }
+
+
+    <!-- End Contact Info Section -->
+
+
+</div>

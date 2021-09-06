@@ -1,93 +1,37 @@
-﻿
+﻿@model List<PortalBuilder.Models.Staff>
         <!-- Team Page Section -->
         <section class="team-page-section">
             <div class="auto-container">
                 <div class="row clearfix">
-
-                    <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="team.html"><img src="images/resource/team-1.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-box">
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li><a href="#" class="fa fa-facebook-f"></a></li>
-                                    <li><a href="#" class="fa fa-twitter"></a></li>
-                                    <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <div class="content">
-                                    <h5><a href="team.html">پگاه یزدانی</a></h5>
-                                    <div class="designation">مشاوره شرکت</div>
+                    @foreach (var item in Model)
+                    {
+                        <div class="team-block col-lg-3 col-md-6 col-sm-12">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a href="team.html"><img src="@item.Photo" alt="" /></a>
+                                </div>
+                                <div class="lower-box">
+                                    <!-- Social Box -->
+                                    <ul class="social-box">
+                                        <li><a href="#" class="fa fa-facebook-f"></a></li>
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-dribbble"></a></li>
+                                    </ul>
+                                    <div class="content">
+                                        <h5><a href="team.html">@item.FirstName @item.LastName</a></h5>
+                                        <div class="designation">@item.Education</div>
+                                        <div class="designation">@item.StaffPosition.Title</div>
+                                        <div class="designation">@item.OrganizationUnit.Title</div>
+                                        <div class="designation">تلفن : @item.Phone</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    }
                     <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="team.html"><img src="images/resource/team-2.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-box">
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li><a href="#" class="fa fa-facebook-f"></a></li>
-                                    <li><a href="#" class="fa fa-twitter"></a></li>
-                                    <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <div class="content">
-                                    <h5><a href="team.html">احسان سعیدپور</a></h5>
-                                    <div class="designation">طراحی وب</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="team.html"><img src="images/resource/team-3.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-box">
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li><a href="#" class="fa fa-facebook-f"></a></li>
-                                    <li><a href="#" class="fa fa-twitter"></a></li>
-                                    <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <div class="content">
-                                    <h5><a href="team.html">سجاد جلیلی</a></h5>
-                                    <div class="designation">مدیر پروژه</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="team.html"><img src="images/resource/team-4.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-box">
-                                <!-- Social Box -->
-                                <ul class="social-box">
-                                    <li><a href="#" class="fa fa-facebook-f"></a></li>
-                                    <li><a href="#" class="fa fa-twitter"></a></li>
-                                    <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <div class="content">
-                                    <h5><a href="team.html">مجید رمضانی</a></h5>
-                                    <div class="designation">دفتر خدمات اطلاعاتی </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                 
 
                 </div>
             </div>

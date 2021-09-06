@@ -1,0 +1,74 @@
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.Bank.DipositModel
+@{
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                واریزی ها
+            </h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">واریزی ها</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">واریزی ها</li>
+                </ol>
+            </nav>
+            
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <button class="btn btn-outline-success">جدید</button>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table id="order-listing" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ردیف</th>
+                                        <th>ایجاد کننده</th>
+                                        <th>تاریخ ایجاد</th>
+                                        <th>کد ملی</th>
+                                        <th>نام بانک</th>
+                                        <th>مبلغ</th>
+                                        <th>نام شعبه</th>
+                                        <th>عملیات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1399/08/03</td>
+                                        <td>مرتضی کریمی</td>
+                                        <td>تهران</td>
+                                        <td>15000 تومان</td>
+                                        <td>32000 تومان</td>
+                                        <td>
+                                            در حال نمایش
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-primary">ویرایش</button>
+                                            <button class="btn btn-outline-danger">حذف</button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>
