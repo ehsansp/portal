@@ -89,6 +89,7 @@ namespace ShahrKoodak.Web
             #region IoC
 
             services.AddTransient<IArticleService, ArticleService>();
+            services.AddTransient<IStaffService, StaffService>();
 
             #endregion
 
