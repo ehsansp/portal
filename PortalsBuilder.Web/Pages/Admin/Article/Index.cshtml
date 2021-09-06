@@ -20,7 +20,7 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <button class="btn btn-outline-success">جدید</button>
+                <a href="/Admin/Article/CreateArticle" class="btn btn-outline-success">جدید</a>
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
@@ -41,14 +41,14 @@
                                 @foreach (var item in Model.ListArticle)
                                 {
                                     <tr>
-                                        <td>1</td>
-                                        <td>1399/08/03</td>
-                                        <td>مرتضی کریمی</td>
-                                        <td>تهران</td>
-                                        <td>15000 تومان</td>
-                                        <td>32000 تومان</td>
+                                        <td>@item.Id</td>
+                                        <td>@item.CreatedBy</td>
+                                        <td>@item.CreatedAt</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.IsActive</td>
+                                        <td>@item.ArticleCategoryTitle</td>
                                         <td>
-                                            در حال نمایش
+                                            @item.ViewCount
                                         </td>
 
                                         <td>

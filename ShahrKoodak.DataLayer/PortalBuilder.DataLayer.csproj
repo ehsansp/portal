@@ -59,11 +59,15 @@
     <Compile Remove="Migrations\20210821051256_mig_Portal.Designer.cs" />
     <Compile Remove="Migrations\20210821051358_mig_Portal.cs" />
     <Compile Remove="Migrations\20210821051358_mig_Portal.Designer.cs" />
+    <Compile Remove="Migrations\20210821051646_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210821051646_mig_Portal.Designer.cs" />
+    <Compile Remove="Migrations\20210906152415_mig_Portal.cs" />
+    <Compile Remove="Migrations\20210906152415_mig_Portal.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
   </ItemGroup>
 
 </Project>

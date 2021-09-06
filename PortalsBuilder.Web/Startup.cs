@@ -14,6 +14,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
+using PortalBuilder.Core.Services;
+using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.DataLayer.Context;
 
 namespace ShahrKoodak.Web
@@ -86,19 +88,7 @@ namespace ShahrKoodak.Web
 
             #region IoC
 
-            //services.AddTransient<IProductService, ProductService>();
-            //services.AddTransient<IBrandService, BrandService>();
-            //services.AddTransient<IUserService, UserService>();
-            //services.AddTransient<IViewRenderService, RenderViewToString>();
-            //services.AddTransient<IPermissionService, PermissionService>();
-            //services.AddTransient<IAgentService, AgentService>();
-            //services.AddTransient<IFeatureService, FeatureService>();
-            //services.AddTransient<ISliderService, SliderService>();
-            //services.AddTransient<IAccountService, AccountService>();
-            //services.AddTransient<IOrderService, OrderService>();
-            //services.AddTransient<IArticleService, ArticleService>();
-            //services.AddTransient<IContactUsService, CountactUsService>();
-            //services.AddTransient<IChatRoomService, InMemoryChatRoomService>();
+            services.AddTransient<IArticleService, ArticleService>();
 
             #endregion
 

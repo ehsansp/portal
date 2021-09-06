@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PortalBuilder.DataLayer.Migrations
@@ -170,7 +169,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -199,7 +198,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -223,7 +222,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -246,7 +245,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -269,7 +268,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -291,7 +290,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     EnTitle = table.Column<string>(nullable: true),
                     SortIndex = table.Column<int>(nullable: false)
@@ -306,7 +305,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -333,7 +332,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -354,7 +353,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -390,7 +389,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -420,7 +419,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -448,7 +447,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     SystemName = table.Column<string>(nullable: true),
                     SortIndex = table.Column<int>(nullable: false),
@@ -464,7 +463,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -484,7 +483,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -508,7 +507,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -534,7 +533,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -556,7 +555,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -585,7 +584,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     EnTitle = table.Column<string>(nullable: true),
                     SortIndex = table.Column<int>(nullable: false)
@@ -600,7 +599,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -648,7 +647,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -673,7 +672,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -693,7 +692,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -728,7 +727,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false),
@@ -760,7 +759,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     AnsweredAt = table.Column<DateTime>(nullable: true),
@@ -784,7 +783,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -815,7 +814,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -844,7 +843,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -882,7 +881,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -910,7 +909,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -949,7 +948,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -1006,7 +1005,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -1052,7 +1051,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     AnsweredAt = table.Column<DateTime>(nullable: true),
@@ -1076,7 +1075,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -1115,7 +1114,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -1162,7 +1161,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     JobAdId = table.Column<int>(nullable: false),
@@ -1190,7 +1189,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     BankAccountId = table.Column<int>(nullable: false),
@@ -1219,7 +1218,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     BankId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     EnTitle = table.Column<string>(nullable: true),
                     Logo = table.Column<string>(nullable: true),
@@ -1241,7 +1240,7 @@ namespace PortalBuilder.DataLayer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedBy = table.Column<int>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     LastModifiedBy = table.Column<int>(nullable: true),
@@ -1520,10 +1519,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Agents",
                 columns: table => new
                 {
-                    AgentId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AgentLocation = table.Column<string>(maxLength: 200, nullable: false),
-                    AgentName = table.Column<string>(maxLength: 200, nullable: false)
+                    AgentId = table.Column<int>(type: "int", nullable: false),
+                    AgentLocation = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    AgentName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1534,10 +1532,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ButtomBanners",
                 columns: table => new
                 {
-                    ButtomBannerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BennerLink = table.Column<string>(maxLength: 400, nullable: true),
-                    ImageName = table.Column<string>(maxLength: 400, nullable: true)
+                    ButtomBannerId = table.Column<int>(type: "int", nullable: false),
+                    BennerLink = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    ImageName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1548,9 +1545,8 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Cities",
                 columns: table => new
                 {
-                    CityId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    CityId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1561,13 +1557,12 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "City2s",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    level = table.Column<string>(nullable: true),
-                    name = table.Column<string>(nullable: true),
-                    parent = table.Column<int>(nullable: false),
-                    radius = table.Column<int>(nullable: false),
-                    slug = table.Column<string>(nullable: true)
+                    id = table.Column<int>(type: "int", nullable: false),
+                    level = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    parent = table.Column<int>(type: "int", nullable: false),
+                    radius = table.Column<int>(type: "int", nullable: false),
+                    slug = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1578,11 +1573,10 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Contacts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Description = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1593,9 +1587,8 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Currencies",
                 columns: table => new
                 {
-                    CurrencyId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    CurrencyId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1606,13 +1599,12 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Discounts",
                 columns: table => new
                 {
-                    DiscountId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DiscountCode = table.Column<string>(maxLength: 150, nullable: false),
-                    DiscountPercent = table.Column<int>(nullable: false),
-                    EndDate = table.Column<DateTime>(nullable: true),
-                    StartDate = table.Column<DateTime>(nullable: true),
-                    UsableCount = table.Column<int>(nullable: true)
+                    DiscountId = table.Column<int>(type: "int", nullable: false),
+                    DiscountCode = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    DiscountPercent = table.Column<int>(type: "int", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UsableCount = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1623,10 +1615,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Features",
                 columns: table => new
                 {
-                    FeatureId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    FeatureTitle = table.Column<string>(maxLength: 400, nullable: false),
-                    GroupId = table.Column<int>(nullable: false)
+                    FeatureId = table.Column<int>(type: "int", nullable: false),
+                    FeatureTitle = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: false),
+                    GroupId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1637,10 +1628,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "LeftBanner",
                 columns: table => new
                 {
-                    LeftBannerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BennerLink = table.Column<string>(maxLength: 400, nullable: true),
-                    ImageName = table.Column<string>(maxLength: 400, nullable: true)
+                    LeftBannerId = table.Column<int>(type: "int", nullable: false),
+                    BennerLink = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    ImageName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1651,10 +1641,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "LeftBanner2s",
                 columns: table => new
                 {
-                    LeftBannerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BennerLink = table.Column<string>(maxLength: 400, nullable: true),
-                    ImageName = table.Column<string>(maxLength: 400, nullable: true)
+                    LeftBannerId = table.Column<int>(type: "int", nullable: false),
+                    BennerLink = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    ImageName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1665,10 +1654,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "MiddleBanner",
                 columns: table => new
                 {
-                    LeftBannerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BennerLink = table.Column<string>(maxLength: 400, nullable: true),
-                    ImageName = table.Column<string>(maxLength: 400, nullable: true)
+                    LeftBannerId = table.Column<int>(type: "int", nullable: false),
+                    BennerLink = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    ImageName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1679,10 +1667,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Permissoins",
                 columns: table => new
                 {
-                    PermissionId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ParentID = table.Column<int>(nullable: true),
-                    PermissionTitle = table.Column<string>(maxLength: 200, nullable: false)
+                    PermissionId = table.Column<int>(type: "int", nullable: false),
+                    ParentID = table.Column<int>(type: "int", nullable: true),
+                    PermissionTitle = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1699,11 +1686,10 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "QuestionPackages",
                 columns: table => new
                 {
-                    QuestionPackageId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Price1 = table.Column<string>(nullable: true),
-                    Price2 = table.Column<string>(nullable: true),
-                    Status = table.Column<bool>(nullable: false)
+                    QuestionPackageId = table.Column<int>(type: "int", nullable: false),
+                    Price1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1714,10 +1700,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Questions",
                 columns: table => new
                 {
-                    QuestionId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Status = table.Column<bool>(nullable: false),
-                    Title = table.Column<string>(nullable: true)
+                    QuestionId = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1728,10 +1713,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Regions",
                 columns: table => new
                 {
-                    RegionId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    OstanId = table.Column<int>(nullable: false)
+                    RegionId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OstanId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1742,10 +1726,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "RightBanner",
                 columns: table => new
                 {
-                    LeftBannerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BennerLink = table.Column<string>(maxLength: 400, nullable: true),
-                    ImageName = table.Column<string>(maxLength: 400, nullable: true)
+                    LeftBannerId = table.Column<int>(type: "int", nullable: false),
+                    BennerLink = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    ImageName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1756,10 +1739,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "RightBanner2s",
                 columns: table => new
                 {
-                    RightBannerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BennerLink = table.Column<string>(maxLength: 400, nullable: true),
-                    ImageName = table.Column<string>(maxLength: 400, nullable: true)
+                    RightBannerId = table.Column<int>(type: "int", nullable: false),
+                    BennerLink = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    ImageName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1770,10 +1752,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Roles",
                 columns: table => new
                 {
-                    RoleId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    IsDelete = table.Column<bool>(nullable: false),
-                    RoleTitle = table.Column<string>(maxLength: 200, nullable: false)
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    RoleTitle = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1784,9 +1765,8 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Rules",
                 columns: table => new
                 {
-                    RuleId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Description = table.Column<string>(nullable: true)
+                    RuleId = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1797,12 +1777,11 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Shahr",
                 columns: table => new
                 {
-                    ShahrId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    GroupTitle = table.Column<string>(maxLength: 200, nullable: false),
-                    IsDelete = table.Column<bool>(nullable: false),
-                    ParentId = table.Column<int>(nullable: true),
-                    slug = table.Column<string>(nullable: true)
+                    ShahrId = table.Column<int>(type: "int", nullable: false),
+                    GroupTitle = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    ParentId = table.Column<int>(type: "int", nullable: true),
+                    slug = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1813,13 +1792,12 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Slider",
                 columns: table => new
                 {
-                    SliderId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    LinkAddress = table.Column<string>(maxLength: 400, nullable: true),
-                    SliderImageName = table.Column<string>(maxLength: 400, nullable: false),
-                    Text1 = table.Column<string>(maxLength: 400, nullable: true),
-                    Text2 = table.Column<string>(maxLength: 400, nullable: true),
-                    Text3 = table.Column<string>(maxLength: 400, nullable: true)
+                    SliderId = table.Column<int>(type: "int", nullable: false),
+                    LinkAddress = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    SliderImageName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: false),
+                    Text1 = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    Text2 = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    Text3 = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1830,9 +1808,8 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ToCurrencies",
                 columns: table => new
                 {
-                    ToCurrencyId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(nullable: true)
+                    ToCurrencyId = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1843,9 +1820,8 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "TypeAds",
                 columns: table => new
                 {
-                    typeAdId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    TypeAdTitle = table.Column<string>(maxLength: 150, nullable: false)
+                    typeAdId = table.Column<int>(type: "int", nullable: false),
+                    TypeAdTitle = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1856,9 +1832,8 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Vaziats",
                 columns: table => new
                 {
-                    VaziatId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(nullable: true)
+                    VaziatId = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1869,8 +1844,8 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "WalletTypes",
                 columns: table => new
                 {
-                    TypeId = table.Column<int>(nullable: false),
-                    TypeTitle = table.Column<string>(maxLength: 150, nullable: false)
+                    TypeId = table.Column<int>(type: "int", nullable: false),
+                    TypeTitle = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1881,10 +1856,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "WithdrawalTypes",
                 columns: table => new
                 {
-                    WithdrawalTypeId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(nullable: true),
-                    UserId = table.Column<int>(nullable: false)
+                    WithdrawalTypeId = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1895,13 +1869,12 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ProductGroup",
                 columns: table => new
                 {
-                    GroupId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    FeatureId = table.Column<int>(nullable: true),
-                    GroupTitle = table.Column<string>(maxLength: 200, nullable: false),
-                    ImageName = table.Column<string>(nullable: true),
-                    IsDelete = table.Column<bool>(nullable: false),
-                    ParentId = table.Column<int>(nullable: true)
+                    GroupId = table.Column<int>(type: "int", nullable: false),
+                    FeatureId = table.Column<int>(type: "int", nullable: true),
+                    GroupTitle = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    ParentId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1924,11 +1897,10 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Answers",
                 columns: table => new
                 {
-                    AnswerId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    IsTrue = table.Column<bool>(nullable: false),
-                    QuestionId = table.Column<int>(nullable: false),
-                    Title = table.Column<string>(nullable: true)
+                    AnswerId = table.Column<int>(type: "int", nullable: false),
+                    IsTrue = table.Column<bool>(type: "bit", nullable: false),
+                    QuestionId = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1945,10 +1917,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "RolePermissions",
                 columns: table => new
                 {
-                    RP_Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    PermissionId = table.Column<int>(nullable: false),
-                    RoleId = table.Column<int>(nullable: false)
+                    RP_Id = table.Column<int>(type: "int", nullable: false),
+                    PermissionId = table.Column<int>(type: "int", nullable: false),
+                    RoleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1971,12 +1942,11 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Exchanges",
                 columns: table => new
                 {
-                    ExchangeId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Amount = table.Column<string>(nullable: true),
-                    ToCurrencyId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
-                    tousdt = table.Column<bool>(nullable: false)
+                    ExchangeId = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ToCurrencyId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    tousdt = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -1993,13 +1963,12 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Withdrawals",
                 columns: table => new
                 {
-                    WithdrawalId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Address = table.Column<string>(nullable: true),
-                    Amount = table.Column<string>(nullable: true),
-                    CurrencyId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
-                    WithdrawalTypeId = table.Column<int>(nullable: false)
+                    WithdrawalId = table.Column<int>(type: "int", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Amount = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CurrencyId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    WithdrawalTypeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2022,10 +1991,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "FeatureGroups",
                 columns: table => new
                 {
-                    FG_ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    FeatureId = table.Column<int>(nullable: false),
-                    ProductGroupId = table.Column<int>(nullable: false)
+                    FG_ID = table.Column<int>(type: "int", nullable: false),
+                    FeatureId = table.Column<int>(type: "int", nullable: false),
+                    ProductGroupId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2048,47 +2016,46 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Product",
                 columns: table => new
                 {
-                    ProductId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Counter = table.Column<int>(nullable: false),
-                    CreateDate = table.Column<DateTime>(nullable: false),
-                    DemoFileName = table.Column<string>(maxLength: 100, nullable: true),
-                    GroupId = table.Column<int>(nullable: false),
-                    IsActive = table.Column<bool>(nullable: false),
-                    IsShowTel = table.Column<bool>(nullable: false),
-                    Mantaghe = table.Column<int>(maxLength: 450, nullable: false),
-                    Mobile = table.Column<string>(maxLength: 450, nullable: true),
-                    Ostan = table.Column<int>(nullable: true),
-                    OtherProduct = table.Column<int>(nullable: true),
-                    OtherProduct2 = table.Column<int>(nullable: true),
-                    OtherProduct3 = table.Column<int>(nullable: true),
-                    Price = table.Column<int>(nullable: false),
-                    PriceType = table.Column<bool>(nullable: false),
-                    ProductDescription = table.Column<string>(nullable: true),
-                    ProductId1 = table.Column<int>(nullable: true),
-                    ProductImageName = table.Column<string>(maxLength: 50, nullable: true),
-                    ProductImageName1 = table.Column<string>(maxLength: 50, nullable: true),
-                    ProductImageName2 = table.Column<string>(maxLength: 50, nullable: true),
-                    ProductImageName3 = table.Column<string>(maxLength: 50, nullable: true),
-                    ProductImageName4 = table.Column<string>(maxLength: 50, nullable: true),
-                    ProductImageName5 = table.Column<string>(maxLength: 50, nullable: true),
-                    ProductImageName6 = table.Column<string>(maxLength: 50, nullable: true),
-                    ProductTitle = table.Column<string>(maxLength: 450, nullable: false),
-                    ProductTitle2 = table.Column<string>(maxLength: 450, nullable: true),
-                    ProductTitle3 = table.Column<string>(maxLength: 450, nullable: true),
-                    RegionId = table.Column<int>(nullable: false),
-                    ShahrId = table.Column<int>(nullable: false),
-                    ShortDescription = table.Column<string>(nullable: true),
-                    StarNumber = table.Column<int>(nullable: false),
-                    SubGroup = table.Column<int>(nullable: true),
-                    Tags = table.Column<string>(maxLength: 600, nullable: true),
-                    Tel1 = table.Column<string>(maxLength: 450, nullable: true),
-                    Tel2 = table.Column<string>(maxLength: 450, nullable: true),
-                    Tel3 = table.Column<string>(maxLength: 450, nullable: true),
-                    TypeAdId = table.Column<int>(nullable: false),
-                    UpdateDate = table.Column<DateTime>(nullable: true),
-                    UserId = table.Column<int>(nullable: false),
-                    VaziatId = table.Column<int>(nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Counter = table.Column<int>(type: "int", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DemoFileName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    GroupId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsShowTel = table.Column<bool>(type: "bit", nullable: false),
+                    Mantaghe = table.Column<int>(type: "int", maxLength: 450, nullable: false),
+                    Mobile = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    Ostan = table.Column<int>(type: "int", nullable: true),
+                    OtherProduct = table.Column<int>(type: "int", nullable: true),
+                    OtherProduct2 = table.Column<int>(type: "int", nullable: true),
+                    OtherProduct3 = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    PriceType = table.Column<bool>(type: "bit", nullable: false),
+                    ProductDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductId1 = table.Column<int>(type: "int", nullable: true),
+                    ProductImageName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductImageName1 = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductImageName2 = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductImageName3 = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductImageName4 = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductImageName5 = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductImageName6 = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    ProductTitle = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    ProductTitle2 = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    ProductTitle3 = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    RegionId = table.Column<int>(type: "int", nullable: false),
+                    ShahrId = table.Column<int>(type: "int", nullable: false),
+                    ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StarNumber = table.Column<int>(type: "int", nullable: false),
+                    SubGroup = table.Column<int>(type: "int", nullable: true),
+                    Tags = table.Column<string>(type: "nvarchar(600)", maxLength: 600, nullable: true),
+                    Tel1 = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    Tel2 = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    Tel3 = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    TypeAdId = table.Column<int>(type: "int", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    VaziatId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2147,14 +2114,13 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Packages",
                 columns: table => new
                 {
-                    PackageId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Discount = table.Column<int>(nullable: false),
-                    PackageImage = table.Column<string>(nullable: false),
-                    PakageName = table.Column<string>(maxLength: 450, nullable: false),
-                    Price1 = table.Column<int>(nullable: false),
-                    Price2 = table.Column<int>(nullable: false),
-                    ProductId = table.Column<int>(nullable: false)
+                    PackageId = table.Column<int>(type: "int", nullable: false),
+                    Discount = table.Column<int>(type: "int", nullable: false),
+                    PackageImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PakageName = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    Price1 = table.Column<int>(type: "int", nullable: false),
+                    Price2 = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2171,13 +2137,12 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ProductEpisodes",
                 columns: table => new
                 {
-                    EpisodeId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    EpisodeFileName = table.Column<string>(nullable: true),
-                    EpisodeTime = table.Column<TimeSpan>(nullable: false),
-                    EpisodeTitle = table.Column<string>(maxLength: 400, nullable: false),
-                    IsFree = table.Column<bool>(nullable: false),
-                    ProductId = table.Column<int>(nullable: false)
+                    EpisodeId = table.Column<int>(type: "int", nullable: false),
+                    EpisodeFileName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EpisodeTime = table.Column<TimeSpan>(type: "time", nullable: false),
+                    EpisodeTitle = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: false),
+                    IsFree = table.Column<bool>(type: "bit", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2194,12 +2159,11 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ProductFeatures",
                 columns: table => new
                 {
-                    PF_ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    FeatureId = table.Column<int>(nullable: false),
-                    ProductGroupGroupId = table.Column<int>(nullable: true),
-                    ProductId = table.Column<int>(nullable: false),
-                    Value = table.Column<string>(nullable: false)
+                    PF_ID = table.Column<int>(type: "int", nullable: false),
+                    FeatureId = table.Column<int>(type: "int", nullable: false),
+                    ProductGroupGroupId = table.Column<int>(type: "int", nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2228,10 +2192,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ProductSharayets",
                 columns: table => new
                 {
-                    SharayetId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 450, nullable: false),
-                    ProductId = table.Column<int>(nullable: false)
+                    SharayetId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2248,10 +2211,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ProductVizhegis",
                 columns: table => new
                 {
-                    VizhegiId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(maxLength: 450, nullable: false),
-                    ProductId = table.Column<int>(nullable: false)
+                    VizhegiId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2268,27 +2230,26 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ActiveCode = table.Column<string>(maxLength: 50, nullable: true),
-                    Address = table.Column<string>(maxLength: 500, nullable: true),
-                    CityId = table.Column<int>(nullable: false),
-                    Email = table.Column<string>(maxLength: 200, nullable: false),
-                    Family = table.Column<string>(maxLength: 200, nullable: true),
-                    IsActive = table.Column<bool>(nullable: false),
-                    IsDelete = table.Column<bool>(nullable: false),
-                    Mail = table.Column<string>(maxLength: 200, nullable: true),
-                    Name = table.Column<string>(maxLength: 200, nullable: true),
-                    Password = table.Column<string>(maxLength: 200, nullable: false),
-                    PostCode = table.Column<string>(maxLength: 200, nullable: true),
-                    Referal = table.Column<bool>(nullable: false),
-                    RegisterDate = table.Column<DateTime>(nullable: false),
-                    StoreId = table.Column<int>(nullable: true),
-                    Tel = table.Column<string>(maxLength: 200, nullable: true),
-                    UserAvatar = table.Column<string>(maxLength: 200, nullable: true),
-                    UserName = table.Column<string>(maxLength: 200, nullable: false),
-                    WebSite = table.Column<string>(maxLength: 200, nullable: true),
-                    WhatsApp = table.Column<string>(maxLength: 200, nullable: true)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ActiveCode = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    CityId = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Family = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    Mail = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    PostCode = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    Referal = table.Column<bool>(type: "bit", nullable: false),
+                    RegisterDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StoreId = table.Column<int>(type: "int", nullable: true),
+                    Tel = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    UserAvatar = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    WebSite = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    WhatsApp = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -2305,12 +2266,11 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Order",
                 columns: table => new
                 {
-                    OrderId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CreateDate = table.Column<DateTime>(nullable: false),
-                    IsFinaly = table.Column<bool>(nullable: false),
-                    OrderSum = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsFinaly = table.Column<bool>(type: "bit", nullable: false),
+                    OrderSum = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2327,14 +2287,13 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "ProductComment",
                 columns: table => new
                 {
-                    CommentId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Comment = table.Column<string>(maxLength: 700, nullable: true),
-                    CreateDate = table.Column<DateTime>(nullable: false),
-                    IsAdminRead = table.Column<bool>(nullable: false),
-                    IsDelete = table.Column<bool>(nullable: false),
-                    ProductId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    CommentId = table.Column<int>(type: "int", nullable: false),
+                    Comment = table.Column<string>(type: "nvarchar(700)", maxLength: 700, nullable: true),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsAdminRead = table.Column<bool>(type: "bit", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2357,19 +2316,18 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Stores",
                 columns: table => new
                 {
-                    StoreId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Banner = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(maxLength: 500, nullable: true),
-                    GroupId = table.Column<int>(nullable: false),
-                    Instagram = table.Column<string>(maxLength: 200, nullable: true),
-                    Logo = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(maxLength: 200, nullable: true),
-                    Shoar = table.Column<string>(maxLength: 200, nullable: true),
-                    StoreId1 = table.Column<int>(nullable: true),
-                    SubGroup = table.Column<int>(nullable: true),
-                    Telegram = table.Column<string>(maxLength: 200, nullable: true),
-                    UserId = table.Column<int>(nullable: false)
+                    StoreId = table.Column<int>(type: "int", nullable: false),
+                    Banner = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    GroupId = table.Column<int>(type: "int", nullable: false),
+                    Instagram = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    Logo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    Shoar = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    StoreId1 = table.Column<int>(type: "int", nullable: true),
+                    SubGroup = table.Column<int>(type: "int", nullable: true),
+                    Telegram = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2404,10 +2362,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "UserDiscountCodes",
                 columns: table => new
                 {
-                    UD_Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DiscountId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    UD_Id = table.Column<int>(type: "int", nullable: false),
+                    DiscountId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2430,10 +2387,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "UserProduct",
                 columns: table => new
                 {
-                    US_Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProductId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    US_Id = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2456,10 +2412,9 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "UserRoles",
                 columns: table => new
                 {
-                    UR_Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    RoleId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    UR_Id = table.Column<int>(type: "int", nullable: false),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2482,17 +2437,16 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "Wallets",
                 columns: table => new
                 {
-                    WalletId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Amount = table.Column<decimal>(nullable: false),
-                    CreateDate = table.Column<DateTime>(nullable: false),
-                    Description = table.Column<string>(maxLength: 500, nullable: true),
-                    IsPay = table.Column<bool>(nullable: false),
-                    TypeId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false),
-                    btc = table.Column<decimal>(nullable: false),
-                    doge = table.Column<decimal>(nullable: false),
-                    eth = table.Column<decimal>(nullable: false)
+                    WalletId = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    IsPay = table.Column<bool>(type: "bit", nullable: false),
+                    TypeId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    btc = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    doge = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    eth = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -2515,12 +2469,11 @@ namespace PortalBuilder.DataLayer.Migrations
                 name: "OrderDetail",
                 columns: table => new
                 {
-                    DetailId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Count = table.Column<int>(nullable: false),
-                    OrderId = table.Column<int>(nullable: false),
-                    Price = table.Column<int>(nullable: false),
-                    ProductId = table.Column<int>(nullable: false)
+                    DetailId = table.Column<int>(type: "int", nullable: false),
+                    Count = table.Column<int>(type: "int", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
