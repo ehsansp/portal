@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PortalBuilder.Core.DTOs.Customer;
 
 namespace PortalBuilder.Core.Services.Interfaces
 {
-    interface ICustomerService
+    public interface ICustomerService
     {
+        List<ShowCustomerForWebSiteViewModel> GetCustomerForWebSite();
     }
 }
