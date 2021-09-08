@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using PortalBuilder.Core.Convertors;
 using PortalBuilder.Core.DTOs.Article;
+using PortalBuilder.Core.Generator;
+using PortalBuilder.Core.Security;
 using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.DataLayer.Context;
+using PortalBuilder.Models;
 
 namespace PortalBuilder.Core.Services
 {
@@ -30,6 +36,37 @@ namespace PortalBuilder.Core.Services
                 IsActive = c.IsActive,
                 ViewCount = c.ViewCount
             }).ToList();
+        }
+
+
+        public int AddArticle(Article article, IFormFile imgArticle)
+        {
+            article.CreatedAt = DateTime.Now;
+            article.Photo = "no-photo.jpg";
+            //ToDo Check Image
+
+            if (imgArticle != null && imgArticle.IsImage())
+            {
+                article.Photo = NameGenerator.GenerateUniqeCode() + Path.GetExtension(imgArticle.FileName);
+                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/image", article.Photo);
+
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imgArticle.CopyTo(stream);
+                }
+                ImageConvertor imgResizer = new ImageConvertor();
+                string thumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/thumb", article.Photo);
+
+                imgResizer.Image_resize(imagePath, thumbPath, 185);
+            }
+
+            _context.Add(article);
+            _context.SaveChanges();
+            return article.Id;
+        }
+        public Article GetArticleById(int articleId)
+        {
+            return _context.Articles.Find(articleId);
         }
     }
 }

@@ -1,27 +1,27 @@
-﻿@page
-@model PortalsBuilder.Web.Pages.Admin.Article.CreateArticleModel
+﻿@page "{id}"
+@model PortalsBuilder.Web.Pages.Admin.Article.EditArticleModel
 @{
 }
 <div class="main-panel">
     <form method="post">
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title">
-                ایجاد مقاله
-            </h3>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
-                </ol>
-            </nav>
-        </div>
-        <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">مقاله جدید</h4>
-                        
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    ایجاد مقاله
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">مقاله جدید</h4>
+
                             <div class="form-group">
                                 <label for="exampleInputUsername1">عنوان</label>
                                 <input type="text" class="form-control" asp-for="Article.Title" placeholder="عنوان را وارد کنید">
@@ -43,10 +43,10 @@
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-body pad">
-                                                    
-                                                        <textarea id="editor1" name="editor1" rows="10"
-                                                                  cols="80">این ویرایشگر راست چین و فارسی شده است...</textarea>
-                                                   
+
+                                                    <textarea id="editor1" name="editor1" rows="10"
+                                                              cols="80">این ویرایشگر راست چین و فارسی شده است...</textarea>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -107,12 +107,12 @@
 
                             <button type="submit" class="btn btn-primary mr-2">ثبت</button>
                             <button class="btn btn-light">لغو</button>
-                       
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </form>
     <!-- content-wrapper ends -->
     <!-- partial:../../partials/_footer.html -->

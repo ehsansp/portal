@@ -2,36 +2,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PortalBuilder.Core.Services.Interfaces;
 
 namespace PortalsBuilder.Web.Pages.Admin.Article
 {
-    public class CreateArticleModel : PageModel
+    public class EditArticleModel : PageModel
     {
         private IArticleService _articleService;
 
-        public CreateArticleModel(IArticleService articleService)
+        public EditArticleModel(IArticleService articleService)
         {
             _articleService = articleService;
         }
         [BindProperty]
         public PortalBuilder.Models.Article Article { get; set; }
-        public void OnGet()
+        public void OnGet(int id)
         {
+            
+            Article = _articleService.GetArticleById(id);
 
-        }
-
-        public IActionResult OnPost(IFormFile imgCourseUp)
-        {
-            if (!ModelState.IsValid)
-                return Page();
-
-            _articleService.AddArticle(Article, imgCourseUp);
-
-            return RedirectToPage("Index");
         }
     }
 }

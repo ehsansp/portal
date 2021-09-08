@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.Models;
 using PortalsBuilder.Web.Models;
 
@@ -13,10 +14,12 @@ namespace PortalsBuilder.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private ICustomerService _customerService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICustomerService customerService)
         {
             _logger = logger;
+            _customerService = customerService;
         }
 
         public IActionResult Index()
@@ -43,6 +46,11 @@ namespace PortalsBuilder.Web.Controllers
         [Route("ColleaguesAndCustomers")]
         public IActionResult ColleaguesAndCustomers()
         {
+            var customer= _customerService.GetCustomerForWebSite();
+            foreach (var item in customer)
+            {
+                
+            }
             var res = new List<PortalBuilder.Models.Customer>();
             res.Add(new Customer { FirstName = "محمد", LastName = "موسوی", JobTitle = "کارگذار بورس", Description = "بسیار خوش فکر و بیان ارتباطات. نقاط عطف ، مهلت و کار سریع را پاک کنید. صبر. صبر بی نهایت. بدون میانبر حتی اگر مشتری بی خیال باشد. بهترین قسمت ... همیشه حل مشکلات با ایده های عالی و عالی!." });
             res.Add(new Customer { FirstName = "علی", LastName = "عرفانی", JobTitle = "کارگذار بورس", Description = "بسیار خوش فکر و بیان ارتباطات. نقاط عطف ، مهلت و کار سریع را پاک کنید. صبر. صبر بی نهایت. بدون میانبر حتی اگر مشتری بی خیال باشد. بهترین قسمت ... همیشه حل مشکلات با ایده های عالی و عالی!." });
