@@ -33,19 +33,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>1399/08/03</td>
-                                        <td>مرتضی کریمی</td>
-                                        <td>تهران</td>
-                                       
-                                        <td>
-                                            <button class="btn btn-outline-primary">ویرایش</button>
-                                            <button class="btn btn-outline-danger">حذف</button>
-                                        </td>
-                                    </tr>
+                                    @foreach (var item in Model.ListBank)
+                                    {
+                                        <tr>
+                                            <td>@item.BankId</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.EnTitle</td>
+                                            <td>
+                                                <img src="@item.Logo"/>
+                                            </td>
 
-                                </tbody>
+                                            <td>
+                                                <button class="btn btn-outline-primary">ویرایش</button>
+                                                <button class="btn btn-outline-danger">حذف</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                    </tbody>
                             </table>
                         </div>
                     </div>
