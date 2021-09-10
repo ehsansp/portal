@@ -91,11 +91,8 @@
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">دسته بندی</label>
-                                <select name="cars" id="cars">
-                                    <option value="volvo">text</option>
-                                    <option value="saab">text</option>
-                                    <option value="opel">text</option>
-                                    <option value="audi">text</option>
+                                <select asp-for="Article.ArticleCategoryId" asp-items="@(ViewData["Groups"] as SelectList)">
+                                   
                                 </select>
                             </div>
                             <div class="form-group">

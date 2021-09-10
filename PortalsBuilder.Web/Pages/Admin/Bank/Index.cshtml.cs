@@ -20,6 +20,7 @@ namespace PortalsBuilder.Web.Pages.Admin.Bank
         public List<ShowBankForAdminViewModel> ListBank { get; set; }
         public void OnGet()
         {
+            ListBank = _bankService.GetBanksForAdmin();
         }
     }
 }

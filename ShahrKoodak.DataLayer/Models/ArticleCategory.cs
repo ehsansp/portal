@@ -18,7 +18,7 @@ namespace PortalBuilder.Models
         public bool IsFeatured { get; set; }
         public int SortIndex { get; set; }
         public int? ParentId { get; set; }
-        public ArticleCategory Parent { get; set; }
+        public List<ArticleCategory> Parent { get; set; }
         public bool IsSecondLanguage { get; set; }
     }
 }

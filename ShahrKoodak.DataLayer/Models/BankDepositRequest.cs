@@ -30,6 +30,6 @@ namespace PortalBuilder.Models
         public DateTime? ValidatedAt { get; set; }
         public string ValidationNote { get; set; }
 
-        public List<Bank> Banks { get; set; }
+        public Bank Banks { get; set; }
     }
 }

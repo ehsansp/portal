@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PortalBuilder.Core.Services.Interfaces;
 
 namespace PortalsBuilder.Web.Pages.Admin.Article
@@ -21,7 +22,8 @@ namespace PortalsBuilder.Web.Pages.Admin.Article
         public PortalBuilder.Models.Article Article { get; set; }
         public void OnGet()
         {
-
+            var groups = _articleService.GetGroupForManageArticle();
+            ViewData["Groups"] = new SelectList(groups, "Value", "Text");
         }
 
         public IActionResult OnPost(IFormFile imgCourseUp)

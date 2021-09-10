@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PortalBuilder.Core.Convertors;
 using PortalBuilder.Core.DTOs.Article;
@@ -67,6 +68,43 @@ namespace PortalBuilder.Core.Services
         public Article GetArticleById(int articleId)
         {
             return _context.Articles.Find(articleId);
+        }
+
+        public int AddGroup(ArticleCategory @group)
+        {
+            group.CreatedAt=DateTime.Now;
+
+            _context.ArticleCategories.Add(group);
+            _context.SaveChanges();
+            return group.Id;
+        }
+
+        public ArticleCategory GetById(int groupId)
+        {
+            return _context.ArticleCategories.Find(groupId);
+        }
+
+        public int UpdateGroup(ArticleCategory @group)
+        {
+            _context.ArticleCategories.Update(group);
+            _context.SaveChanges();
+            return group.Id;
+        }
+
+        public List<SelectListItem> GetGroupForManageArticle()
+        {
+            return _context.ArticleCategories.Where(g => g.ParentId == null)
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
+        }
+
+        public List<ArticleCategory> GetCategoryArticlesForAdmin()
+        {
+            return _context.ArticleCategories.Include(c => c.Parent).ToList();
+
         }
     }
 }

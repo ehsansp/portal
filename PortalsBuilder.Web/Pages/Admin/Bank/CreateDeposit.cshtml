@@ -1,0 +1,94 @@
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.Bank.CreateDepositModel
+@{
+}
+<div class="main-panel">
+    <form method="post">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    ایجاد واریزی
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">واریزی جدید</h4>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">زمان واریزی</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.DepositedAt" placeholder="زمان واریزی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام واریز کننده</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.DepositorName" placeholder="نام واریز کننده را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شماره ملی</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.NationalCode" placeholder="شماره ملی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شماره تماس</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.Cellphone" placeholder="شماره تماس را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">مبلغ</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.Amount" placeholder="مبلغ را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام شعبه</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.BranchTitle" placeholder="نام شعبه را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شماره واریز</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.ReceiptCode" placeholder="شماره واریز را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">توضیحات اضافه</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.Description" placeholder="توضیحات اضافه را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شماره پیگیری</label>
+                                <input type="text" class="form-control" asp-for="BankDepositRequest.TrackingCode" placeholder="شماره پیگیری را وارد کنید">
+                            </div>
+                            
+                           
+
+
+
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button class="btn btn-light">لغو</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

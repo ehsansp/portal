@@ -15,6 +15,6 @@ namespace PortalBuilder.Models
         public string Logo { get; set; }
 
 
-        public BankDepositRequest BankDepositRequest { get; set; }
+        public List<BankDepositRequest> BankDepositRequest { get; set; }
     }
 }

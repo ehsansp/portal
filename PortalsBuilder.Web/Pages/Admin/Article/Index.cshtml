@@ -1,4 +1,5 @@
 ﻿@page
+@using PortalBuilder.Core.Convertors
 @model PortalsBuilder.Web.Pages.Admin.Article.IndexModel
 @{
 }
@@ -43,7 +44,7 @@
                                     <tr>
                                         <td>@item.Id</td>
                                         <td>@item.CreatedBy</td>
-                                        <td>@item.CreatedAt</td>
+                                        <td>@item.CreatedAt.Date.ToShamsi()</td>
                                         <td>@item.Title</td>
                                         <td>@item.IsActive</td>
                                         <td>@item.ArticleCategoryTitle</td>
