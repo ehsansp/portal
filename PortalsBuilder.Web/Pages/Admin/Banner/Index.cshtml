@@ -1,4 +1,5 @@
 ﻿@page
+@using PortalBuilder.Core.Convertors
 @model PortalsBuilder.Web.Pages.Admin.Banner.IndexModel
 @{
 }
@@ -18,7 +19,7 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <button class="btn btn-outline-success">جدید</button>
+                <a href="/Admin/Banner/CreateBanner" class="btn btn-outline-success">جدید</a>
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
@@ -36,23 +37,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach (var item in Model.ListBanner)
+                                    {
                                     <tr>
-                                        <td>1</td>
-                                        <td>1399/08/03</td>
-                                        <td>مرتضی کریمی</td>
-                                        <td>تهران</td>
-                                        <td>15000 تومان</td>
-                                        <td>32000 تومان</td>
+                                        <td>@item.Id</td>
+                                        <td>@item.CreatedBy</td>
+                                        <td>@item.CreatedAt.Date.ToShamsi()</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Photo</td>
+                                        <td>@item.ClickCount</td>
                                         <td>
-                                            در حال نمایش
+                                            @item.IsActive
                                         </td>
                                         <td>
-                                            <button class="btn btn-outline-primary">ویرایش</button>
+                                            <a href="/Admin/Banner/EditBanner/@item.Id" class="btn btn-outline-primary">ویرایش</a>
                                             <button class="btn btn-outline-danger">حذف</button>
                                         </td>
                                     </tr>
-
-                                </tbody>
+                                    }
+                                    </tbody>
                             </table>
                         </div>
                     </div>

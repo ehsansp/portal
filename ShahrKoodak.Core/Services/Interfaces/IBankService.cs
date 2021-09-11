@@ -14,6 +14,6 @@ namespace PortalBuilder.Core.Services.Interfaces
         int AddBank(Bank bank, IFormFile imgBank);
         int AddDeposit(BankDepositRequest bankDepositRequest);
         Bank GetBankById(int bankId);
-        int UpdateBank(Bank bank);
+        int UpdateBank(Bank bank,IFormFile imgArticle);
     }
 }

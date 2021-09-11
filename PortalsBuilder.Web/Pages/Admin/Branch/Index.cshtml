@@ -1,4 +1,5 @@
 ﻿@page
+@using PortalBuilder.Core.Convertors
 @model PortalsBuilder.Web.Pages.Admin.Branch.IndexModel
 @{
 }
@@ -6,7 +7,7 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                جدول داده
+                لیست شعب
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -17,165 +18,44 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">جدول داده</h4>
+                <a href="/Admin/Branch/CreateBranch" class="btn btn-outline-success">جدید</a>
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
                             <table id="order-listing" class="table">
                                 <thead>
                                     <tr>
-                                        <th>شماره سفارش</th>
-                                        <th>تاریخ خرید</th>
-                                        <th>مشتری</th>
+                                        <th>ردیف</th>
+                                        <th>ایجاد کننده</th>
+                                        <th>تاریخ ایجاد</th>
+                                        <th>عنوان</th>
+                                        <th>نام مدیر</th>
                                         <th>شهر</th>
-                                        <th>قیمت محصول</th>
-                                        <th>مبلغ قابل پرداخت</th>
-                                        <th>وضعیت</th>
-                                        <th>مشاهده محصول</th>
+                                        <th>شماره تماس</th>
+                                        <th>عملیات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>1399/08/03</td>
-                                        <td>مرتضی کریمی</td>
-                                        <td>تهران</td>
-                                        <td>15000 تومان</td>
-                                        <td>32000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-info">در حال ارسال</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>1399/04/01</td>
-                                        <td>رضا رسولی</td>
-                                        <td>گیلان</td>
-                                        <td>45000 تومان</td>
-                                        <td>75000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-danger">در حال پردازش</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>1399/11/21</td>
-                                        <td>معصومه افشاری</td>
-                                        <td>تهران</td>
-                                        <td>21000 تومان</td>
-                                        <td>63000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-success">تکمیل</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>1399/01/12</td>
-                                        <td>علی رحمتی</td>
-                                        <td>کرمانشاه</td>
-                                        <td>21000 تومان</td>
-                                        <td>63000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-success">تکمیل</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>1399/12/28</td>
-                                        <td>محمد نجیب</td>
-                                        <td>تهران</td>
-                                        <td>21000 تومان</td>
-                                        <td>63000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-success">تکمیل</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>1399/10/30</td>
-                                        <td>مریم محمدی</td>
-                                        <td>تهران</td>
-                                        <td>21000 تومان</td>
-                                        <td>63000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-info">در حال ارسال</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>1399/03/11</td>
-                                        <td>نازنین بیات</td>
-                                        <td>تهران</td>
-                                        <td>21000 تومان</td>
-                                        <td>63000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-success">تکمیل</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>1399/06/25</td>
-                                        <td>میثم تیموری</td>
-                                        <td>زنجان</td>
-                                        <td>63000 تومان</td>
-                                        <td>21000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-info">در حال ارسال</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>1399/11/12</td>
-                                        <td>میلاد جهانی</td>
-                                        <td>تهران</td>
-                                        <td>21000 تومان</td>
-                                        <td>63000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-success">تکمیل</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>1399/12/26</td>
-                                        <td>مینا علیزاده</td>
-                                        <td>مشهد</td>
-                                        <td>11000 تومان</td>
-                                        <td>23000 تومان</td>
-                                        <td>
-                                            <label class="badge badge-danger">در حال پردازش</label>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary">مشاهده</button>
-                                        </td>
-                                    </tr>
+                                    @foreach (var item in Model.ListBranch)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.CreatedBy</td>
+                                            <td>@item.CreatedAt.Date.ToShamsi()</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.ManagerName</td>
+                                            <td>@item.City</td>
+                                            <td>
+                                                @item.Phone
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/Branch/EditBranch/@item.Id" class="btn btn-outline-primary">ویرایش</a>
+                                                <button class="btn btn-outline-danger">حذف</button>
+                                            </td>
+                                        </tr>
+                                    }
                                 </tbody>
+
                             </table>
                         </div>
                     </div>

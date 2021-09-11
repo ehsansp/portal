@@ -90,8 +90,24 @@ namespace PortalBuilder.Core.Services
             return _context.Banks.Find(bankId);
         }
 
-        public int UpdateBank(Bank bank)
+        public int UpdateBank(Bank bank,IFormFile imgArticle)
         {
+            if (imgArticle != null && imgArticle.IsImage())
+            {
+                
+                bank.Logo = NameGenerator.GenerateUniqeCode() + Path.GetExtension(imgArticle.FileName);
+                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/image", bank.Logo);
+
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imgArticle.CopyTo(stream);
+                }
+                ImageConvertor imgResizer = new ImageConvertor();
+                string thumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/thumb", bank.Logo);
+
+                imgResizer.Image_resize(imagePath, thumbPath, 185);
+            }
+
             _context.Banks.Update(bank);
             _context.SaveChanges();
             return bank.BankId;

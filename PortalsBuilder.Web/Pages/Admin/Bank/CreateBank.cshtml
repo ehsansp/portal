@@ -3,7 +3,7 @@
 @{
 }
 <div class="main-panel">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
@@ -34,7 +34,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">لوگوی بانک</label>
-                                <input type="file" class="form-control" id="exampleInputUsername1">
+                                <input type="file" class="form-control" name="imgCourseUp" id="imgCourseUp" asp-for="Bank.Logo">
                             </div>
 
 

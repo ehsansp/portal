@@ -1,0 +1,61 @@
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.Province.CreateProvinceModel
+@{
+}
+<div class="main-panel">
+    <form method="post" enctype="multipart/form-data">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    ایجاد استان
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">استان جدید</h4>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">عنوان</label>
+                                <input type="text" class="form-control" asp-for="Province.Title" placeholder="عنوان را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">عنوان انگلیسی</label>
+                                <input type="text" class="form-control" asp-for="Province.EnTitle" placeholder="عنوان انگلیسی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">ترتیب نمایش</label>
+                                <input type="text" class="form-control" asp-for="Province.SortIndex" placeholder="ترتیب نمایش را وارد کنید">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button class="btn btn-light">لغو</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

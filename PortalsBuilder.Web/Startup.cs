@@ -92,6 +92,11 @@ namespace ShahrKoodak.Web
             services.AddTransient<IStaffService, StaffService>();
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IBankService, BankService>();
+            services.AddTransient<IBannerService, BannerService>();
+            services.AddTransient<IBranchService, BranchService>();
+            services.AddTransient<IProvinceService, ProvinceService>();
+            services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<ICertificateService, CertificateService>();
 
             #endregion
 

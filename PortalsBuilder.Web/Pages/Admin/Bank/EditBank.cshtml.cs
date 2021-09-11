@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -26,12 +27,12 @@ namespace PortalsBuilder.Web.Pages.Admin.Bank
 
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(IFormFile imgCourseUp)
         {
             if (!ModelState.IsValid)
                 return Page();
 
-            _bankService.UpdateBank(Bank);
+            _bankService.UpdateBank(Bank, imgCourseUp);
 
             return RedirectToPage("Index");
         }

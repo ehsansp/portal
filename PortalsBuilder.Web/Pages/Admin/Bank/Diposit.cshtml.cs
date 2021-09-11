@@ -23,6 +23,8 @@ namespace PortalsBuilder.Web.Pages.Admin.Bank
             ListDeposit = _bankService.GetDipositsForAdmin();
         }
 
+
+
         
     }
 }
