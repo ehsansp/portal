@@ -11,5 +11,7 @@ namespace PortalBuilder.Core.Services.Interfaces
     {
         List<ShowCertificateForWebSiteViewModel> GetCertificateForAdmin();
         int AddCertificate(Certificate certificate, IFormFile imgBank);
+        Certificate GetCertificateById(int certificateId);
+        int UpdateCertificate(Certificate certificate, IFormFile imgArticle);
     }
 }

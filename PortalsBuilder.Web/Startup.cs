@@ -17,6 +17,7 @@ using Microsoft.Net.Http.Headers;
 using PortalBuilder.Core.Services;
 using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.DataLayer.Context;
+using PortalBuilder.Models;
 
 namespace ShahrKoodak.Web
 {
@@ -97,6 +98,25 @@ namespace ShahrKoodak.Web
             services.AddTransient<IProvinceService, ProvinceService>();
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<ICertificateService, CertificateService>();
+            services.AddTransient<IContactService, ContactService>();
+            services.AddTransient<IProvinceService, ProvinceService>();
+            services.AddTransient<IStaffService, StaffService>();
+            services.AddTransient<ISlideService, SlideService>();
+            services.AddTransient<ISiteSettingService, SiteSettingService>();
+            services.AddTransient<IQuestionService, QuestionService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IPhotoService, PhotoService>();
+            services.AddTransient<IPartnerService, PartnerService>();
+            services.AddTransient<IPageService, PageService>();
+            services.AddTransient<IOrganizationSerivce, OrganizationSerivce>();
+            services.AddTransient<IOperatorService, OperatorService>();
+            services.AddTransient<INotificationService, NotificationService>();
+            services.AddTransient<IMenuService, MenuService>();
+            services.AddTransient<ILandingPageService, LandingPageService>();
+            services.AddTransient<IJobServicve, JobServicve>();
+            services.AddTransient<IFAQService, FAQService>();
+            services.AddTransient<IExamService, ExamService>();
+            services.AddTransient<IEducationService, EducationService>();
 
             #endregion
 

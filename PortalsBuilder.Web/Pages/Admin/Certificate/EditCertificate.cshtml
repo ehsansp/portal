@@ -1,13 +1,16 @@
-﻿@page
-@model PortalsBuilder.Web.Pages.Admin.Certificate.CreateCertificateModel
+﻿@page "{id}"
+@model PortalsBuilder.Web.Pages.Admin.Certificate.EditCertificateModel
 @{
 }
+
 <div class="main-panel">
     <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Certificate.Id"/>
+        <input type="hidden" asp-for="Certificate.CreatedAt"/>
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
-                    ایجاد مجوز
+                    ویرایش مجوز
                 </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -20,7 +23,7 @@
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">مجوز جدید</h4>
+                            <h4 class="card-title">ویرایش مجوز</h4>
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">عنوان</label>

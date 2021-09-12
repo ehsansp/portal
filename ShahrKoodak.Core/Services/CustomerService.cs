@@ -5,6 +5,7 @@ using System.Text;
 using PortalBuilder.Core.DTOs.Customer;
 using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.DataLayer.Context;
+using PortalBuilder.Models;
 
 namespace PortalBuilder.Core.Services
 {
@@ -26,6 +27,35 @@ namespace PortalBuilder.Core.Services
                 JobTitle = c.JobTitle,
                 LastName = c.LastName
             }).ToList();
+        }
+
+        public List<ShowCustomerForAdminViewModel> GetCustomerForAdmin()
+        {
+            return _context.Customers.Select(c => new ShowCustomerForAdminViewModel()
+            {
+                CreatedBy = c.CreatedBy,
+                Id = c.Id,
+                CreatedAt = c.CreatedAt,
+                IsActive = c.IsActive,
+                Phone = c.Phone,
+                FirstName = c.FirstName,
+                LastIP = c.LastIP,
+                LastName = c.LastName,
+                Username = c.Username
+            }).ToList();
+        }
+
+        public int AddCustomer(Customer customer)
+        {
+            customer.CreatedAt=DateTime.Now;
+            _context.Add(customer);
+            _context.SaveChanges();
+            return customer.Id;
+        }
+
+        public Customer GetCustomerById(int customerId)
+        {
+            return _context.Customers.Find(customerId);
         }
     }
 }

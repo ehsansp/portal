@@ -1,5 +1,5 @@
 ﻿@page
-@model PortalsBuilder.Web.Pages.Admin.Certificate.CreateCertificateModel
+@model PortalsBuilder.Web.Pages.Admin.Contact.CreateCategoryModel
 @{
 }
 <div class="main-panel">
@@ -7,7 +7,7 @@
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
-                    ایجاد مجوز
+                    ایجاد دسته بندی تماس با ما
                 </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -20,44 +20,38 @@
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">مجوز جدید</h4>
+                            <h4 class="card-title">ایجاد دسته بندی تماس با ما</h4>
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">عنوان</label>
-                                <input type="text" class="form-control" asp-for="Certificate.Title" placeholder="عنوان را وارد کنید">
+                                <input type="text" class="form-control" asp-for="ContactMessageCategory.Title" placeholder="عنوان را وارد کنید">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">توضیحات</label>
-                                <input type="text" class="form-control" asp-for="Certificate.Description" placeholder="توضیحات را وارد کنید">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputUsername1">تصویر مجوز</label>
-                                <input type="file" class="form-control" name="imgCourseUp" id="imgCourseUp" asp-for="Certificate.Photo">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputUsername1">لینک</label>
-                                <input type="text" class="form-control" asp-for="Certificate.Link" placeholder="لینک را وارد کنید">
+                                <input type="text" class="form-control" asp-for="ContactMessageCategory.Description" placeholder="توضیحات را وارد کنید">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">ترتیب نمایش</label>
-                                <input type="text" class="form-control" asp-for="Certificate.SortIndex" placeholder="ترتیب نمایش را وارد کنید">
+                                <input type="text" class="form-control" asp-for="ContactMessageCategory.SortIndex" placeholder="ترتیب نمایش را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">ارسال ایمیل درخواست</label>
+                                <input type="text" class="form-control" asp-for="ContactMessageCategory.SendRequestsToEmails" placeholder="ایمیل را وارد کنید">
                             </div>
 
                             <div class="row">
                                 <div class="form-group">
                                     <label for="exampleInputUsername2">فعال</label>
-                                    <input type="checkbox" asp-for="Certificate.IsActive" class="form-control" id="exampleInputUsername2">
+                                    <input type="checkbox" asp-for="ContactMessageCategory.IsActive" class="form-control" id="exampleInputUsername2">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputUsername5">زبان انگلیسی</label>
-                                    <input type="checkbox" asp-for="Certificate.IsSecondLanguage" class="form-control" id="exampleInputUsername5">
+                                    <label for="exampleInputUsername3">زبان دوم</label>
+                                    <input type="checkbox" asp-for="ContactMessageCategory.IsSecondLanguage" class="form-control" id="exampleInputUsername3">
                                 </div>
                             </div>
-
                             <button type="submit" class="btn btn-primary mr-2">ثبت</button>
                             <button class="btn btn-light">لغو</button>
 

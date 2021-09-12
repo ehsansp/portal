@@ -63,5 +63,33 @@ namespace PortalBuilder.Core.Services
             _context.SaveChanges();
             return certificate.Id;
         }
+
+        public Certificate GetCertificateById(int certificateId)
+        {
+            return _context.Certificates.Find(certificateId);
+        }
+
+        public int UpdateCertificate(Certificate certificate, IFormFile imgArticle)
+        {
+            if (imgArticle != null && imgArticle.IsImage())
+            {
+
+                certificate.Photo = NameGenerator.GenerateUniqeCode() + Path.GetExtension(imgArticle.FileName);
+                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/image", certificate.Photo);
+
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imgArticle.CopyTo(stream);
+                }
+                ImageConvertor imgResizer = new ImageConvertor();
+                string thumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/thumb", certificate.Photo);
+
+                imgResizer.Image_resize(imagePath, thumbPath, 185);
+            }
+
+            _context.Certificates.Update(certificate);
+            _context.SaveChanges();
+            return certificate.Id;
+        }
     }
 }
