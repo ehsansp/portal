@@ -62,12 +62,16 @@ namespace PortalBuilder.Core.Services
 
         public int AddExam(Exam exam)
         {
-            throw new NotImplementedException();
+            _context.Add(exam);
+            _context.SaveChanges();
+            return exam.Id;
         }
 
         public int AddInstance(ExamInstance instance)
         {
-            throw new NotImplementedException();
+            _context.Add(instance);
+            _context.SaveChanges();
+            return instance.Id;
         }
 
         public int AddQuestion(ExamQuestion question, IFormFile imgBank)
