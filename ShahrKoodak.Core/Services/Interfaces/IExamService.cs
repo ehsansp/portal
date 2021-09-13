@@ -15,6 +15,11 @@ namespace PortalBuilder.Core.Services.Interfaces
         int AddExam(Exam exam);
         int AddInstance(ExamInstance instance);
         int AddQuestion(ExamQuestion question, IFormFile imgBank);
-
+        Exam GetExamById(int bankId);
+        ExamInstance GetInstanceById(int bankId);
+        ExamQuestion GetQuestionById(int bankId);
+        int UpdateExam(Exam exam);
+        int UpdateExamInstance(ExamInstance examInstance);
+        int UpdateExamQuestion(ExamQuestion examQuestion, IFormFile imgArticle);
     }
 }

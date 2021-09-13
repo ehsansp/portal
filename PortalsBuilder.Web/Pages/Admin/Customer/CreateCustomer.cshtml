@@ -1,0 +1,96 @@
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.Customer.CreateCustomerModel
+@{
+}
+<div class="main-panel">
+    <form method="post" enctype="multipart/form-data">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    ایجاد مشتری
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">مشتری جدید</h4>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام کاربری</label>
+                                <input type="text" class="form-control" asp-for="Customer.Username" placeholder="نام کاربری را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">رمز عبور</label>
+                                <input type="text" class="form-control" asp-for="Customer.EncryptedPassword" placeholder="رمز عبور را وارد کنید">
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام</label>
+                                <input type="text" class="form-control" asp-for="Customer.FirstName" placeholder="نام را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام خانوادگی</label>
+                                <input type="text" class="form-control" asp-for="Customer.LastName" placeholder="نام خانوادگی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام پدر</label>
+                                <input type="text" class="form-control" asp-for="Customer.FatherName" placeholder="نام پدر را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">کد ملی</label>
+                                <input type="text" class="form-control" asp-for="Customer.NationalCode" placeholder="کد ملی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شماره همراه</label>
+                                <input type="text" class="form-control" asp-for="Customer.Cellphone" placeholder="شماره همراه را وارد کنید">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شماره تلفن</label>
+                                <input type="text" class="form-control" asp-for="Customer.Phone" placeholder="شماره تلفن را وارد کنید">
+                            </div>
+                            
+
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername2">فعال</label>
+                                    <input type="checkbox" asp-for="Customer.IsActive" class="form-control" id="exampleInputUsername2">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button class="btn btn-light">لغو</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

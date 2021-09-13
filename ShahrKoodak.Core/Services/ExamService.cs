@@ -99,5 +99,57 @@ namespace PortalBuilder.Core.Services
             _context.SaveChanges();
             return question.Id;
         }
+
+        public Exam GetExamById(int bankId)
+        {
+            return _context.Exams.Find(bankId);
+        }
+
+        public ExamInstance GetInstanceById(int bankId)
+        {
+            return _context.ExamInstances.Find(bankId);
+        }
+
+        public ExamQuestion GetQuestionById(int bankId)
+        {
+            return _context.ExamQuestions.Find(bankId);
+        }
+
+        public int UpdateExam(Exam exam)
+        {
+            _context.Exams.Update(exam);
+            _context.SaveChanges();
+            return exam.Id;
+        }
+
+        public int UpdateExamInstance(ExamInstance examInstance)
+        {
+            _context.ExamInstances.Update(examInstance);
+            _context.SaveChanges();
+            return examInstance.Id;
+        }
+
+        public int UpdateExamQuestion(ExamQuestion examQuestion, IFormFile imgArticle)
+        {
+            if (imgArticle != null && imgArticle.IsImage())
+            {
+
+                examQuestion.Photo = NameGenerator.GenerateUniqeCode() + Path.GetExtension(imgArticle.FileName);
+                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/image", examQuestion.Photo);
+
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imgArticle.CopyTo(stream);
+                }
+                ImageConvertor imgResizer = new ImageConvertor();
+                string thumbPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/article/thumb", examQuestion.Photo);
+
+                imgResizer.Image_resize(imagePath, thumbPath, 185);
+            }
+
+            _context.ExamQuestions.Update(examQuestion);
+            _context.SaveChanges();
+            return examQuestion.Id;
+        }
     }
 }

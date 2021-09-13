@@ -57,5 +57,12 @@ namespace PortalBuilder.Core.Services
         {
             return _context.Customers.Find(customerId);
         }
+
+        public int UpdateCustomer(Customer customer)
+        {
+            _context.Customers.Update(customer);
+            _context.SaveChanges();
+            return customer.Id;
+        }
     }
 }
