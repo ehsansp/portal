@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PortalBuilder.Core.Convertors;
 using PortalBuilder.Core.DTOs.Staff;
@@ -138,6 +139,16 @@ namespace PortalBuilder.Core.Services
             _context.StaffPositions.Update(staffPosition);
             _context.SaveChanges();
             return staffPosition.Id;
+        }
+
+        public List<SelectListItem> getStaffPositionItems()
+        {
+            return _context.StaffPositions
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
         }
     }
 }

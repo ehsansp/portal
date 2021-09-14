@@ -14,5 +14,6 @@ namespace PortalBuilder.Core.Services.Interfaces
         List<SelectListItem> GetProvinceForManageBranch();
         Branch GetById(int branchId);
         int UpdateBranch(Branch branch);
+        List<SelectListItem> getBrancsItems();
     }
 }

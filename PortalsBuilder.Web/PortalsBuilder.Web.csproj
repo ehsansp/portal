@@ -48,6 +48,7 @@
     <Folder Include="Pages\Admin\Exam\" />
     <Folder Include="Pages\Admin\FAQ\" />
     <Folder Include="Pages\Admin\Job\" />
+    <Folder Include="Pages\Admin\Slider\" />
     <Folder Include="wwwroot\Admin\Page\Article\" />
     <Folder Include="wwwroot\Admin\Page\Bank\" />
     <Folder Include="wwwroot\Admin\Page\Banner\" />

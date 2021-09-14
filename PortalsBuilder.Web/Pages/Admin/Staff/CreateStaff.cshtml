@@ -1,0 +1,116 @@
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.Staff.CreateStaffModel
+@{
+}
+<div class="main-panel">
+    <form method="post" enctype="multipart/form-data">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    ایجاد پرسنل
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"> پرسنل جدید</h4>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام</label>
+                                <input type="text" class="form-control" asp-for="Staff.FirstName" placeholder="نام را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام خانوادگی</label>
+                                <input type="text" class="form-control" asp-for="Staff.LastName" placeholder="نام خانوادگی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">تصویر پرسنلی</label>
+                                <input type="file" class="form-control" name="imgCourseUp" id="imgCourseUp" asp-for="Staff.Phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">تحصیلات</label>
+                                <input type="text" class="form-control" asp-for="Staff.Education" placeholder="تحصیلات را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">توضیحات</label>
+                                <input type="text" class="form-control" asp-for="Staff.Description" placeholder="توضیحات را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شماره تماس</label>
+                                <input type="text" class="form-control" asp-for="Staff.Phone" placeholder="شماره تماس را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">پست الکترونیکی</label>
+                                <input type="text" class="form-control" asp-for="Staff.Email" placeholder="پست الکترونیکی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">شعبه</label>
+                                <select asp-for="Staff.BranchId" asp-items="@(ViewData["Groups"] as SelectList)">
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">سازمان</label>
+                                <select asp-for="Staff.OrganizationUnitId" asp-items="@(ViewData["Groups2"] as SelectList)">
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">پوزیشن</label>
+                                <select asp-for="Staff.StaffPositionId" asp-items="@(ViewData["Groups3"] as SelectList)">
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">ترتیب نمایش</label>
+                                <input type="text" class="form-control" asp-for="Staff.Phone" placeholder="ترتیب نمایش را وارد کنید">
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername2">نمایش داده شود</label>
+                                    <input type="checkbox" asp-for="Staff.IsActive" class="form-control" id="exampleInputUsername2">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label for="exampleInputUsername5">زبان انگلیسی</label>
+                                    <input type="checkbox" asp-for="Staff.IsSecondLanguage" class="form-control" id="exampleInputUsername5">
+                                </div>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button class="btn btn-light">لغو</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

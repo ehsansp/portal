@@ -63,5 +63,15 @@ namespace PortalBuilder.Core.Services
             _context.SaveChanges();
             return branch.Id;
         }
+
+        public List<SelectListItem> getBrancsItems()
+        {
+            return _context.Branches
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
+        }
     }
 }

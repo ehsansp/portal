@@ -1,0 +1,73 @@
+﻿@page
+@using PortalBuilder.Core.Convertors
+@model PortalsBuilder.Web.Pages.Admin.Staff.StaffPositionModel
+@{
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">
+                موقعیت شغلی
+            </h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">موقعیت شغلی</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">موقعیت شغلی</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <a href="/Admin/Staff/CreatePosition" class="btn btn-outline-success">جدید</a>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table id="order-listing" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ردیف</th>
+                                        <th>تاریخ ایجاد</th>
+                                        <th>عنوان</th>
+                                        <th>وضعیت</th>
+                                        <th>ترتیب نمایش</th>
+
+                                        <th>عملیات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.ListStaff)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.CreatedAt.Date.ToShamsi()</td>
+                                            <td>@item.Title</td>
+                                            <td>
+                                                @item.IsActive
+                                            </td>
+                                            <td>@item.SortIndex</td>
+                                            <td>
+                                                <a href="/Admin/Staff/EditPosition/@item.Id" class="btn btn-outline-primary">ویرایش</a>
+                                                <button class="btn btn-outline-danger">حذف</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

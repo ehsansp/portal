@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PortalBuilder.Core.DTOs.OrganizationUnit;
 using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.DataLayer.Context;
@@ -50,5 +51,15 @@ namespace PortalBuilder.Core.Services
             _context.SaveChanges();
             return organization.Id;
         }
-    }
+
+        public List<SelectListItem> getOrganizationItems()
+        {
+            return _context.OrganizationUnits
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
+        }
+   }
 }

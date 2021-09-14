@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PortalBuilder.Core.DTOs.Staff;
 using PortalBuilder.Models;
 
@@ -19,5 +20,6 @@ namespace PortalBuilder.Core.Services.Interfaces
         StaffPosition GetStaffPositionById(int staffPositionId);
         int UpdateStaff(Staff staff, IFormFile imgArticle);
         int UpdateStaffPosition(StaffPosition staffPosition);
+        List<SelectListItem> getStaffPositionItems();
     }
 }
