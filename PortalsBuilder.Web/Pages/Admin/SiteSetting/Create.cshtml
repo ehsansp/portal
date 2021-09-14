@@ -1,15 +1,13 @@
-﻿@page "{id}"
-@model PortalsBuilder.Web.Pages.Admin.Slide.EditModel
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.SiteSetting.CreateModel
 @{
 }
 <div class="main-panel">
     <form method="post" enctype="multipart/form-data">
-        <input type="hidden" asp-for="Slide.Id"/>
-        <input type="hidden" asp-for="Slide.CreatedAt"/>
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
-                    ایجاد اسلاید
+                    ایجاد تنظیمات
                 </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -22,47 +20,44 @@
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">اسلاید جدید</h4>
+                            <h4 class="card-title">تنظیمات جدید</h4>
 
                             <div class="form-group">
-                                <label for="exampleInputUsername1">عنوان</label>
-                                <input type="text" class="form-control" asp-for="Slide.Title" placeholder="عنوان را وارد کنید">
+                                <label for="exampleInputUsername1">نام برند</label>
+                                <input type="text" class="form-control" asp-for="SiteSetting.BrandName" placeholder="نام برند را وارد کنید">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">توضیحات</label>
-                                <input type="text" class="form-control" asp-for="Slide.Description" placeholder="توضیحات را وارد کنید">
+                                <input type="text" class="form-control" asp-for="SiteSetting.BrandDescription" placeholder="توضیحات را وارد کنید">
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">تصویر</label>
-                                <input type="file" class="form-control" name="imgCourseUp" id="imgCourseUp" asp-for="Slide.Photo">
+                                <input type="file" class="form-control" name="imgCourseUp" id="imgCourseUp" asp-for="SiteSetting.LogoPhoto">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputUsername1">لینک</label>
-                                <input type="text" class="form-control" asp-for="Slide.Link" placeholder="لینک را وارد کنید">
+                                <label for="exampleInputUsername1">ماموریت برند</label>
+                                <input type="text" class="form-control" asp-for="SiteSetting.BrandMission" placeholder="ماموریت برند را وارد کنید">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputUsername1">عنوان لینک</label>
-                                <input type="text" class="form-control" asp-for="Slide.LinkTitle" placeholder="عنوان لینک را وارد کنید">
+                                <label for="exampleInputUsername1">چشم انداز برند</label>
+                                <input type="text" class="form-control" asp-for="SiteSetting.BrandVision" placeholder="چشم انداز برند را وارد کنید">
                             </div>
 
-                            <div class="form-group">
-                                <label for="exampleInputUsername1">ترتیب نمایش</label>
-                                <input type="text" class="form-control" asp-for="Slide.SortIndex" placeholder="ترتیب نمایش را وارد کنید">
-                            </div>
+                            
 
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="exampleInputUsername2">نمایش داده شود</label>
-                                    <input type="checkbox" asp-for="Slide.IsActive" class="form-control" id="exampleInputUsername2">
+                                    <label for="exampleInputUsername2">اجازه ثبت نام مشتری</label>
+                                    <input type="checkbox" asp-for="SiteSetting.AllowCustomerRegisteration" class="form-control" id="exampleInputUsername2">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputUsername5">زبان انگلیسی</label>
-                                    <input type="checkbox" asp-for="Slide.IsSecondLanguage" class="form-control" id="exampleInputUsername5">
+                                    <input type="checkbox" asp-for="SiteSetting.AllowSecondLanguage" class="form-control" id="exampleInputUsername5">
                                 </div>
                             </div>
 

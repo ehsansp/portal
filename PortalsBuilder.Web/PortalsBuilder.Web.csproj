@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Admin\Exam\**" />
+    <Content Remove="Pages\Admin\Exam\**" />
+    <EmbeddedResource Remove="Pages\Admin\Exam\**" />
+    <None Remove="Pages\Admin\Exam\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\Admin\vendors\ckeditor\.npm\assets\ckeditor4.png" />
     <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog.css" />
     <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog_ie.css" />
@@ -45,10 +52,8 @@
     <Folder Include="Areas\UserPanel\Data\" />
     <Folder Include="Areas\UserPanel\Models\" />
     <Folder Include="Areas\UserPanel\Views\" />
-    <Folder Include="Pages\Admin\Exam\" />
     <Folder Include="Pages\Admin\FAQ\" />
     <Folder Include="Pages\Admin\Job\" />
-    <Folder Include="Pages\Admin\Slider\" />
     <Folder Include="wwwroot\Admin\Page\Article\" />
     <Folder Include="wwwroot\Admin\Page\Bank\" />
     <Folder Include="wwwroot\Admin\Page\Banner\" />

@@ -7,22 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PortalBuilder.Core.Services.Interfaces;
 
-namespace PortalsBuilder.Web.Pages.Admin.Slide
+namespace PortalsBuilder.Web.Pages.Admin.SiteSetting
 {
-    public class EditModel : PageModel
+    public class CreateModel : PageModel
     {
-        private ISlideService _slideService;
+        private ISiteSettingService _siteSettingService;
 
-        public EditModel(ISlideService slideService)
+        public CreateModel(ISiteSettingService siteSettingService)
         {
-            _slideService = slideService;
+            _siteSettingService = siteSettingService;
         }
-        [BindProperty]
-        public PortalBuilder.Models.Slide Slide { get; set; }
-        public void OnGet(int id)
+        public PortalBuilder.Models.SiteSetting SiteSetting { get; set; }
+        public void OnGet()
         {
-            Slide = _slideService.GetSlideById(id);
-
         }
 
         public IActionResult OnPost(IFormFile imgCourseUp)
@@ -30,7 +27,7 @@ namespace PortalsBuilder.Web.Pages.Admin.Slide
             if (!ModelState.IsValid)
                 return Page();
 
-            _slideService.UpdateSlide(Slide, imgCourseUp);
+            _siteSettingService.AddSiteSetting(SiteSetting, imgCourseUp);
 
             return RedirectToPage("Index");
         }
