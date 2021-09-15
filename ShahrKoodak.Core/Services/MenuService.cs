@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PortalBuilder.Core.DTOs.Menu;
 using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.DataLayer.Context;
@@ -31,7 +32,15 @@ namespace PortalBuilder.Core.Services
                ParentId = c.ParentId
             }).ToList();
         }
-
+        public List<SelectListItem> GetGroupForManageArticle()
+        {
+            return _context.ArticleCategories.Where(g => g.ParentId == null)
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
+        }
         public int AddMenuPage(Menu menu)
         {
             menu.CreatedAt=DateTime.Now;

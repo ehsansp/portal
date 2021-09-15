@@ -1,0 +1,88 @@
+﻿@page "{id}"
+@model PortalsBuilder.Web.Pages.Admin.Menu.EditModel
+@{
+}
+<div class="main-panel">
+    <form method="post">
+        <div class="content-wrapper">
+            <input type="hidden" asp-for="Menu.Id"/>
+            <div class="page-header">
+                <h3 class="page-title">
+                    ایجاد منو
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">منو جدید</h4>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">عنوان</label>
+                                <input type="text" class="form-control" asp-for="Menu.Title" placeholder="عنوان را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">لینک</label>
+                                <input type="text" class="form-control" asp-for="Menu.Link" id="exampleInputUsername1" placeholder="لینک وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">دسته بندی</label>
+                                <select asp-for="Menu.ParentId" asp-items="@(ViewData["Groups"] as SelectList)">
+                                </select>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername2">نمایش داده شود</label>
+                                    <input type="checkbox" asp-for="Menu.IsActive" class="form-control" id="exampleInputUsername2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rr">منو اصلی</label>
+                                    <input type="checkbox" name="rr" class="form-control" id="rr">
+                                </div>
+                            </div>
+
+
+                            @*<div class="form-group">
+                                    <label for="exampleInputUsername1">دسته بندی فرعی</label>
+                                    <select asp-for="Article." asp-items="@(ViewData["SubGroups"] as SelectList)">
+
+                                    </select>
+                                </div>*@
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">تعداد بازدید</label>
+                                <input type="number" class="form-control" id="exampleInputUsername1" placeholder="تعداد بازدید را وارد کنید">
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button class="btn btn-light">لغو</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>
