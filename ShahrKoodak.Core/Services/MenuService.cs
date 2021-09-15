@@ -26,7 +26,9 @@ namespace PortalBuilder.Core.Services
                Id = c.Id,
                IsActive = c.IsActive,
                SortIndex = c.SortIndex,
-               Title = c.Title
+               Title = c.Title,
+               Link = c.Link,
+               ParentId = c.ParentId
             }).ToList();
         }
 

@@ -1,0 +1,36 @@
+﻿@model List<PortalBuilder.Models.JobAdRequest>
+@{ 
+
+
+}
+<section class="process-section">
+    <div class="pattern-layer-one" style="background-image: url(images/background/pattern-11.jpg)"></div>
+    <div class="pattern-layer-two" style="background-image: url(images/background/pattern-12.jpg)"></div>
+    <div class="auto-container">
+        <!-- Sec Title -->
+        <div class="sec-title centered">
+            <div class="title">همکاری با ما</div>
+            <h2>فرصت های شغلی</h2>
+        </div>
+        <div class="row clearfix">
+            @foreach (var item in Model)
+            {
+       
+                <!-- Process Block -->
+                <div class="process-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
+                        <div class="number-box">@item.Id</div>
+                        <h4><a href="services-detail.html">@item.JobAd.Title</a></h4>
+                        <div class="text">@item.JobAd.Description</div>
+                        <a class="read-more" href="#"><span class="arrow flaticon-long-arrow-pointing-to-the-right"></span>ارسال درخواست </a>
+                    </div>
+                </div>
+
+            }
+
+
+
+
+        </div>
+    </div>
+</section>

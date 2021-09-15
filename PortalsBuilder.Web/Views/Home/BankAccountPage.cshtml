@@ -8,8 +8,8 @@
             <div class="auto-container">
                 <!-- Sec Title -->
                 <div class="sec-title centered">
-                    <div class="title">برنامه های قیمت گذاری ما</div>
-                    <h2>هزینه پروژه ماهانه <br> پلن قیمتها</h2>
+                    
+                    <h2>شماره حساب ها</h2>
                 </div>
 
                 <div class="row clearfix">
@@ -19,18 +19,19 @@
                         <!-- Price Block -->
                         <div class="price-block col-lg-4 col-md-6 col-sm-12">
                             <div class="inner-box">
-                                <h3>حرفه ای </h3>
-                                <div class="text">طراحی شده برای مشاغل با الزامات بهداشتی استاندارد</div>
-                                <div class="price">100000 تومان <span>/ هر ماه </span></div>
+                                <h3>@item.Title </h3>
+                                <div class="text">@item.BranchTitle</div>
+                                
                                 <ul class="price-list">
-                                    <li>پشتیبانی 24/7</li>
-                                    <li>تنظیمات پیشرفته</li>
-                                    <li>16 گیگابایت فضا</li>
-                                    <li>پشتیبانی نامحدود</li>
+                                    <li>نامه شعبه: @item.BranchTitle </li>
+                                    <li>شماره شبا: @item.ShebaNumber </li>
+                                    <li> مالک حساب: @item.AccountOwner</li>
+                                    <li>توضیحات حساب: @item.Description </li>
+                                    
                                 </ul>
-                                <div class="btn-box">
+                                @*<div class="btn-box">
                                     <a href="contact.html" class="theme-btn btn-style-one"><span class="txt">شروع کنید</span></a>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
 

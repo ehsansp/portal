@@ -1,22 +1,22 @@
-﻿
+﻿@model PortalsBuilder.Web.Controllers.HomeController.IndexVM
  <!-- Banner Section -->
 <section class="banner-section">
     <div class="main-slider-carousel owl-carousel owl-theme">
 
-        <div class="slide" style="background-image: url(images/main-slider/image-1.jpg)">
-            <div class="patern-layer-one" style="background-image: url(images/main-slider/pattern-1.png)"></div>
-            <div class="patern-layer-two" style="background-image: url(images/main-slider/pattern-2.png)"></div>
+        <div class="slide" style="background-image: url(@Model.banner.Photo)">
+            @*<div class="patern-layer-one" style="background-image: url(@Model.banner.Photo)"></div>
+            <div class="patern-layer-two" style="background-image: url(@Model.banner.Photo)"></div>*@
             <div class="auto-container">
 
                 <!-- Content Column -->
                 <div class="content-column">
                     <div class="inner-column">
-                        <div class="patern-layer-three" style="background-image: url(images/main-slider/pattern-3.png)"></div>
-                        <div class="title">هامون</div>
-                        <h1> سامانه مدیریت<br> وبگاه کارگزاری های بازار سرمایه </h1>
-                        <div class="text">توسعه ابزار بازار سرمایه <br> 10 سال تجربه در ارائه محصولات برتر.</div>
+                        <div class="patern-layer-three" style="background-image: url(@Model.banner.Photo)"></div>
+                        <div class="title">@Model.siteSetting.BrandName</div>
+                        <h1>@Model.banner.Title </h1>
+                        <div class="text">@Model.banner.Description</div>
                         <div class="btns-box">
-                            <a href="about" class="theme-btn btn-style-one"><span class="txt">مطالعه بیشتر</span></a>
+                            @*<a href="about" class="theme-btn btn-style-one"><span class="txt">مطالعه بیشتر</span></a>*@
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
         <!-- Sec Title -->
         <div class="sec-title">
             <div class="title">درباره شرکت</div>
-            <h2>هامون چیست؟</h2>
+            <h2>@Model.siteSetting.BrandName چیست؟</h2>
         </div>
         <div class="row clearfix">
 
@@ -82,33 +82,31 @@
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="text">
-                        هامون، با قابلیت های متنوع و کاربری آسان، راهکار نوینی برای مدیریت وبگاه کارگزاری ها ارائه داده است تا نیازمندی ها و فرایندهای اصلی آنها، از جمله:
-                        برندینگ سازمانی، اطالع رسانی، جذب مشتری، کمپین های آنالین، استخدام نیرو و ... را تسهیل نماید. این سامانه، از جنبه های عملیاتی و امنیتی مورد
-                        تایید سازمان بورس بوده و از استانداردهای فنی الزم برخوردار است.
+                        @Model.siteSetting.BrandDescription
                     </div>
                     <div class="blocks-outer">
 
                         <!-- Feature Block -->
-                        <div class="feature-block">
+                        @*<div class="feature-block">
                             <div class="inner-box">
                                 <div class="icon flaticon-award-1"></div>
                                 <h6>تجربه </h6>
                                 <div class="feature-text">تیم عالی ما متشکل از بیش از 1400 متخصص نرم افزار است.</div>
                             </div>
-                        </div>
+                        </div>*@
 
                         <!-- Feature Block -->
-                        <div class="feature-block">
+                        @*<div class="feature-block">
                             <div class="inner-box">
                                 <div class="icon flaticon-technical-support"></div>
                                 <h6>پشتیبانی سریع </h6>
                                 <div class="feature-text">ما به شما کمک می کنیم ضمن به اشتراک گذاشتن ایده های جسورانه ، ایده های جدید پررنگ خود را ارسال کنید.</div>
                             </div>
-                        </div>
+                        </div>*@
 
                     </div>
 
-                    <a href="#" class="lightbox-image theme-btn btn-style-one"><span class="txt"><i class="play-icon"><img src="images/icons/play-icon.png" alt="" /></i>&ensp; نمایش ویدئو </span></a>
+                    @*<a href="#" class="lightbox-image theme-btn btn-style-one"><span class="txt"><i class="play-icon"><img src="images/icons/play-icon.png" alt="" /></i>&ensp; نمایش ویدئو </span></a>*@
 
                 </div>
             </div>
@@ -132,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="about" class="learn"><span class="arrow flaticon-long-arrow-pointing-to-the-right"></span>مطالعه بیشتر درباره شرکت</a>
+                @*<a href="about" class="learn"><span class="arrow flaticon-long-arrow-pointing-to-the-right"></span>مطالعه بیشتر درباره شرکت</a>*@
             </div>
 
         </div>
@@ -327,11 +325,11 @@
                 </div>
             </div>
             <!-- Button Column -->
-            <div class="button-column col-lg-4 col-md-12 col-sm-12">
+            @*<div class="button-column col-lg-4 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <a href="contact.html" class="theme-btn btn-style-two"><span class="txt">ملاقات با ما</span></a>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </section>

@@ -13,6 +13,7 @@ namespace PortalBuilder.Core.DTOs.Menu
         public bool IsActive { get; set; }
         public int SortIndex { get; set; }
         public int? ParentId { get; set; }
+        public string Link { get; set; }
         public List<Models.Menu> Parent { get; set; }
     }
 }

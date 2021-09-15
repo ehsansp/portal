@@ -1,0 +1,47 @@
+﻿@model List<PortalBuilder.Models.Article>
+
+<section class="blog-page-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            @foreach (var item in Model)
+            {
+                <!-- News Block -->
+                <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
+                        <div class="image">
+                            <a href="news-detail.html"><img src="@item.Photo" alt=""></a>
+                        </div>
+                        <div class="lower-content">
+                            @*<div class="post-date">22 <span>خرداد </span></div>*@
+                            <ul class="post-meta">
+                                <li><span class="icon flaticon-comment"></span> @item.ViewCount تعداد بازدید</li>
+                                <li><span class="icon flaticon-user"></span>@item.Writer </li>
+                            </ul>
+                            <h4><a href="news-detail.html">@item.Title</a></h4>
+                            <div class="text">@item.Detail</div>
+                            <a class="read-more" href="news-detail.html">ادامه مطلب <span class="arrow flaticon-long-arrow-pointing-to-the-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+
+        </div>
+
+        <!-- Post Share Options -->
+        @*<div class="styled-pagination text-center">
+            <ul class="clearfix">
+                <li class="prev"><a href="#"><span class="fa fa-angle-left"></span> </a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li class="active"><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li class="next"><a href="#"><span class="fa fa-angle-right"></span> </a></li>
+            </ul>
+        </div>*@
+
+    </div>
+</section>
