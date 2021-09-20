@@ -3,7 +3,7 @@
 @{
 }
 <div class="main-panel">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
@@ -44,7 +44,7 @@
                                             <div class="card">
                                                 <div class="card-body pad">
                                                     
-                                                        <textarea id="editor1" name="editor1" rows="10"
+                                                        <textarea asp-for="Article.Description" id="editor1" name="editor1" rows="10"
                                                                   cols="80">این ویرایشگر راست چین و فارسی شده است...</textarea>
                                                    
                                                 </div>
@@ -56,11 +56,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">نویسنده</label>
-                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="نام نویسنده وارد کنید">
+                                <input type="text" asp-for="Article.Writer" class="form-control" id="exampleInputUsername1" placeholder="نام نویسنده وارد کنید">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">تصویر مقاله</label>
-                                <input type="file" class="form-control" id="exampleInputUsername1">
+                                <input type="file" asp-for="Article.Photo" class="form-control" id="exampleInputUsername1">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">جزئیات</label>

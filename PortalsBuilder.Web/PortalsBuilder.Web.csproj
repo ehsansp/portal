@@ -5,13 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Admin\Exam\**" />
-    <Content Remove="Pages\Admin\Exam\**" />
-    <EmbeddedResource Remove="Pages\Admin\Exam\**" />
-    <None Remove="Pages\Admin\Exam\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="wwwroot\Admin\vendors\ckeditor\.npm\assets\ckeditor4.png" />
     <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog.css" />
     <Content Include="wwwroot\Admin\vendors\ckeditor\skins\bootstrapck\.temp\css\dialog_ie.css" />
@@ -43,48 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\about.cshtml" />
-    <None Include="Views\Home\account.cshtml" />
-    <None Include="Views\Home\BankAccountPage.cshtml" />
-    <None Include="Views\Home\blog-classic.cshtml" />
-    <None Include="Views\Home\blog.cshtml" />
-    <None Include="Views\Home\Branch.cshtml" />
-    <None Include="Views\Home\certificate.cshtml" />
-    <None Include="Views\Home\checkout.cshtml" />
-    <None Include="Views\Home\ColleaguesAndCustomers.cshtml" />
-    <None Include="Views\Home\comming-soon.cshtml" />
-    <None Include="Views\Home\contact.cshtml" />
-    <None Include="Views\Home\faq.cshtml" />
-    <None Include="Views\Home\index-2.cshtml" />
-    <None Include="Views\Home\index-3.cshtml" />
-    <None Include="Views\Home\index-4.cshtml" />
-    <None Include="Views\Home\index-5.cshtml" />
-    <None Include="Views\Home\index-6.cshtml" />
-    <None Include="Views\Home\index.cshtml" />
-    <None Include="Views\Home\JobAdRequest.cshtml" />
-    <None Include="Views\Home\news-detail.cshtml" />
-    <None Include="Views\Home\news.cshtml" />
-    <None Include="Views\Home\not-found.cshtml" />
-    <None Include="Views\Home\price.cshtml" />
-    <None Include="Views\Home\projects-detail.cshtml" />
-    <None Include="Views\Home\projects.cshtml" />
-    <None Include="Views\Home\services-detail.cshtml" />
-    <None Include="Views\Home\services.cshtml" />
-    <None Include="Views\Home\shop-single.cshtml" />
-    <None Include="Views\Home\shop.cshtml" />
-    <None Include="Views\Home\shopping-cart.cshtml" />
-    <None Include="Views\Home\SocialMedia.cshtml" />
-    <None Include="Views\Home\team.cshtml" />
-    <None Include="Views\Home\testimonial.cshtml" />
-    <None Include="Views\Shared\Components\MenuComponent\Menu.cshtml" />
-    <None Include="Views\Shared\Error.cshtml" />
-    <None Include="Views\Shared\Footer.cshtml" />
-    <None Include="Views\Shared\Head.cshtml" />
-    <None Include="Views\Shared\Header.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
-    <None Include="Views\_ViewImports.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
     <None Include="wwwroot\Admin\vendors\ckeditor\.github\ISSUE_TEMPLATE" />
     <None Include="wwwroot\Admin\vendors\ckeditor\.npm\README.md" />
   </ItemGroup>
@@ -94,8 +45,6 @@
     <Folder Include="Areas\UserPanel\Data\" />
     <Folder Include="Areas\UserPanel\Models\" />
     <Folder Include="Areas\UserPanel\Views\" />
-    <Folder Include="Pages\Admin\FAQ\" />
-    <Folder Include="Pages\Admin\Job\" />
     <Folder Include="wwwroot\Admin\Page\Article\" />
     <Folder Include="wwwroot\Admin\Page\Bank\" />
     <Folder Include="wwwroot\Admin\Page\Banner\" />

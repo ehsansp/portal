@@ -1,0 +1,130 @@
+﻿@page "{id}"
+@model PortalsBuilder.Web.Pages.Admin.Job.EditModel
+@{
+}
+<div class="main-panel">
+    <form method="post">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    ویرایش شغل
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">ویرایش شغل</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">ویرایش شغل</h4>
+                            <input type="hidden" asp-for="JobAd.Id"/>
+                            <input type="hidden" asp-for="JobAd.CreatedAt"/>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">زمان واریزی</label>
+                                <input type="text" class="form-control" asp-for="JobAd.Title" placeholder="عنوان را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام واریز کننده</label>
+                                <input type="text" class="form-control" asp-for="JobAd.Description" placeholder="توضیحات را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">جزئیات</label>
+                                <input type="text" class="form-control" asp-for="JobAd.Detail" placeholder="جزئیات را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">کلمه کلیدی</label>
+                                <input type="text" class="form-control" asp-for="JobAd.Keywords" placeholder="کلمه کلیدی را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام استان</label>
+                                <select asp-for="JobAd.ProvinceId" asp-items="@(ViewData["Groups"] as SelectList)">
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">نام شهر</label>
+                                <input type="text" class="form-control" asp-for="JobAd.City" placeholder="نام شهر را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">حداقل مدرک تحصیلی</label>
+                                <select asp-for="JobAd.ProvinceId" asp-items="@(ViewData["level"] as SelectList)">
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername2">پذیرش ارسال ایمیل</label>
+                                    <input type="checkbox" asp-for="JobAd.MaleIsAccepted" class="form-control" id="exampleInputUsername2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername3">پذیرش خانم</label>
+                                    <input type="checkbox" asp-for="JobAd.FemaleIsAccepted" class="form-control" id="exampleInputUsername3">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername4">تمام وقت</label>
+                                    <input type="checkbox" asp-for="JobAd.IsFulltime" class="form-control" id="exampleInputUsername4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername5">پاره وقت</label>
+                                    <input type="checkbox" asp-for="JobAd.IsPartTime" class="form-control" id="exampleInputUsername5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername5">بیرون سپاری</label>
+                                    <input type="checkbox" asp-for="JobAd.IsOutsource" class="form-control" id="exampleInputUsername5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername5">کارآموزی</label>
+                                    <input type="checkbox" asp-for="JobAd.IsInternship" class="form-control" id="exampleInputUsername5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername5">فعال</label>
+                                    <input type="checkbox" asp-for="JobAd.IsActive" class="form-control" id="exampleInputUsername5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputUsername5">زبان انگلیسی</label>
+                                    <input type="checkbox" asp-for="JobAd.IsSecondLanguage" class="form-control" id="exampleInputUsername5">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">زمان نمایش آگهی شغلی</label>
+                                <input type="text" class="form-control" asp-for="JobAd.PublishAt" placeholder="نام شهر را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">ایمیل دریافت آگهی شغلی</label>
+                                <input type="text" class="form-control" asp-for="JobAd.SendRequestsToEmails" placeholder="نام شهر را وارد کنید">
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button class="btn btn-light">لغو</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

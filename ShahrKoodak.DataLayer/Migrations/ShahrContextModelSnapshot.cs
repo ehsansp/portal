@@ -19,14 +19,29 @@ namespace PortalBuilder.DataLayer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("PortalBuilder.Models.Article", b =>
+            modelBuilder.Entity("PortalBuilder.DataLayer.Models.ColorSite", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ColorId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ArticleCategoryId")
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ColorId");
+
+                    b.ToTable("ColorSites");
+                });
+
+            modelBuilder.Entity("PortalBuilder.Models.Article", b =>
+                {
+                    b.Property<int>("ArticleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ArticleCategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -68,6 +83,9 @@ namespace PortalBuilder.DataLayer.Migrations
                     b.Property<bool>("SendAsNewsLetter")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("SubGroup")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -77,9 +95,11 @@ namespace PortalBuilder.DataLayer.Migrations
                     b.Property<string>("Writer")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ArticleId");
 
                     b.HasIndex("ArticleCategoryId");
+
+                    b.HasIndex("SubGroup");
 
                     b.ToTable("Articles");
                 });
@@ -90,9 +110,6 @@ namespace PortalBuilder.DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ArticleCategoryId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -129,7 +146,7 @@ namespace PortalBuilder.DataLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleCategoryId");
+                    b.HasIndex("ParentId");
 
                     b.ToTable("ArticleCategories");
                 });
@@ -141,9 +158,6 @@ namespace PortalBuilder.DataLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BankDepositRequestId")
-                        .HasColumnType("int");
-
                     b.Property<string>("EnTitle")
                         .HasColumnType("nvarchar(max)");
 
@@ -154,8 +168,6 @@ namespace PortalBuilder.DataLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BankId");
-
-                    b.HasIndex("BankDepositRequestId");
 
                     b.ToTable("Banks");
                 });
@@ -221,7 +233,7 @@ namespace PortalBuilder.DataLayer.Migrations
 
             modelBuilder.Entity("PortalBuilder.Models.BankDepositRequest", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("BankDepositId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -277,9 +289,9 @@ namespace PortalBuilder.DataLayer.Migrations
                     b.Property<string>("ValidationNote")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("BankDepositId");
 
-                    b.HasIndex("BankAccountId");
+                    b.HasIndex("BankId");
 
                     b.ToTable("BankDepositRequests");
                 });
@@ -1840,8 +1852,10 @@ namespace PortalBuilder.DataLayer.Migrations
 
             modelBuilder.Entity("PortalBuilder.Models.SiteSetting", b =>
                 {
-                    b.Property<string>("BrandName")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ActiveTheme")
                         .HasColumnType("nvarchar(max)");
@@ -1861,11 +1875,20 @@ namespace PortalBuilder.DataLayer.Migrations
                     b.Property<string>("BrandMission")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("BrandName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("BrandSlogan")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BrandVision")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ColorSiteColorId")
+                        .HasColumnType("int");
 
                     b.Property<string>("FavIcon")
                         .HasColumnType("nvarchar(max)");
@@ -1888,7 +1911,9 @@ namespace PortalBuilder.DataLayer.Migrations
                     b.Property<string>("SecondaryColor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BrandName");
+                    b.HasKey("Id");
+
+                    b.HasIndex("ColorSiteColorId");
 
                     b.ToTable("SiteSettings");
                 });
@@ -2052,28 +2077,27 @@ namespace PortalBuilder.DataLayer.Migrations
             modelBuilder.Entity("PortalBuilder.Models.Article", b =>
                 {
                     b.HasOne("PortalBuilder.Models.ArticleCategory", "ArticleCategory")
-                        .WithMany()
-                        .HasForeignKey("ArticleCategoryId");
+                        .WithMany("Articles")
+                        .HasForeignKey("ArticleCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PortalBuilder.Models.ArticleCategory", "Group")
+                        .WithMany("SubGroup")
+                        .HasForeignKey("SubGroup");
                 });
 
             modelBuilder.Entity("PortalBuilder.Models.ArticleCategory", b =>
                 {
                     b.HasOne("PortalBuilder.Models.ArticleCategory", null)
                         .WithMany("Parent")
-                        .HasForeignKey("ArticleCategoryId");
-                });
-
-            modelBuilder.Entity("PortalBuilder.Models.Bank", b =>
-                {
-                    b.HasOne("PortalBuilder.Models.BankDepositRequest", "BankDepositRequest")
-                        .WithMany("Banks")
-                        .HasForeignKey("BankDepositRequestId");
+                        .HasForeignKey("ParentId");
                 });
 
             modelBuilder.Entity("PortalBuilder.Models.BankAccount", b =>
                 {
                     b.HasOne("PortalBuilder.Models.Bank", "Bank")
-                        .WithMany()
+                        .WithMany("BankAccounts")
                         .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -2081,9 +2105,9 @@ namespace PortalBuilder.DataLayer.Migrations
 
             modelBuilder.Entity("PortalBuilder.Models.BankDepositRequest", b =>
                 {
-                    b.HasOne("PortalBuilder.Models.BankAccount", "BankAccount")
-                        .WithMany()
-                        .HasForeignKey("BankAccountId")
+                    b.HasOne("PortalBuilder.Models.Bank", "Bank")
+                        .WithMany("BankDepositRequest")
+                        .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -2201,6 +2225,13 @@ namespace PortalBuilder.DataLayer.Migrations
                         .HasForeignKey("QuestionnaireId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("PortalBuilder.Models.SiteSetting", b =>
+                {
+                    b.HasOne("PortalBuilder.DataLayer.Models.ColorSite", "ColorSite")
+                        .WithMany()
+                        .HasForeignKey("ColorSiteColorId");
                 });
 
             modelBuilder.Entity("PortalBuilder.Models.Staff", b =>

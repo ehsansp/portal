@@ -33,7 +33,7 @@ namespace PortalBuilder.Core.Services
                 ArticleCategoryId = c.ArticleCategoryId,
                 CreatedAt = c.CreatedAt,
                 CreatedBy = c.CreatedBy,
-                Id = c.Id,
+                Id = c.ArticleId,
                 IsActive = c.IsActive,
                 ViewCount = c.ViewCount
             }).ToList();
@@ -63,7 +63,7 @@ namespace PortalBuilder.Core.Services
 
             _context.Add(article);
             _context.SaveChanges();
-            return article.Id;
+            return article.ArticleId;
         }
         public Article GetArticleById(int articleId)
         {

@@ -16,5 +16,6 @@ namespace PortalBuilder.Models
 
 
         public List<BankDepositRequest> BankDepositRequest { get; set; }
+        public List<BankAccount> BankAccounts { get; set; }
     }
 }

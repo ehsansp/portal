@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,7 +16,7 @@ namespace PortalBuilder.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public int BankId { get; set; }
-        public Bank Bank { get; set; }
+        
         public string BranchTitle { get; set; }
         public string AccountOwner { get; set; }
         public string AccountNumber { get; set; }
@@ -24,5 +25,7 @@ namespace PortalBuilder.Models
         public bool IsActive { get; set; }
         public string SendRequestsToEmails { get; set; }
         public bool IsSecondLanguage { get; set; }
+        [ForeignKey("BankId")]
+        public Bank Bank { get; set; }
     }
 }

@@ -38,15 +38,15 @@ namespace PortalBuilder.Core.Services
 
         public List<ShowDepositForAdminViewModel> GetDipositsForAdmin()
         {
-            return _context.BankDepositRequests.Include(c=>c.Banks).Select(c => new ShowDepositForAdminViewModel()
+            return _context.BankDepositRequests.Include(c=>c.Bank).Select(c => new ShowDepositForAdminViewModel()
             {
                 Amount = c.Amount,
                 BankId = c.BankId,
-                BankName = c.Banks.Title,
+                BankName = c.Bank.Title,
                 BranchTitle = c.BranchTitle,
                 CreatedAt = c.CreatedAt,
                 CreatedBy = c.CreatedBy,
-                Id = c.Id,
+                Id = c.BankDepositId,
                 NationalCode = c.NationalCode
             }).ToList();
         }
@@ -82,7 +82,7 @@ namespace PortalBuilder.Core.Services
             bankDepositRequest.CreatedBy = 1;
             _context.Add(bankDepositRequest);
             _context.SaveChanges();
-            return bankDepositRequest.Id;
+            return bankDepositRequest.BankDepositId;
         }
 
         public Bank GetBankById(int bankId)

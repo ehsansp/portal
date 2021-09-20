@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,7 +9,8 @@ namespace PortalBuilder.Models
 {
     public class Article
     {
-        public int Id { get; set; }
+        [Key]
+        public int ArticleId { get; set; }
         public int CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
         public int? LastModifiedBy { get; set; }
@@ -22,9 +25,16 @@ namespace PortalBuilder.Models
         public bool IsActive { get; set; }
         public bool IsFeatured { get; set; }
         public bool SendAsNewsLetter { get; set; }
-        public int? ArticleCategoryId { get; set; }
-        public ArticleCategory ArticleCategory { get; set; }
+        public int ArticleCategoryId { get; set; }
+        public int? SubGroup { get; set; }
         public int ViewCount { get; set; }
         public bool IsSecondLanguage { get; set; }
+
+
+        [ForeignKey("ArticleCategoryId")]
+        public ArticleCategory ArticleCategory { get; set; }
+
+        [ForeignKey("SubGroup")]
+        public ArticleCategory Group { get; set; }
     }
 }

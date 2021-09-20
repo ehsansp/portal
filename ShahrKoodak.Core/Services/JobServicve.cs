@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PortalBuilder.Core.DTOs.Job;
 using PortalBuilder.Core.Services.Interfaces;
 using PortalBuilder.DataLayer.Context;
@@ -17,6 +18,27 @@ namespace PortalBuilder.Core.Services
         {
             _context = context;
         }
+
+        public List<SelectListItem> GetJobForManage()
+        {
+            return _context.JobAds
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
+        }
+
+        public List<SelectListItem> GetEducationLevelForManageBranch()
+        {
+            return _context.EducationLevels
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
+        }
+
         public List<ShowJobAdForAdminViewModel> GetJobAdsForAdmin()
         {
             return _context.JobAds.Select(c => new ShowJobAdForAdminViewModel()
@@ -49,6 +71,16 @@ namespace PortalBuilder.Core.Services
             _context.Add(jobAd);
             _context.SaveChanges();
             return jobAd.Id;
+        }
+
+        public List<SelectListItem> GetProvinceForManageBranch()
+        {
+            return _context.Provinces
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Title,
+                    Value = g.Id.ToString()
+                }).ToList();
         }
 
         public int AddJobRequest(JobAdRequest jobAdRequest)

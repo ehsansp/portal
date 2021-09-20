@@ -1,4 +1,4 @@
-﻿@model List<PortalBuilder.Models.JobAdRequest>
+﻿@model List<PortalBuilder.Models.JobAd>
 @{ 
 
 
@@ -20,9 +20,18 @@
                 <div class="process-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
                         <div class="number-box">@item.Id</div>
-                        <h4><a href="services-detail.html">@item.JobAd.Title</a></h4>
-                        <div class="text">@item.JobAd.Description</div>
-                        <a class="read-more" href="#"><span class="arrow flaticon-long-arrow-pointing-to-the-right"></span>ارسال درخواست </a>
+                        <h4><a href="services-detail.html">@item.Title</a></h4>
+                        <h4><a href="services-detail.html">@item.City</a></h4>
+                        @if (item.IsPartTime)
+                        {
+                            <h4><a href="services-detail.html">پاره وقت</a></h4>
+                        }
+                        @if (item.IsFulltime)
+                        {
+                            <h4><a href="services-detail.html">تمام وقت</a></h4>
+                        }
+                        <div class="text">@item.Description</div>
+                        <a class="read-more" href="JobRequestForm?jobAddId=@item.Id"><span class="arrow flaticon-long-arrow-pointing-to-the-right"></span>ارسال درخواست </a>
                     </div>
                 </div>
 

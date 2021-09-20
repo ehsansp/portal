@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using PortalBuilder.DataLayer.Models;
 
 namespace PortalBuilder.Models
 {
     public class SiteSetting
     {
-        [Key]
+        [Key] 
+        public int Id { get; set; }
+
+        public int ColorId { get; set; }
         public string BrandName { get; set; }
         public string BrandDescription { get; set; }
         public string LogoPhoto { get; set; }
@@ -25,6 +29,9 @@ namespace PortalBuilder.Models
         public string ActiveTheme { get; set; }
         public string HomePageMode { get; set; }
         public bool AllowCustomerRegisteration { get; set; }
+
+
+        public ColorSite ColorSite { get; set; }
         
     }
 }

@@ -1,0 +1,85 @@
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.Job.CreateJobRequestModel
+@{
+}
+<div class="main-panel">
+    <form method="post">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                    ایجاد درخواست شغل
+                </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">فرم ها</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">عناصر ساده فرم</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">درخواست شغل جدید</h4>
+
+
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">عنوان شغلی</label>
+                                <select asp-for="JobAd.JobAdId" asp-items="@(ViewData["Groups"] as SelectList)">
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">توضیحات</label>
+                                <input type="text" class="form-control" asp-for="JobAd.Description" placeholder="توضیحات را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">تاریخ مصاحبه</label>
+                                <input type="text" class="form-control" asp-for="JobAd.InterviewDate" placeholder="تاریخ مصاحبه را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">پیام دعوت مصاحبه</label>
+                                <input type="text" class="form-control" asp-for="JobAd.InterviewInviteMessage" placeholder="پیام دعوت مصاحبه را وارد کنید">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">پیام تاییدیه</label>
+                                <input type="text" class="form-control" asp-for="JobAd.ValidationNote" placeholder="پیام تاییدیه را وارد کنید">
+                            </div>
+
+                            @*<div class="row">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername2">پذیرفته شده</label>
+                                    <input type="checkbox" asp-for="JobAd.IsAccpeted" class="form-control" id="exampleInputUsername2">
+                                </div>
+                                
+                            </div>*@
+
+                           
+
+
+
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button class="btn btn-light">لغو</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
+                کپی رایت © 2018 . تمام حقوق
+                محفوظ است.
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

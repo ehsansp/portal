@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using PortalBuilder.DataLayer.Models;
 using PortalBuilder.Models;
 
 
@@ -54,5 +55,6 @@ namespace PortalBuilder.DataLayer.Context
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Staff> Staves { get; set; }
         public DbSet<StaffPosition> StaffPositions { get; set; }
+        public DbSet<ColorSite> ColorSites { get; set; }
     }
 }

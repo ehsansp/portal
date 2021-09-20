@@ -10,11 +10,12 @@ namespace PortalBuilder.Models
     public class BankDepositRequest
     {
         [Key]
-        public int Id { get; set; }
+        public int BankDepositId { get; set; }
         public int? CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
         public int BankAccountId { get; set; }
-        public BankAccount BankAccount { get; set; }
+
+       
         public DateTime DepositedAt { get; set; }
         public string DepositorName { get; set; }
         public string NationalCode { get; set; }
@@ -29,7 +30,8 @@ namespace PortalBuilder.Models
         public int? ValidatedBy { get; set; }
         public DateTime? ValidatedAt { get; set; }
         public string ValidationNote { get; set; }
-
-        public Bank Banks { get; set; }
+        
+        [ForeignKey("BankId")]
+        public Bank Bank { get; set; }
     }
 }

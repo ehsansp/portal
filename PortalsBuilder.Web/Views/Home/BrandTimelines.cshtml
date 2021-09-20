@@ -1,0 +1,131 @@
+﻿@model List<PortalBuilder.Models.BrandTimeline>
+
+<div class="page-wrapper">
+
+    <!-- End Main Header -->
+    <!--Page Title-->
+    <section class="page-title">
+        <div class="pattern-layer-one" style="background-image: url(images/background/pattern-16.png)"></div>
+        <div class="auto-container">
+            <h2>دستاوردهای مهم برند</h2>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">صفحه اصلی </a></li>
+                <li>دستاوردهای مهم برند</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="experiance-section" style="background-image: url(images/background/pattern-9.png)">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title centered">
+                @*<div class="title">تجربه ، اجرا ، عالی بودن.</div>*@
+                <h2>قابلیت های سامانه</h2>
+            </div>
+
+            <!-- Experiance Info Tabs -->
+            <div class="experiance-info-tabs">
+                <!-- Experiance Tabs -->
+                <div class="experiance-tabs tabs-box">
+                    <ul class="tab-btns tab-buttons clearfix">
+                        @foreach (var item in Model)
+                        {
+                            <!-- Tab Btns-->
+
+                            <li data-tab="#prod-@(item.Photo)" class="tab-btn"><span class="icon flaticon-@(item.Photo)"></span>@item.Title </li>
+                            @*<li data-tab="#prod-bootstrap" class="tab-btn"><span class="icon flaticon-bootstrap"></span>معرفی مدیران و کارکنان </li>
+                                <li data-tab="#prod-css" class="tab-btn active-btn"><span class="icon flaticon-css"></span>معرفی همکاران و مشتریان </li>
+                                <li data-tab="#prod-php" class="tab-btn"><span class="icon flaticon-php"></span>شماره حساب ها و ثبت فیش </li>
+                                <li data-tab="#prod-java" class="tab-btn"><span class="icon flaticon-java"></span>شعب و نمایندگی ها </li>*@
+
+                        }
+                    </ul>
+
+                    <!--Tabs Container-->
+                    <div class="tabs-content">
+                        @foreach (var item in Model)
+                        {
+                            <!--Tab / Active Tab-->
+                            <div class="tab" id="prod-@(item.Photo)">
+                                <div class="content">
+                                    <h4>@item.Title</h4>
+                                    <div class="text">
+                                        @item.Description
+                                    </div>
+                                    @*<div class="btn-box text-center">
+                                            <a href="services-detail.html" class="theme-btn btn-style-three"><span class="txt">مطالعه بیشتر</span></a>
+                                        </div>*@
+                                </div>
+                            </div>
+                        }
+
+
+
+                        <!--<div class="tab" id="prod-bootstrap">
+                            <div class="content">
+                                <h4>معرفی مدیران و کارکنان </h4>
+                                <div class="text">
+                                    • تعریف واحدهای مختلف سازمان
+                                    • تعریف سمت های شغلی
+                                    • تعریف مدیران و کارکنان در هر واحد، شامل نام و نام خانوادگی،
+                                    تصویر، سمت، تحصیالت، معرفی کوتاه، شماره تماس و ...
+                                    • امکان جستجو و فیلتر کارکنان بر حسب واحد، سمت و نام
+                                    • امکان تعیین نحوه نمایش واحدها و کارکنان در سایت
+                                </div>
+                                <div class="btn-box text-center">
+                                    <a href="services-detail.html" class="theme-btn btn-style-three"><span class="txt">مطالعه بیشتر</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tab active-tab" id="prod-css">
+                            <div class="content">
+                                <h4>معرفی همکاران و مشتریان </h4>
+                                <div class="text">
+                                    • تعریف همکاران و مشتریان، شامل نام، لوگو، زمینه فعالیت و متن رضایت مشتری
+                                    • امکان تعیین نحوه نمایش همکاران و مشتریان در سایت
+                                </div>
+                                <div class="btn-box text-center">
+                                    <a href="services-detail.html" class="theme-btn btn-style-three"><span class="txt">مطالعه بیشتر</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tab" id="prod-php">
+                            <div class="content">
+                                <h4>شماره حساب ها و ثبت فیش</h4>
+                                <div class="text">
+                                    • تعریف شماره حساب ها، شامل موضوع حساب، بانک، شعبه، نام صاحب حساب، شماره حساب، شماره شبا
+                                    • فرم ثبت اطالعات واریز وجه پیشرفته با قابلیت بارگزاری فایل، تولید کد رهگیری ، ایجاد دسته بندی و ارسال ایمیل به مسئول هر دسته
+                                    • امکان تعیین نحوه نمایش اطالعات حساب ها و فرم واریز وجه در سایت
+                                </div>
+                                <div class="btn-box text-center">
+                                    <a href="services-detail.html" class="theme-btn btn-style-three"><span class="txt">مطالعه بیشتر</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="tab" id="prod-java">
+                            <div class="content">
+                                <h4>شعب و نمایندگی ها</h4>
+                                <div class="text">
+                                    • تعریف شعب و نمایندگی ها شامل، نام شعبه، مسئول شعبه ، ساعات کاری، خدمات، شماره های
+                                    تماس، پست الکترونیک، نام استان، نام شهر، آدرس، کد پستی و موقعیت روی نقشه
+                                    • امکان جستجو و فیلتر شعب و نمایندگی ها بر اساس استان و نام شهر یا آدرس
+                                </div>-->
+                        @*<div class="btn-box text-center">
+                                <a href="services-detail.html" class="theme-btn btn-style-three"><span class="txt">مطالعه بیشتر</span></a>
+                            </div>*@
+                        <!--</div>
+                        </div>-->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </div>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PortalBuilder.Core.Convertors;
 using PortalBuilder.Core.DTOs.SiteSetting;
 using PortalBuilder.Core.Generator;
@@ -86,6 +87,16 @@ namespace PortalBuilder.Core.Services
             _context.SiteSettings.Update(siteSetting);
             _context.SaveChanges();
             return 1;
+        }
+
+        public List<SelectListItem> GetColorForManage()
+        {
+            return _context.ColorSites
+                .Select(g => new SelectListItem()
+                {
+                    Text = g.Name,
+                    Value = g.ColorId.ToString()
+                }).ToList();
         }
     }
 }
