@@ -150,5 +150,58 @@ namespace PortalBuilder.Core.Services
                     Value = g.Id.ToString()
                 }).ToList();
         }
+
+        public Customer LoginUser(LoginViewModel login)
+        {
+            string hashPasword = PasswordHelper.EncodePasswordMd5(login.Password);
+            string email = FixedText.FixEmail(login.Email);
+            return _context.Customers.SingleOrDefault(u => u.Phone == email && u.EncryptedPassword == hashPasword);
+        }
+
+        public Customer GetUserByActiveCode(string activeCode)
+        {
+            return _context.Customers.SingleOrDefault(u => u.ActiveCode == activeCode);
+        }
+
+        public bool IsExistUserName(string userName)
+        {
+            return _context.Customers.Any(u => u.Username == userName);
+        }
+
+        public int AddUser(Customer user)
+        {
+            _context.Customers.Add(user);
+            _context.SaveChanges();
+            return user.Id;
+        }
+
+        public bool ActiveAcount(string activeCode)
+        {
+            var user = _context.Customers.SingleOrDefault((u => u.ActiveCode == activeCode));
+            if (user == null || user.IsActive)
+            {
+                user.ActiveCode = NameGenerator.GenerateUniqeCode();
+                _context.SaveChanges();
+                return true;
+            }
+
+            _context.SaveChanges();
+            user.IsActive = true;
+            user.ActiveCode = NameGenerator.GenerateUniqeCode();
+            _context.SaveChanges();
+            return true;
+        }
+
+        public Customer GetUserByUserName(string username)
+        {
+            return _context.Customers.SingleOrDefault(u => u.Username == username);
+        }
+
+        public void ChangeUserPassword(string userName, string newPassword)
+        {
+            var user = GetUserByUserName(userName);
+            user.EncryptedPassword = PasswordHelper.EncodePasswordMd5(newPassword);
+           
+        }
     }
 }

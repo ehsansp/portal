@@ -1,0 +1,68 @@
+﻿@model PortalBuilder.Core.DTOs.Staff.LoginViewModel 
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+@{
+    ViewData["Title"] = "ورود به هامون";
+}
+
+
+
+<div align="center" class="container">
+    <div class="row">
+<div class="col-4"></div>
+        <div class="" align="center">
+            <!--login area start-->
+            <div class="">
+                <div class="styled-form login-form">
+                    <h2>ورود</h2>
+                    @if (@ViewBag.IsSuccess != null)
+                    {
+                        <div dir="rtl" class="alert alert-success">
+                            <p class="help-block">ورود با موفقیت انجام شد.</p>
+                        </div>
+                        <script>
+                            var delay = 3000;
+                            setTimeout(function () { window.location = "/"; }, delay);
+                        </script>
+                    }
+                    @if (ViewBag.EditProfile == true)
+                    {
+                        <div dir="rtl" class="alert alert-warning">
+                            بدلیل ویرایش پروفایل و بارگزاری مجدد اطلاعات لطفاً مجدد وارد شوید.
+                        </div>
+                    }
+                    <form asp-action="Login" method="post">
+                        <p>
+                            <label>شماره همراه <span>*</span></label>
+                            <input asp-for="Email" type="text">
+                        </p>
+                        <p>
+                            <label>رمز عبور <span>*</span></label>
+                            <input asp-for="Password" type="password">
+                        </p>
+                        <div class="login_submit">
+                            <a href="/ForgotPassword">رمز عبور خود را فراموش کرده اید؟</a>
+                            <a href="/Register">عضویت در هامون</a><br />
+                            <label for="remember">
+                                <input id="remember" asp-for="RememberMe" type="checkbox"> به خاطر سپاری
+                            </label>
+                            <button type="submit" class="theme-btn btn-style-three"><span class="txt">ورود </span></button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!--login area start-->
+            <!--register area start-->
+            <!--register area end-->
+
+        </div>
+    </div>
+</div>

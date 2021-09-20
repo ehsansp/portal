@@ -1,0 +1,33 @@
+﻿@model PortalBuilder.Core.DTOs.Staff.RegisterViewModel
+@{
+    ViewData["Title"] = "عضویت در هامون";
+}
+
+<div align="center" class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="" align="center">
+            <!--login area start-->
+            <div class="">
+                <div class="styled-form login-form">
+                    <h2>ثبت نام</h2>
+                    <form asp-action="Register" method="post">
+                        <p>
+                            <label>شماره همراه <span>*</span></label>
+                            <input asp-for="UserName" type="number">
+
+                        </p>
+                        <div asp-validation-summary="All" class="text-danger">
+
+                        </div>
+                        <div class="login_submit">
+                            <button type="button" class="theme-btn btn-style-three"><span class="txt">ثبت نام </span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--register area end-->
+
+        </div>
+    </div>
+</div>

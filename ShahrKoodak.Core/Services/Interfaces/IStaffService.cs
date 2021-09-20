@@ -21,5 +21,12 @@ namespace PortalBuilder.Core.Services.Interfaces
         int UpdateStaff(Staff staff, IFormFile imgArticle);
         int UpdateStaffPosition(StaffPosition staffPosition);
         List<SelectListItem> getStaffPositionItems();
+        Customer LoginUser(LoginViewModel login);
+        Customer GetUserByActiveCode(string activeCode);
+        bool IsExistUserName(string userName);
+        int AddUser(Customer user);
+        bool ActiveAcount(string activeCode);
+        Customer GetUserByUserName(string username);
+        void ChangeUserPassword(string userName, string newPassword);
     }
 }

@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
+using PortalBuilder.Core.Convertors;
 using PortalBuilder.Core.Services;
 using PortalBuilder.Core.Services.generic;
 using PortalBuilder.Core.Services.Interfaces;
@@ -118,6 +119,7 @@ namespace ShahrKoodak.Web
             services.AddTransient<IFAQService, FAQService>();
             services.AddTransient<IExamService, ExamService>();
             services.AddTransient<IEducationService, EducationService>();
+            services.AddTransient<IViewRenderService, RenderViewToString>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             #endregion

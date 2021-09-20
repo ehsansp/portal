@@ -1,14 +1,13 @@
-﻿@page "{id}"
-@model PortalsBuilder.Web.Pages.Admin.Bank.EditBankModel
+﻿@page
+@model PortalsBuilder.Web.Pages.Admin.Education.CreateModel
 @{
 }
 <div class="main-panel">
     <form method="post" enctype="multipart/form-data">
-        <input type="hidden" asp-for="Bank.BankId"/>
         <div class="content-wrapper">
             <div class="page-header">
                 <h3 class="page-title">
-                    ایجاد بانک
+                    ایجاد مقطع تحصیلی
                 </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -21,26 +20,26 @@
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">بانک جدید</h4>
+                            <h4 class="card-title">مقطع تحصیلی جدید</h4>
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">عنوان</label>
-                                <input type="text" class="form-control" asp-for="Bank.Title" placeholder="عنوان را وارد کنید">
+                                <input type="text" class="form-control" asp-for="Education.Title" placeholder="عنوان را وارد کنید">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputUsername1">توضیحات</label>
-                                <input type="text" class="form-control" asp-for="Bank.EnTitle" placeholder="توضیحات را وارد کنید">
+                                <label for="exampleInputUsername1">عنوان انگلیسی</label>
+                                <input type="text" class="form-control" asp-for="Education.EnTitle" placeholder="عنوان انگلیسی را وارد کنید">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputUsername1">لوگوی بانک</label>
-                                <input type="file" name="imgCourseUp" asp-for="Bank.Logo" id="imgCourseUp" class="form-control">
+                                <label for="exampleInputUsername1">ترتیب نمایش</label>
+                                <input type="text" class="form-control" asp-for="Education.SortIndex" placeholder="ترتیب نمایش را وارد کنید">
                             </div>
 
-
+                            
                             <button type="submit" class="btn btn-primary mr-2">ثبت</button>
-                            <a href="/Admin/Bank" class="btn btn-light">لغو</a>
+                            <a href="/Admin/Education" class="btn btn-light">لغو</a>
 
                         </div>
                     </div>

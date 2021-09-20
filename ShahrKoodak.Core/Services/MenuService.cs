@@ -34,7 +34,7 @@ namespace PortalBuilder.Core.Services
         }
         public List<SelectListItem> GetGroupForManageArticle()
         {
-            return _context.ArticleCategories.Where(g => g.ParentId == null)
+            return _context.Menus.Where(g => g.ParentId == null)
                 .Select(g => new SelectListItem()
                 {
                     Text = g.Title,

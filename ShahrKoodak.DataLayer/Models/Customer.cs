@@ -43,5 +43,6 @@ namespace PortalBuilder.Models
         public string ReferrerCode { get; set; }
         public string TrackingCode { get; set; }
         public string Description { get; set; }
+        public string ActiveCode { get; set; }
     }
 }
